@@ -6,7 +6,7 @@ Support/Cursor/User/settings.json ?
 Other than that, based on all the examples, craft an exquisite, annotated (with comments),
 well-organized remarkrc.yml file that will be used by the VSCode Extension unifiedjs.vscode-remark.
 
-## Recent plugins info from https://github.com/remarkjs/remark/blob/main/doc/plugins.md
+## Recent plugins info from <https://github.com/remarkjs/remark/blob/main/doc/plugins.md>
 
 ![remark][file-logo]
 
@@ -30,7 +30,7 @@ For the most awesome projects in the ecosystem, see
 [`remarkjs/awesome-remark`][github-remark-awesome-remark]. More plugins can be found on GitHub
 tagged with the [`remark-plugin` topic][github-topic-remark-plugin].
 
-> 👉 **Note**: some plugins don’t work with recent versions of remark due to changes in its
+> 👉 **Note**: some plugins don't work with recent versions of remark due to changes in its
 > underlying parser (micromark). Plugins that are up to date or unaffected are marked with `🟢`
 > while plugins that are **currently broken** are marked with `⚠️`.
 
@@ -110,7 +110,7 @@ The list of plugins:
   references w/ separate definitions
 - ⚠️
   [`remark-disable-tokenizers`](https://github.com/zestedesavoir/zmarkdown/tree/HEAD/packages/remark-disable-tokenizers#readme)
-  — turn some or all remark’s tokenizers on or off
+  — turn some or all remark's tokenizers on or off
 - 🟢 [`remark-directive`](https://github.com/remarkjs/remark-directive) — new syntax for directives
   (generic extensions)
 - 🟢 [`remark-directive-rehype`](https://github.com/IGassmann/remark-directive-rehype) — turn
@@ -160,7 +160,7 @@ The list of plugins:
   issues, pull-requests, and users
 - 🟢
   [`remark-github-admonitions-to-directives`](https://github.com/incentro-dc/remark-github-admonitions-to-directives)
-  — convert GitHub’s blockquote-based admonitions syntax to directives syntax
+  — convert GitHub's blockquote-based admonitions syntax to directives syntax
 - 🟢
   [`remark-github-beta-blockquote-admonitions`](https://github.com/myl7/remark-github-beta-blockquote-admonitions)
   — [GitHub beta blockquote-based admonitions](https://github.com/github/feedback/discussions/16925)
@@ -359,11 +359,11 @@ or specify it in a [configuration file][github-unified-engine-config-files].
 To create a plugin, first read up on what they are in [_§ Plugin_ in
 `unifiedjs/unified`][github-unified-plugin]. After that read [_§ Create a remark plugin_ on
 `unifiedjs.com`][unifiedjs-create-a-plugin] for a practical introduction. Finally take one of the
-existing plugins, which looks similar to what you’re about to make, and work from there. If you get
+existing plugins, which looks similar to what you're about to make, and work from there. If you get
 stuck, [discussions][health-discussions] is a good place to get help.
 
 You should pick a name prefixed by `remark-` (such as `remark-lint`). **Do not use the `remark-`
-prefix** if the thing you create doesn’t work with `remark().use()`: it isn’t a “plugin” and will
+prefix** if the thing you create doesn't work with `remark().use()`: it isn't a "plugin" and will
 confuse users. If it works with mdast use `mdast-util-`. If it works with any unist tree use
 `unist-util-`. If it works with virtual files use `vfile-`.
 
@@ -1602,7 +1602,7 @@ editor.
 
 To configure this extension, you define your preferred markdown style in a configuration file
 (`.remarkrc`, `.remarkrc.js`, etc. or in `package.json`). This file is picked up by `vscode-remark`
-and other tools (useful for contributors that don’t use VS Code).
+and other tools (useful for contributors that don't use VS Code).
 
 The configuration file is also used by [`remark-cli`][remark-cli], which is recommended to be used
 alongside `vscode-remark`, as an npm script and/or in CI, to enforce the markdown style.
@@ -1623,8 +1623,8 @@ with a configuration file. The extension will find the configuration in your wor
 running `remark-cli` in your terminal would. You will be able to see your linter work as you type
 and you can format your code if you want it to.
 
-Now, you can open markdown files in your project, and you’ll see squiggly lines and warnings in the
-`Problems` pane if the code doesn’t adhere to the coding standards. Here’s an example that should
+Now, you can open markdown files in your project, and you'll see squiggly lines and warnings in the
+`Problems` pane if the code doesn't adhere to the coding standards. Here's an example that should
 produce problems you can use to verify:
 
 ```markdown
@@ -1688,7 +1688,7 @@ You can optionally choose to automatically format when saving with `editor.forma
 
 ## Plugins
 
-The **remark** ecosystem has a variety of plugins available. Most notably you’ll want to check out
+The **remark** ecosystem has a variety of plugins available. Most notably you'll want to check out
 [`remark-lint`][remark-lint]. See this curated [list of plugins][list-of-plugins] for more remark
 plugins.
 

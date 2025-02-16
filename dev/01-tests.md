@@ -1,8 +1,3 @@
----
-this_file: twardown-docs/dev/01-tests.md
-title: Testing Documentation
----
-
 # Testing Documentation
 
 ## Penguin Programming Patterns
