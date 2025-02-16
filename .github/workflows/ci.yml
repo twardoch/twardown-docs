@@ -25,7 +25,7 @@ jobs:
     - name: Lint Markdown
       run: |
         markdownlint '**/*.md' --ignore node_modules || true
-        prettier --check '**/*.md' || true
+        prettier --check '**/*.md'
         
   links:
     runs-on: ubuntu-latest
@@ -33,7 +33,6 @@ jobs:
     - uses: actions/checkout@v4
     
     - name: Link Checker
-      continue-on-error: true
       uses: lycheeverse/lychee-action@v1
       with:
         args: --verbose --no-progress './**/*.md'
