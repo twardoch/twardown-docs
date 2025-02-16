@@ -36,51 +36,59 @@ Twardown includes all CommonMark features:
 In addition to CommonMark, Twardown includes:
 
 #### 2.1 Tables
+
 - Supports GitHub-style tables
 - Alignment options
 - Header row required
 - Example:
-  ```markdown
-  | Header 1 | Header 2 |
-  |----------|----------|
-  | Cell 1   | Cell 2   |
-  ```
+
+```markdown
+| Header 1 | Header 2 |
+|----------|----------|
+| Cell 1   | Cell 2   |
+```
 
 #### 2.2 Task Lists
+
 - GitHub-style task lists
 - Nested task lists supported
 - Example:
-  ```markdown
-  - [ ] Unchecked task
-  - [x] Checked task
-    - [ ] Nested task
-  ```
+
+```markdown
+- [ ] Unchecked task
+- [x] Checked task
+  - [ ] Nested task
+```
 
 #### 2.3 Frontmatter
+
 - YAML frontmatter for metadata
 - Must start and end with `---` on its own line
 - Example:
-  ```markdown
-  ---
-  title: Document Title
-  author: Name
-  date: 2024-03-24
-  ---
-  ```
+
+```markdown
+---
+title: Document Title
+author: Name
+date: 2024-03-24
+---
+```
 
 ### 3. Special Features
 
 Twardown adds several special features:
 
 #### 3.1 Magic Records
+
 - Special comments that maintain file metadata
 - Must be placed at the top of the file
 - Example:
-  ```markdown
-  ---
-  this_file: path/to/file.md
-  ---
-  ```
+
+```markdown
+---
+this_file: path/to/file.md
+---
+```
 
 ## Implementation Requirements
 

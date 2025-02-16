@@ -16,6 +16,7 @@ You can use **bold**, *italic*, or ***both***. You can also use `inline code` or
 ## Lists
 
 ### Unordered Lists
+
 - First item
 - Second item
   - Nested item
@@ -23,6 +24,7 @@ You can use **bold**, *italic*, or ***both***. You can also use `inline code` or
 - Third item
 
 ### Ordered Lists
+
 1. First step
 2. Second step
    1. Substep A
@@ -30,6 +32,7 @@ You can use **bold**, *italic*, or ***both***. You can also use `inline code` or
 3. Third step
 
 ### Task Lists
+
 - [ ] Write documentation
 - [x] Set up repository
 - [ ] Implement features
@@ -71,15 +74,19 @@ function helloWorld() {
 ## Thematic Breaks
 
 Above this line
+
 ***
+
 Below this line
 
 ## Special Features
 
 ### Magic Records
+
 The magic record at the top of this file (`this_file: examples/basic.md`) helps track the file's location in the project.
 
 ### Frontmatter
+
 This file includes YAML frontmatter with title, author, and date information.
 
 ## Extended Syntax

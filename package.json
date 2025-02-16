@@ -7,7 +7,7 @@
         "lint": "markdownlint '**/*.md' --ignore node_modules",
         "format": "prettier --write '**/*.md'",
         "format:check": "prettier --check '**/*.md'",
-        "check-links": "lychee './**/*.md'"
+        "check-links": "lychee '**/*.md' --exclude node_modules"
     },
     "repository": {
         "type": "git",
