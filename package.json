@@ -1,0 +1,30 @@
+{
+    "name": "twardown-docs",
+    "version": "0.1.0",
+    "description": "Documentation for the Twardown Markdown flavor and associated tools",
+    "private": true,
+    "scripts": {
+        "lint": "markdownlint '**/*.md' --ignore node_modules",
+        "format": "prettier --write '**/*.md'",
+        "format:check": "prettier --check '**/*.md'",
+        "check-links": "lychee './**/*.md'"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/twardoch/twardown-docs.git"
+    },
+    "keywords": [
+        "markdown",
+        "documentation"
+    ],
+    "author": "Adam Twardoch <adam@twardoch.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/twardoch/twardown-docs/issues"
+    },
+    "homepage": "https://github.com/twardoch/twardown-docs#readme",
+    "devDependencies": {
+        "markdownlint-cli": "^0.39.0",
+        "prettier": "^3.2.0"
+    }
+}
