@@ -994,3923 +994,7 @@ Can contain an underscore followed by a period: <aaa@a.b_.c>
 
 <https://google.com>
 
-test/fixtures/autolink-literal/tree.json
-```.json
-{
-  "type": "root",
-  "children": [
-    {
-      "type": "heading",
-      "depth": 1,
-      "children": [
-        {
-          "type": "text",
-          "value": "Literal autolinks",
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 3,
-              "offset": 2
-            },
-            "end": {
-              "line": 1,
-              "column": 20,
-              "offset": 19
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 1,
-          "column": 1,
-          "offset": 0
-        },
-        "end": {
-          "line": 1,
-          "column": 20,
-          "offset": 19
-        }
-      }
-    },
-    {
-      "type": "heading",
-      "depth": 2,
-      "children": [
-        {
-          "type": "text",
-          "value": "WWW autolinks",
-          "position": {
-            "start": {
-              "line": 3,
-              "column": 4,
-              "offset": 24
-            },
-            "end": {
-              "line": 3,
-              "column": 17,
-              "offset": 37
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 3,
-          "column": 1,
-          "offset": 21
-        },
-        "end": {
-          "line": 3,
-          "column": 17,
-          "offset": 37
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "link",
-          "title": null,
-          "url": "http://www.commonmark.org",
-          "children": [
-            {
-              "type": "text",
-              "value": "www.commonmark.org",
-              "position": {
-                "start": {
-                  "line": 5,
-                  "column": 1,
-                  "offset": 39
-                },
-                "end": {
-                  "line": 5,
-                  "column": 19,
-                  "offset": 57
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 5,
-              "column": 1,
-              "offset": 39
-            },
-            "end": {
-              "line": 5,
-              "column": 19,
-              "offset": 57
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 5,
-          "column": 1,
-          "offset": 39
-        },
-        "end": {
-          "line": 5,
-          "column": 19,
-          "offset": 57
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "link",
-          "title": null,
-          "url": "http://WWW.COMMONMARK.ORG",
-          "children": [
-            {
-              "type": "text",
-              "value": "WWW.COMMONMARK.ORG",
-              "position": {
-                "start": {
-                  "line": 7,
-                  "column": 1,
-                  "offset": 59
-                },
-                "end": {
-                  "line": 7,
-                  "column": 19,
-                  "offset": 77
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 7,
-              "column": 1,
-              "offset": 59
-            },
-            "end": {
-              "line": 7,
-              "column": 19,
-              "offset": 77
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 7,
-          "column": 1,
-          "offset": 59
-        },
-        "end": {
-          "line": 7,
-          "column": 19,
-          "offset": 77
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "Visit ",
-          "position": {
-            "start": {
-              "line": 9,
-              "column": 1,
-              "offset": 79
-            },
-            "end": {
-              "line": 9,
-              "column": 7,
-              "offset": 85
-            }
-          }
-        },
-        {
-          "type": "link",
-          "title": null,
-          "url": "http://www.commonmark.org/help",
-          "children": [
-            {
-              "type": "text",
-              "value": "www.commonmark.org/help",
-              "position": {
-                "start": {
-                  "line": 9,
-                  "column": 7,
-                  "offset": 85
-                },
-                "end": {
-                  "line": 9,
-                  "column": 30,
-                  "offset": 108
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 9,
-              "column": 7,
-              "offset": 85
-            },
-            "end": {
-              "line": 9,
-              "column": 30,
-              "offset": 108
-            }
-          }
-        },
-        {
-          "type": "text",
-          "value": " for more information.",
-          "position": {
-            "start": {
-              "line": 9,
-              "column": 30,
-              "offset": 108
-            },
-            "end": {
-              "line": 9,
-              "column": 52,
-              "offset": 130
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 9,
-          "column": 1,
-          "offset": 79
-        },
-        "end": {
-          "line": 9,
-          "column": 52,
-          "offset": 130
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "Visit ",
-          "position": {
-            "start": {
-              "line": 11,
-              "column": 1,
-              "offset": 132
-            },
-            "end": {
-              "line": 11,
-              "column": 7,
-              "offset": 138
-            }
-          }
-        },
-        {
-          "type": "link",
-          "title": null,
-          "url": "http://www.commonmark.org",
-          "children": [
-            {
-              "type": "text",
-              "value": "www.commonmark.org",
-              "position": {
-                "start": {
-                  "line": 11,
-                  "column": 7,
-                  "offset": 138
-                },
-                "end": {
-                  "line": 11,
-                  "column": 25,
-                  "offset": 156
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 11,
-              "column": 7,
-              "offset": 138
-            },
-            "end": {
-              "line": 11,
-              "column": 25,
-              "offset": 156
-            }
-          }
-        },
-        {
-          "type": "text",
-          "value": ".",
-          "position": {
-            "start": {
-              "line": 11,
-              "column": 25,
-              "offset": 156
-            },
-            "end": {
-              "line": 11,
-              "column": 26,
-              "offset": 157
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 11,
-          "column": 1,
-          "offset": 132
-        },
-        "end": {
-          "line": 11,
-          "column": 26,
-          "offset": 157
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "Visit ",
-          "position": {
-            "start": {
-              "line": 13,
-              "column": 1,
-              "offset": 159
-            },
-            "end": {
-              "line": 13,
-              "column": 7,
-              "offset": 165
-            }
-          }
-        },
-        {
-          "type": "link",
-          "title": null,
-          "url": "http://www.commonmark.org/a.b",
-          "children": [
-            {
-              "type": "text",
-              "value": "www.commonmark.org/a.b",
-              "position": {
-                "start": {
-                  "line": 13,
-                  "column": 7,
-                  "offset": 165
-                },
-                "end": {
-                  "line": 13,
-                  "column": 29,
-                  "offset": 187
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 13,
-              "column": 7,
-              "offset": 165
-            },
-            "end": {
-              "line": 13,
-              "column": 29,
-              "offset": 187
-            }
-          }
-        },
-        {
-          "type": "text",
-          "value": ".",
-          "position": {
-            "start": {
-              "line": 13,
-              "column": 29,
-              "offset": 187
-            },
-            "end": {
-              "line": 13,
-              "column": 30,
-              "offset": 188
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 13,
-          "column": 1,
-          "offset": 159
-        },
-        "end": {
-          "line": 13,
-          "column": 30,
-          "offset": 188
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "www.aaa.bbb.ccc_ccc",
-          "position": {
-            "start": {
-              "line": 15,
-              "column": 1,
-              "offset": 190
-            },
-            "end": {
-              "line": 15,
-              "column": 20,
-              "offset": 209
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 15,
-          "column": 1,
-          "offset": 190
-        },
-        "end": {
-          "line": 15,
-          "column": 20,
-          "offset": 209
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "www.aaa_bbb.ccc",
-          "position": {
-            "start": {
-              "line": 17,
-              "column": 1,
-              "offset": 211
-            },
-            "end": {
-              "line": 17,
-              "column": 16,
-              "offset": 226
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 17,
-          "column": 1,
-          "offset": 211
-        },
-        "end": {
-          "line": 17,
-          "column": 16,
-          "offset": 226
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "www.aaa.bbb.ccc.ddd_ddd",
-          "position": {
-            "start": {
-              "line": 19,
-              "column": 1,
-              "offset": 228
-            },
-            "end": {
-              "line": 19,
-              "column": 24,
-              "offset": 251
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 19,
-          "column": 1,
-          "offset": 228
-        },
-        "end": {
-          "line": 19,
-          "column": 24,
-          "offset": 251
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "www.aaa.bbb.ccc_ccc.ddd",
-          "position": {
-            "start": {
-              "line": 21,
-              "column": 1,
-              "offset": 253
-            },
-            "end": {
-              "line": 21,
-              "column": 24,
-              "offset": 276
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 21,
-          "column": 1,
-          "offset": 253
-        },
-        "end": {
-          "line": 21,
-          "column": 24,
-          "offset": 276
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "link",
-          "title": null,
-          "url": "http://www.aaa.bbb_bbb.ccc.ddd",
-          "children": [
-            {
-              "type": "text",
-              "value": "www.aaa.bbb_bbb.ccc.ddd",
-              "position": {
-                "start": {
-                  "line": 23,
-                  "column": 1,
-                  "offset": 278
-                },
-                "end": {
-                  "line": 23,
-                  "column": 24,
-                  "offset": 301
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 23,
-              "column": 1,
-              "offset": 278
-            },
-            "end": {
-              "line": 23,
-              "column": 24,
-              "offset": 301
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 23,
-          "column": 1,
-          "offset": 278
-        },
-        "end": {
-          "line": 23,
-          "column": 24,
-          "offset": 301
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "link",
-          "title": null,
-          "url": "http://www.aaa_aaa.bbb.ccc.ddd",
-          "children": [
-            {
-              "type": "text",
-              "value": "www.aaa_aaa.bbb.ccc.ddd",
-              "position": {
-                "start": {
-                  "line": 25,
-                  "column": 1,
-                  "offset": 303
-                },
-                "end": {
-                  "line": 25,
-                  "column": 24,
-                  "offset": 326
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 25,
-              "column": 1,
-              "offset": 303
-            },
-            "end": {
-              "line": 25,
-              "column": 24,
-              "offset": 326
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 25,
-          "column": 1,
-          "offset": 303
-        },
-        "end": {
-          "line": 25,
-          "column": 24,
-          "offset": 326
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "Visit ",
-          "position": {
-            "start": {
-              "line": 27,
-              "column": 1,
-              "offset": 328
-            },
-            "end": {
-              "line": 27,
-              "column": 7,
-              "offset": 334
-            }
-          }
-        },
-        {
-          "type": "link",
-          "title": null,
-          "url": "http://www.commonmark.org",
-          "children": [
-            {
-              "type": "text",
-              "value": "www.commonmark.org",
-              "position": {
-                "start": {
-                  "line": 27,
-                  "column": 7,
-                  "offset": 334
-                },
-                "end": {
-                  "line": 27,
-                  "column": 25,
-                  "offset": 352
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 27,
-              "column": 7,
-              "offset": 334
-            },
-            "end": {
-              "line": 27,
-              "column": 25,
-              "offset": 352
-            }
-          }
-        },
-        {
-          "type": "text",
-          "value": ".",
-          "position": {
-            "start": {
-              "line": 27,
-              "column": 25,
-              "offset": 352
-            },
-            "end": {
-              "line": 27,
-              "column": 26,
-              "offset": 353
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 27,
-          "column": 1,
-          "offset": 328
-        },
-        "end": {
-          "line": 27,
-          "column": 26,
-          "offset": 353
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "Visit ",
-          "position": {
-            "start": {
-              "line": 29,
-              "column": 1,
-              "offset": 355
-            },
-            "end": {
-              "line": 29,
-              "column": 7,
-              "offset": 361
-            }
-          }
-        },
-        {
-          "type": "link",
-          "title": null,
-          "url": "http://www.commonmark.org/a.b",
-          "children": [
-            {
-              "type": "text",
-              "value": "www.commonmark.org/a.b",
-              "position": {
-                "start": {
-                  "line": 29,
-                  "column": 7,
-                  "offset": 361
-                },
-                "end": {
-                  "line": 29,
-                  "column": 29,
-                  "offset": 383
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 29,
-              "column": 7,
-              "offset": 361
-            },
-            "end": {
-              "line": 29,
-              "column": 29,
-              "offset": 383
-            }
-          }
-        },
-        {
-          "type": "text",
-          "value": ".",
-          "position": {
-            "start": {
-              "line": 29,
-              "column": 29,
-              "offset": 383
-            },
-            "end": {
-              "line": 29,
-              "column": 30,
-              "offset": 384
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 29,
-          "column": 1,
-          "offset": 355
-        },
-        "end": {
-          "line": 29,
-          "column": 30,
-          "offset": 384
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "link",
-          "title": null,
-          "url": "http://www.google.com/search?q=Markup+(business)",
-          "children": [
-            {
-              "type": "text",
-              "value": "www.google.com/search?q=Markup+(business)",
-              "position": {
-                "start": {
-                  "line": 31,
-                  "column": 1,
-                  "offset": 386
-                },
-                "end": {
-                  "line": 31,
-                  "column": 42,
-                  "offset": 427
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 31,
-              "column": 1,
-              "offset": 386
-            },
-            "end": {
-              "line": 31,
-              "column": 42,
-              "offset": 427
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 31,
-          "column": 1,
-          "offset": 386
-        },
-        "end": {
-          "line": 31,
-          "column": 42,
-          "offset": 427
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "link",
-          "title": null,
-          "url": "http://www.google.com/search?q=Markup+(business)",
-          "children": [
-            {
-              "type": "text",
-              "value": "www.google.com/search?q=Markup+(business)",
-              "position": {
-                "start": {
-                  "line": 33,
-                  "column": 1,
-                  "offset": 429
-                },
-                "end": {
-                  "line": 33,
-                  "column": 42,
-                  "offset": 470
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 33,
-              "column": 1,
-              "offset": 429
-            },
-            "end": {
-              "line": 33,
-              "column": 42,
-              "offset": 470
-            }
-          }
-        },
-        {
-          "type": "text",
-          "value": "))",
-          "position": {
-            "start": {
-              "line": 33,
-              "column": 42,
-              "offset": 470
-            },
-            "end": {
-              "line": 33,
-              "column": 44,
-              "offset": 472
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 33,
-          "column": 1,
-          "offset": 429
-        },
-        "end": {
-          "line": 33,
-          "column": 44,
-          "offset": 472
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "(",
-          "position": {
-            "start": {
-              "line": 35,
-              "column": 1,
-              "offset": 474
-            },
-            "end": {
-              "line": 35,
-              "column": 2,
-              "offset": 475
-            }
-          }
-        },
-        {
-          "type": "link",
-          "title": null,
-          "url": "http://www.google.com/search?q=Markup+(business)",
-          "children": [
-            {
-              "type": "text",
-              "value": "www.google.com/search?q=Markup+(business)",
-              "position": {
-                "start": {
-                  "line": 35,
-                  "column": 2,
-                  "offset": 475
-                },
-                "end": {
-                  "line": 35,
-                  "column": 43,
-                  "offset": 516
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 35,
-              "column": 2,
-              "offset": 475
-            },
-            "end": {
-              "line": 35,
-              "column": 43,
-              "offset": 516
-            }
-          }
-        },
-        {
-          "type": "text",
-          "value": ")",
-          "position": {
-            "start": {
-              "line": 35,
-              "column": 43,
-              "offset": 516
-            },
-            "end": {
-              "line": 35,
-              "column": 44,
-              "offset": 517
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 35,
-          "column": 1,
-          "offset": 474
-        },
-        "end": {
-          "line": 35,
-          "column": 44,
-          "offset": 517
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "(",
-          "position": {
-            "start": {
-              "line": 37,
-              "column": 1,
-              "offset": 519
-            },
-            "end": {
-              "line": 37,
-              "column": 2,
-              "offset": 520
-            }
-          }
-        },
-        {
-          "type": "link",
-          "title": null,
-          "url": "http://www.google.com/search?q=Markup+(business)",
-          "children": [
-            {
-              "type": "text",
-              "value": "www.google.com/search?q=Markup+(business)",
-              "position": {
-                "start": {
-                  "line": 37,
-                  "column": 2,
-                  "offset": 520
-                },
-                "end": {
-                  "line": 37,
-                  "column": 43,
-                  "offset": 561
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 37,
-              "column": 2,
-              "offset": 520
-            },
-            "end": {
-              "line": 37,
-              "column": 43,
-              "offset": 561
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 37,
-          "column": 1,
-          "offset": 519
-        },
-        "end": {
-          "line": 37,
-          "column": 43,
-          "offset": 561
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "link",
-          "title": null,
-          "url": "http://www.google.com/search?q=(business))+ok",
-          "children": [
-            {
-              "type": "text",
-              "value": "www.google.com/search?q=(business))+ok",
-              "position": {
-                "start": {
-                  "line": 39,
-                  "column": 1,
-                  "offset": 563
-                },
-                "end": {
-                  "line": 39,
-                  "column": 39,
-                  "offset": 601
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 39,
-              "column": 1,
-              "offset": 563
-            },
-            "end": {
-              "line": 39,
-              "column": 39,
-              "offset": 601
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 39,
-          "column": 1,
-          "offset": 563
-        },
-        "end": {
-          "line": 39,
-          "column": 39,
-          "offset": 601
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "link",
-          "title": null,
-          "url": "http://www.google.com/search?q=commonmark&hl=en",
-          "children": [
-            {
-              "type": "text",
-              "value": "www.google.com/search?q=commonmark&hl=en",
-              "position": {
-                "start": {
-                  "line": 41,
-                  "column": 1,
-                  "offset": 603
-                },
-                "end": {
-                  "line": 41,
-                  "column": 41,
-                  "offset": 643
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 41,
-              "column": 1,
-              "offset": 603
-            },
-            "end": {
-              "line": 41,
-              "column": 41,
-              "offset": 643
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 41,
-          "column": 1,
-          "offset": 603
-        },
-        "end": {
-          "line": 41,
-          "column": 41,
-          "offset": 643
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "link",
-          "title": null,
-          "url": "http://www.google.com/search?q=commonmark&hl;en",
-          "children": [
-            {
-              "type": "text",
-              "value": "www.google.com/search?q=commonmark&hl;en",
-              "position": {
-                "start": {
-                  "line": 43,
-                  "column": 1,
-                  "offset": 645
-                },
-                "end": {
-                  "line": 43,
-                  "column": 41,
-                  "offset": 685
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 43,
-              "column": 1,
-              "offset": 645
-            },
-            "end": {
-              "line": 43,
-              "column": 41,
-              "offset": 685
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 43,
-          "column": 1,
-          "offset": 645
-        },
-        "end": {
-          "line": 43,
-          "column": 41,
-          "offset": 685
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "link",
-          "title": null,
-          "url": "http://www.google.com/search?q=commonmark",
-          "children": [
-            {
-              "type": "text",
-              "value": "www.google.com/search?q=commonmark",
-              "position": {
-                "start": {
-                  "line": 45,
-                  "column": 1,
-                  "offset": 687
-                },
-                "end": {
-                  "line": 45,
-                  "column": 35,
-                  "offset": 721
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 45,
-              "column": 1,
-              "offset": 687
-            },
-            "end": {
-              "line": 45,
-              "column": 35,
-              "offset": 721
-            }
-          }
-        },
-        {
-          "type": "text",
-          "value": "&hl;",
-          "position": {
-            "start": {
-              "line": 45,
-              "column": 35,
-              "offset": 721
-            },
-            "end": {
-              "line": 45,
-              "column": 39,
-              "offset": 725
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 45,
-          "column": 1,
-          "offset": 687
-        },
-        "end": {
-          "line": 45,
-          "column": 39,
-          "offset": 725
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "link",
-          "title": null,
-          "url": "http://www.commonmark.org/he",
-          "children": [
-            {
-              "type": "text",
-              "value": "www.commonmark.org/he",
-              "position": {
-                "start": {
-                  "line": 47,
-                  "column": 1,
-                  "offset": 727
-                },
-                "end": {
-                  "line": 47,
-                  "column": 22,
-                  "offset": 748
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 47,
-              "column": 1,
-              "offset": 727
-            },
-            "end": {
-              "line": 47,
-              "column": 22,
-              "offset": 748
-            }
-          }
-        },
-        {
-          "type": "text",
-          "value": "<lp",
-          "position": {
-            "start": {
-              "line": 47,
-              "column": 22,
-              "offset": 748
-            },
-            "end": {
-              "line": 47,
-              "column": 25,
-              "offset": 751
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 47,
-          "column": 1,
-          "offset": 727
-        },
-        "end": {
-          "line": 47,
-          "column": 25,
-          "offset": 751
-        }
-      }
-    },
-    {
-      "type": "heading",
-      "depth": 2,
-      "children": [
-        {
-          "type": "text",
-          "value": "HTTP autolinks",
-          "position": {
-            "start": {
-              "line": 49,
-              "column": 4,
-              "offset": 756
-            },
-            "end": {
-              "line": 49,
-              "column": 18,
-              "offset": 770
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 49,
-          "column": 1,
-          "offset": 753
-        },
-        "end": {
-          "line": 49,
-          "column": 18,
-          "offset": 770
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "link",
-          "title": null,
-          "url": "http://example.com",
-          "children": [
-            {
-              "type": "text",
-              "value": "http://example.com",
-              "position": {
-                "start": {
-                  "line": 51,
-                  "column": 1,
-                  "offset": 772
-                },
-                "end": {
-                  "line": 51,
-                  "column": 19,
-                  "offset": 790
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 51,
-              "column": 1,
-              "offset": 772
-            },
-            "end": {
-              "line": 51,
-              "column": 19,
-              "offset": 790
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 51,
-          "column": 1,
-          "offset": 772
-        },
-        "end": {
-          "line": 51,
-          "column": 19,
-          "offset": 790
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "link",
-          "title": null,
-          "url": "https://example.com",
-          "children": [
-            {
-              "type": "text",
-              "value": "https://example.com",
-              "position": {
-                "start": {
-                  "line": 53,
-                  "column": 1,
-                  "offset": 792
-                },
-                "end": {
-                  "line": 53,
-                  "column": 20,
-                  "offset": 811
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 53,
-              "column": 1,
-              "offset": 792
-            },
-            "end": {
-              "line": 53,
-              "column": 20,
-              "offset": 811
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 53,
-          "column": 1,
-          "offset": 792
-        },
-        "end": {
-          "line": 53,
-          "column": 20,
-          "offset": 811
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "link",
-          "title": null,
-          "url": "https://example",
-          "children": [
-            {
-              "type": "text",
-              "value": "https://example",
-              "position": {
-                "start": {
-                  "line": 55,
-                  "column": 1,
-                  "offset": 813
-                },
-                "end": {
-                  "line": 55,
-                  "column": 16,
-                  "offset": 828
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 55,
-              "column": 1,
-              "offset": 813
-            },
-            "end": {
-              "line": 55,
-              "column": 16,
-              "offset": 828
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 55,
-          "column": 1,
-          "offset": 813
-        },
-        "end": {
-          "line": 55,
-          "column": 16,
-          "offset": 828
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "link",
-          "title": null,
-          "url": "http://commonmark.org",
-          "children": [
-            {
-              "type": "text",
-              "value": "http://commonmark.org",
-              "position": {
-                "start": {
-                  "line": 57,
-                  "column": 1,
-                  "offset": 830
-                },
-                "end": {
-                  "line": 57,
-                  "column": 22,
-                  "offset": 851
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 57,
-              "column": 1,
-              "offset": 830
-            },
-            "end": {
-              "line": 57,
-              "column": 22,
-              "offset": 851
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 57,
-          "column": 1,
-          "offset": 830
-        },
-        "end": {
-          "line": 57,
-          "column": 22,
-          "offset": 851
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "(Visit ",
-          "position": {
-            "start": {
-              "line": 59,
-              "column": 1,
-              "offset": 853
-            },
-            "end": {
-              "line": 59,
-              "column": 8,
-              "offset": 860
-            }
-          }
-        },
-        {
-          "type": "link",
-          "title": null,
-          "url": "https://encrypted.google.com/search?q=Markup+(business)",
-          "children": [
-            {
-              "type": "text",
-              "value": "https://encrypted.google.com/search?q=Markup+(business)",
-              "position": {
-                "start": {
-                  "line": 59,
-                  "column": 8,
-                  "offset": 860
-                },
-                "end": {
-                  "line": 59,
-                  "column": 63,
-                  "offset": 915
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 59,
-              "column": 8,
-              "offset": 860
-            },
-            "end": {
-              "line": 59,
-              "column": 63,
-              "offset": 915
-            }
-          }
-        },
-        {
-          "type": "text",
-          "value": ")",
-          "position": {
-            "start": {
-              "line": 59,
-              "column": 63,
-              "offset": 915
-            },
-            "end": {
-              "line": 59,
-              "column": 64,
-              "offset": 916
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 59,
-          "column": 1,
-          "offset": 853
-        },
-        "end": {
-          "line": 59,
-          "column": 64,
-          "offset": 916
-        }
-      }
-    },
-    {
-      "type": "heading",
-      "depth": 2,
-      "children": [
-        {
-          "type": "text",
-          "value": "Email autolinks",
-          "position": {
-            "start": {
-              "line": 61,
-              "column": 4,
-              "offset": 921
-            },
-            "end": {
-              "line": 61,
-              "column": 19,
-              "offset": 936
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 61,
-          "column": 1,
-          "offset": 918
-        },
-        "end": {
-          "line": 61,
-          "column": 19,
-          "offset": 936
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "No dot: foo@barbaz",
-          "position": {
-            "start": {
-              "line": 63,
-              "column": 1,
-              "offset": 938
-            },
-            "end": {
-              "line": 63,
-              "column": 19,
-              "offset": 956
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 63,
-          "column": 1,
-          "offset": 938
-        },
-        "end": {
-          "line": 63,
-          "column": 19,
-          "offset": 956
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "No dot: foo@barbaz.",
-          "position": {
-            "start": {
-              "line": 65,
-              "column": 1,
-              "offset": 958
-            },
-            "end": {
-              "line": 65,
-              "column": 20,
-              "offset": 977
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 65,
-          "column": 1,
-          "offset": 958
-        },
-        "end": {
-          "line": 65,
-          "column": 20,
-          "offset": 977
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "link",
-          "title": null,
-          "url": "mailto:foo@bar.baz",
-          "children": [
-            {
-              "type": "text",
-              "value": "foo@bar.baz",
-              "position": {
-                "start": {
-                  "line": 67,
-                  "column": 1,
-                  "offset": 979
-                },
-                "end": {
-                  "line": 67,
-                  "column": 12,
-                  "offset": 990
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 67,
-              "column": 1,
-              "offset": 979
-            },
-            "end": {
-              "line": 67,
-              "column": 12,
-              "offset": 990
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 67,
-          "column": 1,
-          "offset": 979
-        },
-        "end": {
-          "line": 67,
-          "column": 12,
-          "offset": 990
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "hello@mail+xyz.example isn’t valid, but ",
-          "position": {
-            "start": {
-              "line": 69,
-              "column": 1,
-              "offset": 992
-            },
-            "end": {
-              "line": 69,
-              "column": 41,
-              "offset": 1032
-            }
-          }
-        },
-        {
-          "type": "link",
-          "title": null,
-          "url": "mailto:hello+xyz@mail.example",
-          "children": [
-            {
-              "type": "text",
-              "value": "hello+xyz@mail.example",
-              "position": {
-                "start": {
-                  "line": 69,
-                  "column": 41,
-                  "offset": 1032
-                },
-                "end": {
-                  "line": 69,
-                  "column": 63,
-                  "offset": 1054
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 69,
-              "column": 41,
-              "offset": 1032
-            },
-            "end": {
-              "line": 69,
-              "column": 63,
-              "offset": 1054
-            }
-          }
-        },
-        {
-          "type": "text",
-          "value": " is.",
-          "position": {
-            "start": {
-              "line": 69,
-              "column": 63,
-              "offset": 1054
-            },
-            "end": {
-              "line": 69,
-              "column": 67,
-              "offset": 1058
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 69,
-          "column": 1,
-          "offset": 992
-        },
-        "end": {
-          "line": 69,
-          "column": 67,
-          "offset": 1058
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "link",
-          "title": null,
-          "url": "mailto:a.b-c_d@a.b",
-          "children": [
-            {
-              "type": "text",
-              "value": "a.b-c_d@a.b",
-              "position": {
-                "start": {
-                  "line": 71,
-                  "column": 1,
-                  "offset": 1060
-                },
-                "end": {
-                  "line": 71,
-                  "column": 12,
-                  "offset": 1071
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 71,
-              "column": 1,
-              "offset": 1060
-            },
-            "end": {
-              "line": 71,
-              "column": 12,
-              "offset": 1071
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 71,
-          "column": 1,
-          "offset": 1060
-        },
-        "end": {
-          "line": 71,
-          "column": 12,
-          "offset": 1071
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "link",
-          "title": null,
-          "url": "mailto:a.b-c_d@a.b",
-          "children": [
-            {
-              "type": "text",
-              "value": "a.b-c_d@a.b",
-              "position": {
-                "start": {
-                  "line": 73,
-                  "column": 1,
-                  "offset": 1073
-                },
-                "end": {
-                  "line": 73,
-                  "column": 12,
-                  "offset": 1084
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 73,
-              "column": 1,
-              "offset": 1073
-            },
-            "end": {
-              "line": 73,
-              "column": 12,
-              "offset": 1084
-            }
-          }
-        },
-        {
-          "type": "text",
-          "value": ".",
-          "position": {
-            "start": {
-              "line": 73,
-              "column": 12,
-              "offset": 1084
-            },
-            "end": {
-              "line": 73,
-              "column": 13,
-              "offset": 1085
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 73,
-          "column": 1,
-          "offset": 1073
-        },
-        "end": {
-          "line": 73,
-          "column": 13,
-          "offset": 1085
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "a.b-c_d@a.b-",
-          "position": {
-            "start": {
-              "line": 75,
-              "column": 1,
-              "offset": 1087
-            },
-            "end": {
-              "line": 75,
-              "column": 13,
-              "offset": 1099
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 75,
-          "column": 1,
-          "offset": 1087
-        },
-        "end": {
-          "line": 75,
-          "column": 13,
-          "offset": 1099
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "a.b-c_d@a.b_",
-          "position": {
-            "start": {
-              "line": 77,
-              "column": 1,
-              "offset": 1101
-            },
-            "end": {
-              "line": 77,
-              "column": 13,
-              "offset": 1113
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 77,
-          "column": 1,
-          "offset": 1101
-        },
-        "end": {
-          "line": 77,
-          "column": 13,
-          "offset": 1113
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "link",
-          "title": null,
-          "url": "mailto:a@a_b.c",
-          "children": [
-            {
-              "type": "text",
-              "value": "a@a_b.c",
-              "position": {
-                "start": {
-                  "line": 79,
-                  "column": 1,
-                  "offset": 1115
-                },
-                "end": {
-                  "line": 79,
-                  "column": 8,
-                  "offset": 1122
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 79,
-              "column": 1,
-              "offset": 1115
-            },
-            "end": {
-              "line": 79,
-              "column": 8,
-              "offset": 1122
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 79,
-          "column": 1,
-          "offset": 1115
-        },
-        "end": {
-          "line": 79,
-          "column": 8,
-          "offset": 1122
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "link",
-          "title": null,
-          "url": "mailto:a@a-b.c",
-          "children": [
-            {
-              "type": "text",
-              "value": "a@a-b.c",
-              "position": {
-                "start": {
-                  "line": 81,
-                  "column": 1,
-                  "offset": 1124
-                },
-                "end": {
-                  "line": 81,
-                  "column": 8,
-                  "offset": 1131
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 81,
-              "column": 1,
-              "offset": 1124
-            },
-            "end": {
-              "line": 81,
-              "column": 8,
-              "offset": 1131
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 81,
-          "column": 1,
-          "offset": 1124
-        },
-        "end": {
-          "line": 81,
-          "column": 8,
-          "offset": 1131
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "Can’t end in an underscore followed by a period: aaa@a.b_.",
-          "position": {
-            "start": {
-              "line": 83,
-              "column": 1,
-              "offset": 1133
-            },
-            "end": {
-              "line": 83,
-              "column": 59,
-              "offset": 1191
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 83,
-          "column": 1,
-          "offset": 1133
-        },
-        "end": {
-          "line": 83,
-          "column": 59,
-          "offset": 1191
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "Can contain an underscore followed by a period: ",
-          "position": {
-            "start": {
-              "line": 85,
-              "column": 1,
-              "offset": 1193
-            },
-            "end": {
-              "line": 85,
-              "column": 49,
-              "offset": 1241
-            }
-          }
-        },
-        {
-          "type": "link",
-          "title": null,
-          "url": "mailto:aaa@a.b_.c",
-          "children": [
-            {
-              "type": "text",
-              "value": "aaa@a.b_.c",
-              "position": {
-                "start": {
-                  "line": 85,
-                  "column": 49,
-                  "offset": 1241
-                },
-                "end": {
-                  "line": 85,
-                  "column": 59,
-                  "offset": 1251
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 85,
-              "column": 49,
-              "offset": 1241
-            },
-            "end": {
-              "line": 85,
-              "column": 59,
-              "offset": 1251
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 85,
-          "column": 1,
-          "offset": 1193
-        },
-        "end": {
-          "line": 85,
-          "column": 59,
-          "offset": 1251
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "link",
-          "title": null,
-          "url": "https://google.com",
-          "children": [
-            {
-              "type": "text",
-              "value": "https://google.com",
-              "position": {
-                "start": {
-                  "line": 87,
-                  "column": 2,
-                  "offset": 1254
-                },
-                "end": {
-                  "line": 87,
-                  "column": 20,
-                  "offset": 1272
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 87,
-              "column": 1,
-              "offset": 1253
-            },
-            "end": {
-              "line": 87,
-              "column": 41,
-              "offset": 1293
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 87,
-          "column": 1,
-          "offset": 1253
-        },
-        "end": {
-          "line": 87,
-          "column": 41,
-          "offset": 1293
-        }
-      }
-    }
-  ],
-  "position": {
-    "start": {
-      "line": 1,
-      "column": 1,
-      "offset": 0
-    },
-    "end": {
-      "line": 88,
-      "column": 1,
-      "offset": 1294
-    }
-  }
-}
-
-```
-test/fixtures/strikethrough-default/input.md
-~one~, ~~two~~, ~~~three~~~.
-
-test/fixtures/strikethrough-default/output.md
-~~one~~, ~~two~~, \~\~\~three\~\~\~.
-
-test/fixtures/strikethrough-default/tree.json
-```.json
-{
-  "type": "root",
-  "children": [
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "delete",
-          "children": [
-            {
-              "type": "text",
-              "value": "one",
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 2,
-                  "offset": 1
-                },
-                "end": {
-                  "line": 1,
-                  "column": 5,
-                  "offset": 4
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 1,
-              "offset": 0
-            },
-            "end": {
-              "line": 1,
-              "column": 6,
-              "offset": 5
-            }
-          }
-        },
-        {
-          "type": "text",
-          "value": ", ",
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 6,
-              "offset": 5
-            },
-            "end": {
-              "line": 1,
-              "column": 8,
-              "offset": 7
-            }
-          }
-        },
-        {
-          "type": "delete",
-          "children": [
-            {
-              "type": "text",
-              "value": "two",
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 10,
-                  "offset": 9
-                },
-                "end": {
-                  "line": 1,
-                  "column": 13,
-                  "offset": 12
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 8,
-              "offset": 7
-            },
-            "end": {
-              "line": 1,
-              "column": 15,
-              "offset": 14
-            }
-          }
-        },
-        {
-          "type": "text",
-          "value": ", ~~~three~~~.",
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 15,
-              "offset": 14
-            },
-            "end": {
-              "line": 1,
-              "column": 29,
-              "offset": 28
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 1,
-          "column": 1,
-          "offset": 0
-        },
-        "end": {
-          "line": 1,
-          "column": 29,
-          "offset": 28
-        }
-      }
-    }
-  ],
-  "position": {
-    "start": {
-      "line": 1,
-      "column": 1,
-      "offset": 0
-    },
-    "end": {
-      "line": 2,
-      "column": 1,
-      "offset": 29
-    }
-  }
-}
-
-```
-test/fixtures/strikethrough-not-one/config.json
-```.json
-{
-  "singleTilde": false
-}
-
-```
-test/fixtures/strikethrough-not-one/input.md
-~one~, ~~two~~, ~~~three~~~.
-
-test/fixtures/strikethrough-not-one/output.md
-\~one\~, ~~two~~, \~\~\~three\~\~\~.
-
-test/fixtures/strikethrough-not-one/tree.json
-```.json
-{
-  "type": "root",
-  "children": [
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "~one~, ",
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 1,
-              "offset": 0
-            },
-            "end": {
-              "line": 1,
-              "column": 8,
-              "offset": 7
-            }
-          }
-        },
-        {
-          "type": "delete",
-          "children": [
-            {
-              "type": "text",
-              "value": "two",
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 10,
-                  "offset": 9
-                },
-                "end": {
-                  "line": 1,
-                  "column": 13,
-                  "offset": 12
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 8,
-              "offset": 7
-            },
-            "end": {
-              "line": 1,
-              "column": 15,
-              "offset": 14
-            }
-          }
-        },
-        {
-          "type": "text",
-          "value": ", ~~~three~~~.",
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 15,
-              "offset": 14
-            },
-            "end": {
-              "line": 1,
-              "column": 29,
-              "offset": 28
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 1,
-          "column": 1,
-          "offset": 0
-        },
-        "end": {
-          "line": 1,
-          "column": 29,
-          "offset": 28
-        }
-      }
-    }
-  ],
-  "position": {
-    "start": {
-      "line": 1,
-      "column": 1,
-      "offset": 0
-    },
-    "end": {
-      "line": 2,
-      "column": 1,
-      "offset": 29
-    }
-  }
-}
-
-```
-test/fixtures/table-no-align/config.json
-```.json
-{
-  "tablePipeAlign": false
-}
-
-```
-test/fixtures/table-no-align/input.md
-| a | b | c | d |
-| - | :- | -: | :-: |
-
-test/fixtures/table-no-align/tree.json
-```.json
-{
-  "type": "root",
-  "children": [
-    {
-      "type": "table",
-      "align": [null, "left", "right", "center"],
-      "children": [
-        {
-          "type": "tableRow",
-          "children": [
-            {
-              "type": "tableCell",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "a",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 3,
-                      "offset": 2
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 4,
-                      "offset": 3
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 1,
-                  "offset": 0
-                },
-                "end": {
-                  "line": 1,
-                  "column": 5,
-                  "offset": 4
-                }
-              }
-            },
-            {
-              "type": "tableCell",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "b",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 7,
-                      "offset": 6
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 8,
-                      "offset": 7
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 5,
-                  "offset": 4
-                },
-                "end": {
-                  "line": 1,
-                  "column": 9,
-                  "offset": 8
-                }
-              }
-            },
-            {
-              "type": "tableCell",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "c",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 11,
-                      "offset": 10
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 12,
-                      "offset": 11
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 9,
-                  "offset": 8
-                },
-                "end": {
-                  "line": 1,
-                  "column": 13,
-                  "offset": 12
-                }
-              }
-            },
-            {
-              "type": "tableCell",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "d",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 15,
-                      "offset": 14
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 16,
-                      "offset": 15
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 13,
-                  "offset": 12
-                },
-                "end": {
-                  "line": 1,
-                  "column": 18,
-                  "offset": 17
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 1,
-              "offset": 0
-            },
-            "end": {
-              "line": 1,
-              "column": 18,
-              "offset": 17
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 1,
-          "column": 1,
-          "offset": 0
-        },
-        "end": {
-          "line": 2,
-          "column": 22,
-          "offset": 39
-        }
-      }
-    }
-  ],
-  "position": {
-    "start": {
-      "line": 1,
-      "column": 1,
-      "offset": 0
-    },
-    "end": {
-      "line": 3,
-      "column": 1,
-      "offset": 40
-    }
-  }
-}
-
-```
-test/fixtures/table-no-padding/config.json
-```.json
-{
-  "tableCellPadding": false
-}
-
-```
-test/fixtures/table-no-padding/input.md
-| a | b | c | d |
-| - | :- | -: | :-: |
-
-test/fixtures/table-no-padding/output.md
-|a|b | c| d |
-|-|:-|-:|:-:|
-
-test/fixtures/table-no-padding/tree.json
-```.json
-{
-  "type": "root",
-  "children": [
-    {
-      "type": "table",
-      "align": [null, "left", "right", "center"],
-      "children": [
-        {
-          "type": "tableRow",
-          "children": [
-            {
-              "type": "tableCell",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "a",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 3,
-                      "offset": 2
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 4,
-                      "offset": 3
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 1,
-                  "offset": 0
-                },
-                "end": {
-                  "line": 1,
-                  "column": 5,
-                  "offset": 4
-                }
-              }
-            },
-            {
-              "type": "tableCell",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "b",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 7,
-                      "offset": 6
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 8,
-                      "offset": 7
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 5,
-                  "offset": 4
-                },
-                "end": {
-                  "line": 1,
-                  "column": 9,
-                  "offset": 8
-                }
-              }
-            },
-            {
-              "type": "tableCell",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "c",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 11,
-                      "offset": 10
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 12,
-                      "offset": 11
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 9,
-                  "offset": 8
-                },
-                "end": {
-                  "line": 1,
-                  "column": 13,
-                  "offset": 12
-                }
-              }
-            },
-            {
-              "type": "tableCell",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "d",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 15,
-                      "offset": 14
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 16,
-                      "offset": 15
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 13,
-                  "offset": 12
-                },
-                "end": {
-                  "line": 1,
-                  "column": 18,
-                  "offset": 17
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 1,
-              "offset": 0
-            },
-            "end": {
-              "line": 1,
-              "column": 18,
-              "offset": 17
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 1,
-          "column": 1,
-          "offset": 0
-        },
-        "end": {
-          "line": 2,
-          "column": 22,
-          "offset": 39
-        }
-      }
-    }
-  ],
-  "position": {
-    "start": {
-      "line": 1,
-      "column": 1,
-      "offset": 0
-    },
-    "end": {
-      "line": 3,
-      "column": 1,
-      "offset": 40
-    }
-  }
-}
-
-```
-test/fixtures/table-string-length/config.json
-```.json
-{
-  "stringLength": "this is overwritten in `test/index.js`"
-}
-
-```
-test/fixtures/table-string-length/input.md
-| a | 古 | 🤔 |
-| - | - | - |
-
-test/fixtures/table-string-length/output.md
-| a | 古 | 🤔 |
-| - | -- | -- |
-
-test/fixtures/table-string-length/tree.json
-```.json
-{
-  "type": "root",
-  "children": [
-    {
-      "type": "table",
-      "align": [null, null, null],
-      "children": [
-        {
-          "type": "tableRow",
-          "children": [
-            {
-              "type": "tableCell",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "a",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 3,
-                      "offset": 2
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 4,
-                      "offset": 3
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 1,
-                  "offset": 0
-                },
-                "end": {
-                  "line": 1,
-                  "column": 5,
-                  "offset": 4
-                }
-              }
-            },
-            {
-              "type": "tableCell",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "古",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 7,
-                      "offset": 6
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 8,
-                      "offset": 7
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 5,
-                  "offset": 4
-                },
-                "end": {
-                  "line": 1,
-                  "column": 9,
-                  "offset": 8
-                }
-              }
-            },
-            {
-              "type": "tableCell",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "🤔",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 11,
-                      "offset": 10
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 13,
-                      "offset": 12
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 9,
-                  "offset": 8
-                },
-                "end": {
-                  "line": 1,
-                  "column": 15,
-                  "offset": 14
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 1,
-              "offset": 0
-            },
-            "end": {
-              "line": 1,
-              "column": 15,
-              "offset": 14
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 1,
-          "column": 1,
-          "offset": 0
-        },
-        "end": {
-          "line": 2,
-          "column": 14,
-          "offset": 28
-        }
-      }
-    }
-  ],
-  "position": {
-    "start": {
-      "line": 1,
-      "column": 1,
-      "offset": 0
-    },
-    "end": {
-      "line": 3,
-      "column": 1,
-      "offset": 29
-    }
-  }
-}
-
-```
-test/fixtures/table/input.md
-| a | b | c | d |
-| - | :- | -: | :-: |
-| e | f |
-| g | h | i | j | k |
-
-test/fixtures/table/output.md
-| a | b  |  c |  d  |   |
-| - | :- | -: | :-: | - |
-| e | f  |    |     |   |
-| g | h  |  i |  j  | k |
-
-test/fixtures/table/tree.json
-```.json
-{
-  "type": "root",
-  "children": [
-    {
-      "type": "table",
-      "align": [null, "left", "right", "center"],
-      "children": [
-        {
-          "type": "tableRow",
-          "children": [
-            {
-              "type": "tableCell",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "a",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 3,
-                      "offset": 2
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 4,
-                      "offset": 3
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 1,
-                  "offset": 0
-                },
-                "end": {
-                  "line": 1,
-                  "column": 5,
-                  "offset": 4
-                }
-              }
-            },
-            {
-              "type": "tableCell",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "b",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 7,
-                      "offset": 6
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 8,
-                      "offset": 7
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 5,
-                  "offset": 4
-                },
-                "end": {
-                  "line": 1,
-                  "column": 9,
-                  "offset": 8
-                }
-              }
-            },
-            {
-              "type": "tableCell",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "c",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 11,
-                      "offset": 10
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 12,
-                      "offset": 11
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 9,
-                  "offset": 8
-                },
-                "end": {
-                  "line": 1,
-                  "column": 13,
-                  "offset": 12
-                }
-              }
-            },
-            {
-              "type": "tableCell",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "d",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 15,
-                      "offset": 14
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 16,
-                      "offset": 15
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 13,
-                  "offset": 12
-                },
-                "end": {
-                  "line": 1,
-                  "column": 18,
-                  "offset": 17
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 1,
-              "offset": 0
-            },
-            "end": {
-              "line": 1,
-              "column": 18,
-              "offset": 17
-            }
-          }
-        },
-        {
-          "type": "tableRow",
-          "children": [
-            {
-              "type": "tableCell",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "e",
-                  "position": {
-                    "start": {
-                      "line": 3,
-                      "column": 3,
-                      "offset": 42
-                    },
-                    "end": {
-                      "line": 3,
-                      "column": 4,
-                      "offset": 43
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 3,
-                  "column": 1,
-                  "offset": 40
-                },
-                "end": {
-                  "line": 3,
-                  "column": 5,
-                  "offset": 44
-                }
-              }
-            },
-            {
-              "type": "tableCell",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "f",
-                  "position": {
-                    "start": {
-                      "line": 3,
-                      "column": 7,
-                      "offset": 46
-                    },
-                    "end": {
-                      "line": 3,
-                      "column": 8,
-                      "offset": 47
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 3,
-                  "column": 5,
-                  "offset": 44
-                },
-                "end": {
-                  "line": 3,
-                  "column": 10,
-                  "offset": 49
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 3,
-              "column": 1,
-              "offset": 40
-            },
-            "end": {
-              "line": 3,
-              "column": 10,
-              "offset": 49
-            }
-          }
-        },
-        {
-          "type": "tableRow",
-          "children": [
-            {
-              "type": "tableCell",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "g",
-                  "position": {
-                    "start": {
-                      "line": 4,
-                      "column": 3,
-                      "offset": 52
-                    },
-                    "end": {
-                      "line": 4,
-                      "column": 4,
-                      "offset": 53
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 4,
-                  "column": 1,
-                  "offset": 50
-                },
-                "end": {
-                  "line": 4,
-                  "column": 5,
-                  "offset": 54
-                }
-              }
-            },
-            {
-              "type": "tableCell",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "h",
-                  "position": {
-                    "start": {
-                      "line": 4,
-                      "column": 7,
-                      "offset": 56
-                    },
-                    "end": {
-                      "line": 4,
-                      "column": 8,
-                      "offset": 57
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 4,
-                  "column": 5,
-                  "offset": 54
-                },
-                "end": {
-                  "line": 4,
-                  "column": 9,
-                  "offset": 58
-                }
-              }
-            },
-            {
-              "type": "tableCell",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "i",
-                  "position": {
-                    "start": {
-                      "line": 4,
-                      "column": 11,
-                      "offset": 60
-                    },
-                    "end": {
-                      "line": 4,
-                      "column": 12,
-                      "offset": 61
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 4,
-                  "column": 9,
-                  "offset": 58
-                },
-                "end": {
-                  "line": 4,
-                  "column": 13,
-                  "offset": 62
-                }
-              }
-            },
-            {
-              "type": "tableCell",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "j",
-                  "position": {
-                    "start": {
-                      "line": 4,
-                      "column": 15,
-                      "offset": 64
-                    },
-                    "end": {
-                      "line": 4,
-                      "column": 16,
-                      "offset": 65
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 4,
-                  "column": 13,
-                  "offset": 62
-                },
-                "end": {
-                  "line": 4,
-                  "column": 17,
-                  "offset": 66
-                }
-              }
-            },
-            {
-              "type": "tableCell",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "k",
-                  "position": {
-                    "start": {
-                      "line": 4,
-                      "column": 19,
-                      "offset": 68
-                    },
-                    "end": {
-                      "line": 4,
-                      "column": 20,
-                      "offset": 69
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 4,
-                  "column": 17,
-                  "offset": 66
-                },
-                "end": {
-                  "line": 4,
-                  "column": 22,
-                  "offset": 71
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 4,
-              "column": 1,
-              "offset": 50
-            },
-            "end": {
-              "line": 4,
-              "column": 22,
-              "offset": 71
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 1,
-          "column": 1,
-          "offset": 0
-        },
-        "end": {
-          "line": 4,
-          "column": 22,
-          "offset": 71
-        }
-      }
-    }
-  ],
-  "position": {
-    "start": {
-      "line": 1,
-      "column": 1,
-      "offset": 0
-    },
-    "end": {
-      "line": 5,
-      "column": 1,
-      "offset": 72
-    }
-  }
-}
-
-```
-test/fixtures/tasklist/input.md
-* [x] done
-* [ ] to do
-* other
-test/fixtures/tasklist/output.md
-* [x] done
-* [ ] to do
-* other
-
-test/fixtures/tasklist/tree.json
-```.json
-{
-  "type": "root",
-  "children": [
-    {
-      "type": "list",
-      "ordered": false,
-      "start": null,
-      "spread": false,
-      "children": [
-        {
-          "type": "listItem",
-          "spread": false,
-          "checked": true,
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "done",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 7,
-                      "offset": 6
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 11,
-                      "offset": 10
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 7,
-                  "offset": 6
-                },
-                "end": {
-                  "line": 1,
-                  "column": 11,
-                  "offset": 10
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 1,
-              "offset": 0
-            },
-            "end": {
-              "line": 1,
-              "column": 11,
-              "offset": 10
-            }
-          }
-        },
-        {
-          "type": "listItem",
-          "spread": false,
-          "checked": false,
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "to do",
-                  "position": {
-                    "start": {
-                      "line": 2,
-                      "column": 7,
-                      "offset": 17
-                    },
-                    "end": {
-                      "line": 2,
-                      "column": 12,
-                      "offset": 22
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 2,
-                  "column": 7,
-                  "offset": 17
-                },
-                "end": {
-                  "line": 2,
-                  "column": 12,
-                  "offset": 22
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 2,
-              "column": 1,
-              "offset": 11
-            },
-            "end": {
-              "line": 2,
-              "column": 12,
-              "offset": 22
-            }
-          }
-        },
-        {
-          "type": "listItem",
-          "spread": false,
-          "checked": null,
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "other",
-                  "position": {
-                    "start": {
-                      "line": 3,
-                      "column": 3,
-                      "offset": 25
-                    },
-                    "end": {
-                      "line": 3,
-                      "column": 8,
-                      "offset": 30
-                    }
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 3,
-                  "column": 3,
-                  "offset": 25
-                },
-                "end": {
-                  "line": 3,
-                  "column": 8,
-                  "offset": 30
-                }
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 3,
-              "column": 1,
-              "offset": 23
-            },
-            "end": {
-              "line": 3,
-              "column": 8,
-              "offset": 30
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 1,
-          "column": 1,
-          "offset": 0
-        },
-        "end": {
-          "line": 3,
-          "column": 8,
-          "offset": 30
-        }
-      }
-    }
-  ],
-  "position": {
-    "start": {
-      "line": 1,
-      "column": 1,
-      "offset": 0
-    },
-    "end": {
-      "line": 3,
-      "column": 8,
-      "offset": 30
-    }
-  }
-}
+(...)
 
 ```
 test/index.js
@@ -5028,4 +1112,1986 @@ tsconfig.json
 }
 
 ```
+
+
+
+
+====
+
+
+
+Token Usage:
+GitHub Tokens: 23669
+LLM Input Tokens: 0
+LLM Output Tokens: 0
+Total Tokens: 23669
+
+FileTree:
+.eslintrc.js
+.github/workflows/nodejs.yml
+.gitignore
+CHANGELOG.md
+README.md
+examples/simple/.gitignore
+examples/simple/custom-typograf-example.js
+examples/simple/example.js
+examples/simple/example.md
+examples/simple/package-lock.json
+examples/simple/package.json
+index.js
+jest.config.js
+package.json
+remark-typograf.js
+remark-typograf.test.js
+scripts/before.md
+scripts/generate.js
+scripts/publishSite.js
+
+Analysis:
+.eslintrc.js
+```.js
+module.exports = {
+  env: {
+    commonjs: true,
+    es6: true,
+    node: true,
+  },
+  extends: ["eslint:recommended", "plugin:jest/recommended"],
+  globals: {
+    Atomics: "readonly",
+    SharedArrayBuffer: "readonly",
+  },
+  parserOptions: {
+    ecmaVersion: 2018,
+  },
+  rules: {},
+};
+
+```
+.github/workflows/nodejs.yml
+```.yml
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+        env:
+          CI: true
+
+```
+.gitignore
+```.gitignore
+# Created by .ignore support plugin (hsz.mobi)
+### Node template
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Directory for instrumented libs generated by jscoverage/JSCover
+lib-cov
+
+# Coverage directory used by tools like istanbul
+coverage
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Bower dependency directory (https://bower.io/)
+bower_components
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons (https://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Snowpack dependency directory (https://snowpack.dev/)
+web_modules/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+.env.test
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+# Comment in the public line in if your project uses Gatsby and not Next.js
+# https://nextjs.org/blog/next-9-1#public-directory-support
+# public
+
+# vuepress build output
+.vuepress/dist
+
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# TernJS port file
+.tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# yarn v2
+
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.pnp.*
+.idea
+
+
+```
+CHANGELOG.md
+## 2.1.6 (May 5, 2020)
+
+update dev dependencies
+
+## 2.1.5 (May 5, 2020)
+
+fix case with inline code
+
+## 2.1.4 (May 5, 2020)
+
+use visit method instead of own tree walker
+
+## 2.1.3 (May 5, 2020)
+
+use files section in package.json instead of .npmignore
+
+## 2.1.2 (May 5, 2020)
+
+Fix case with mark and punctuation. Before the fix, plugin add an unnecessary comma.
+
+```
+    **Categories,** а у родительского тега // original markdonw
+    **Categories,**, а у родительского тега // before the fix
+    **Categories,** а у родительского тега // after the fix
+```
+
+## 2.1.1 (Apr 26, 2020)
+
+Fix readme
+
+## 2.1.0 (Apr 26, 2020)
+
+Add `keywords` config. Strings from this config will be not typografed.
+
+## 2.0.1 (Apr 24, 2020)
+
+Now typograf is built-in to plugin. Also was added remark-cli support.
+
+### Breaking Changes
+
+Plugin use builtIn typograf. If you want use custom typograf set `builtIn`option to false.
+
+## 1.0.0 (Apr 20, 2020)
+
+Initial version.
+
+README.md
+# remarkjs-typograf
+
+Plugin for [remark](https://github.com/remarkjs/remark) to make your typography better with [typograf](https://github.com/typograf/typograf)
+
+Example https://mavrin.github.io/remark-typograf/
+
+## Install
+
+[npm](https://docs.npmjs.com/cli/install):
+
+```sh
+npm install @mavrin/remark-typograf remark
+```
+
+## Use
+
+Say we have the following file, `example.md`:
+
+````markdown
+## spread operator `...`
+
+It is test...
+
+```js
+function test(...args) {
+  return args;
+}
+```
+````
+
+You probably want to use it on the CLI through a config file:
+
+```diff
+  …
+  "remarkConfig": {
+    "plugins": [
+      [
+        "@mavrin/remark-typograf",
+        {
+          "locale": ["ru"]
+        }
+      ]
+    ]
+  }
+…
+```
+
+Or use it on the CLI directly (ru locale will be used as default)
+
+```sh
+remark -u @mavrin/remark-typograf example.md -o processed-example.md
+```
+
+Or use this on the API:
+
+```js
+const fs = require("fs");
+const path = require("path");
+const remark = require("remark");
+const remarkTypograf = require("@mavrin/remark-typograf");
+
+const processed = remark()
+  .use(remarkTypograf, { locale: ["en-US"], keywords: [":)"] })
+  .processSync(fs.readFileSync(path.resolve(__dirname, "example.md")));
+
+fs.writeFileSync(path.resolve(__dirname, "processed-example.md"), processed);
+```
+
+or with custom typograf:
+
+```js
+const fs = require("fs");
+const path = require("path");
+const remark = require("remark");
+const remarkTypograf = require("@mavrin/remark-typograf");
+const Typograf = require("typograf");
+
+const processed = remark()
+  .use(remarkTypograf, {
+    typograf: new Typograf({ locale: ["en-US"] }),
+    keywords: [":)"],
+    builtIn: false,
+  })
+  .processSync(fs.readFileSync(path.resolve(__dirname, "example.md")));
+
+fs.writeFileSync(path.resolve(__dirname, "processed-example.md"), processed);
+```
+
+Yields:
+
+````markdown
+## spread operator `...`
+
+It is test…
+
+```js
+function test(...args) {
+  return args;
+}
+```
+````
+
+[Example source code](/examples/simple)
+
+examples/simple/.gitignore
+```.gitignore
+processed-example.md
+
+```
+examples/simple/custom-typograf-example.js
+```.js
+const fs = require("fs");
+const path = require("path");
+const remark = require("remark");
+const remarkTypograf = require("@mavrin/remark-typograf");
+const Typograf = require("typograf");
+
+const processed = remark()
+  .use(remarkTypograf, {
+    typograf: new Typograf({ locale: ["en-US"] }),
+    builtIn: false,
+  })
+  .processSync(fs.readFileSync(path.resolve(__dirname, "example.md")));
+
+fs.writeFileSync(path.resolve(__dirname, "processed-example.md"), processed.toString());
+
+```
+examples/simple/example.js
+```.js
+const fs = require("fs");
+const path = require("path");
+const remark = require("remark");
+const remarkTypograf = require("@mavrin/remark-typograf");
+const Typograf = require("typograf");
+
+const processed = remark()
+  .use(remarkTypograf, {
+    typograf: new Typograf({ locale: ["en-US"] }),
+    keywords: [":)"],
+    builtIn: false,
+  })
+  .processSync(fs.readFileSync(path.resolve(__dirname, "example.md")));
+
+fs.writeFileSync(path.resolve(__dirname, "processed-example.md"), processed.toString());
+
+```
+examples/simple/example.md
+## spread operator `...`
+
+It is test... :)
+
+```js
+function test(...args) {
+  return args;
+}
+```
+
+examples/simple/package-lock.json
+```.json
+{
+  "name": "remark-typograf-simple-expample",
+  "requires": true,
+  "lockfileVersion": 1,
+  "dependencies": {
+    "@babel/code-frame": {
+      "version": "7.12.13",
+      "resolved": "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.12.13.tgz",
+      "integrity": "sha512-HV1Cm0Q3ZrpCR93tkWOYiuYIgLxZXZFVG2VgK+MBWjUqZTundupbfx2aXarXuw5Ko5aMcjtJgbSs4vUGBS5v6g==",
+      "requires": {
+        "@babel/highlight": "^7.12.13"
+      }
+    },
+    "@babel/helper-validator-identifier": {
+      "version": "7.12.11",
+      "resolved": "https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.12.11.tgz",
+      "integrity": "sha512-np/lG3uARFybkoHokJUmf1QfEvRVCPbmQeUQpKow5cQ3xWrV9i3rUHodKDJPQfTVX61qKi+UdYk8kik84n7XOw=="
+    },
+    "@babel/highlight": {
+      "version": "7.13.10",
+      "resolved": "https://registry.npmjs.org/@babel/highlight/-/highlight-7.13.10.tgz",
+      "integrity": "sha512-5aPpe5XQPzflQrFwL1/QoeHkP2MsA4JCntcXHRhEsdsfPVkvPi2w7Qix4iV7t5S/oC9OodGrggd8aco1g3SZFg==",
+      "requires": {
+        "@babel/helper-validator-identifier": "^7.12.11",
+        "chalk": "^2.0.0",
+        "js-tokens": "^4.0.0"
+      },
+      "dependencies": {
+        "ansi-styles": {
+          "version": "3.2.1",
+          "resolved": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-3.2.1.tgz",
+          "integrity": "sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==",
+          "requires": {
+            "color-convert": "^1.9.0"
+          }
+        },
+        "chalk": {
+          "version": "2.4.2",
+          "resolved": "https://registry.npmjs.org/chalk/-/chalk-2.4.2.tgz",
+          "integrity": "sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==",
+          "requires": {
+            "ansi-styles": "^3.2.1",
+            "escape-string-regexp": "^1.0.5",
+            "supports-color": "^5.3.0"
+          }
+        },
+        "color-convert": {
+          "version": "1.9.3",
+          "resolved": "https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz",
+          "integrity": "sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==",
+          "requires": {
+            "color-name": "1.1.3"
+          }
+        },
+        "color-name": {
+          "version": "1.1.3",
+          "resolved": "https://registry.npmjs.org/color-name/-/color-name-1.1.3.tgz",
+          "integrity": "sha1-p9BVi9icQveV3UIyj3QIMcpTvCU="
+        },
+        "has-flag": {
+          "version": "3.0.0",
+          "resolved": "https://registry.npmjs.org/has-flag/-/has-flag-3.0.0.tgz",
+          "integrity": "sha1-tdRU3CGZriJWmfNGfloH87lVuv0="
+        },
+        "supports-color": {
+          "version": "5.5.0",
+          "resolved": "https://registry.npmjs.org/supports-color/-/supports-color-5.5.0.tgz",
+          "integrity": "sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==",
+          "requires": {
+            "has-flag": "^3.0.0"
+          }
+        }
+      }
+    },
+    "@mavrin/remark-typograf": {
+      "version": "2.1.6",
+      "resolved": "https://registry.npmjs.org/@mavrin/remark-typograf/-/remark-typograf-2.1.6.tgz",
+      "integrity": "sha512-6fOVtmX7U1ytwYJh9pd8HbDq2T4SodVkp6bZpe6aYfnieHlujvmyBMtogl+TkA8rPX3BEhNEBCDG07Kesk8y9Q==",
+      "requires": {
+        "lodash.escaperegexp": "^4.1.2",
+        "typograf": "^6.11.0",
+        "unist-util-visit": "^2.0.2"
+      }
+    },
+    "@types/mdast": {
+      "version": "3.0.3",
+      "resolved": "https://registry.npmjs.org/@types/mdast/-/mdast-3.0.3.tgz",
+      "integrity": "sha512-SXPBMnFVQg1s00dlMCc/jCdvPqdE4mXaMMCeRlxLDmTAEoegHT53xKtkDnzDTOcmMHUfcjyf36/YYZ6SxRdnsw==",
+      "requires": {
+        "@types/unist": "*"
+      }
+    },
+    "@types/unist": {
+      "version": "2.0.3",
+      "resolved": "https://registry.npmjs.org/@types/unist/-/unist-2.0.3.tgz",
+      "integrity": "sha512-FvUupuM3rlRsRtCN+fDudtmytGO6iHJuuRKS1Ss0pG5z8oX0diNEw94UEL7hgDbpN94rgaK5R7sWm6RrSkZuAQ=="
+    },
+    "ansi-regex": {
+      "version": "5.0.1",
+      "resolved": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz",
+      "integrity": "sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ=="
+    },
+    "ansi-styles": {
+      "version": "4.3.0",
+      "resolved": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-4.3.0.tgz",
+      "integrity": "sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==",
+      "requires": {
+        "color-convert": "^2.0.1"
+      }
+    },
+    "anymatch": {
+      "version": "3.1.2",
+      "resolved": "https://registry.npmjs.org/anymatch/-/anymatch-3.1.2.tgz",
+      "integrity": "sha512-P43ePfOAIupkguHUycrc4qJ9kz8ZiuOUijaETwX7THt0Y/GNK7v0aa8rY816xWjZ7rJdA5XdMcpVFTKMq+RvWg==",
+      "requires": {
+        "normalize-path": "^3.0.0",
+        "picomatch": "^2.0.4"
+      }
+    },
+    "argparse": {
+      "version": "1.0.10",
+      "resolved": "https://registry.npmjs.org/argparse/-/argparse-1.0.10.tgz",
+      "integrity": "sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==",
+      "requires": {
+        "sprintf-js": "~1.0.2"
+      }
+    },
+    "bail": {
+      "version": "1.0.5",
+      "resolved": "https://registry.npmjs.org/bail/-/bail-1.0.5.tgz",
+      "integrity": "sha512-xFbRxM1tahm08yHBP16MMjVUAvDaBMD38zsM9EMAUN61omwLmKlOpB/Zku5QkjZ8TZ4vn53pj+t518cH0S03RQ=="
+    },
+    "balanced-match": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz",
+      "integrity": "sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw=="
+    },
+    "binary-extensions": {
+      "version": "2.2.0",
+      "resolved": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.2.0.tgz",
+      "integrity": "sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA=="
+    },
+    "brace-expansion": {
+      "version": "1.1.11",
+      "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.11.tgz",
+      "integrity": "sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==",
+      "requires": {
+        "balanced-match": "^1.0.0",
+        "concat-map": "0.0.1"
+      }
+    },
+    "braces": {
+      "version": "3.0.2",
+      "resolved": "https://registry.npmjs.org/braces/-/braces-3.0.2.tgz",
+      "integrity": "sha512-b8um+L1RzM3WDSzvhm6gIz1yfTbBt6YTlcEKAvsmqCZZFw46z626lVj9j1yEPW33H5H+lBQpZMP1k8l+78Ha0A==",
+      "requires": {
+        "fill-range": "^7.0.1"
+      }
+    },
+    "buffer-from": {
+      "version": "1.1.1",
+      "resolved": "https://registry.npmjs.org/buffer-from/-/buffer-from-1.1.1.tgz",
+      "integrity": "sha512-MQcXEUbCKtEo7bhqEs6560Hyd4XaovZlO/k9V3hjVUF/zwW7KBVdSK4gIt/bzwS9MbR5qob+F5jusZsb0YQK2A=="
+    },
+    "camelcase": {
+      "version": "5.3.1",
+      "resolved": "https://registry.npmjs.org/camelcase/-/camelcase-5.3.1.tgz",
+      "integrity": "sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg=="
+    },
+    "chalk": {
+      "version": "3.0.0",
+      "resolved": "https://registry.npmjs.org/chalk/-/chalk-3.0.0.tgz",
+      "integrity": "sha512-4D3B6Wf41KOYRFdszmDqMCGq5VV/uMAB273JILmO+3jAlh8X4qDtdtgCR3fxtbLEMzSx22QdhnDcJvu2u1fVwg==",
+      "requires": {
+        "ansi-styles": "^4.1.0",
+        "supports-color": "^7.1.0"
+      }
+    },
+    "character-entities": {
+      "version": "1.2.4",
+      "resolved": "https://registry.npmjs.org/character-entities/-/character-entities-1.2.4.tgz",
+      "integrity": "sha512-iBMyeEHxfVnIakwOuDXpVkc54HijNgCyQB2w0VfGQThle6NXn50zU6V/u+LDhxHcDUPojn6Kpga3PTAD8W1bQw=="
+    },
+    "character-entities-legacy": {
+      "version": "1.1.4",
+      "resolved": "https://registry.npmjs.org/character-entities-legacy/-/character-entities-legacy-1.1.4.tgz",
+      "integrity": "sha512-3Xnr+7ZFS1uxeiUDvV02wQ+QDbc55o97tIV5zHScSPJpcLm/r0DFPcoY3tYRp+VZukxuMeKgXYmsXQHO05zQeA=="
+    },
+    "character-reference-invalid": {
+      "version": "1.1.4",
+      "resolved": "https://registry.npmjs.org/character-reference-invalid/-/character-reference-invalid-1.1.4.tgz",
+      "integrity": "sha512-mKKUkUbhPpQlCOfIuZkvSEgktjPFIsZKRRbC6KWVEMvlzblj3i3asQv5ODsrwt0N3pHAEvjP8KTQPHkp0+6jOg=="
+    },
+    "chokidar": {
+      "version": "3.5.1",
+      "resolved": "https://registry.npmjs.org/chokidar/-/chokidar-3.5.1.tgz",
+      "integrity": "sha512-9+s+Od+W0VJJzawDma/gvBNQqkTiqYTWLuZoyAsivsI4AaWTCzHG06/TMjsf1cYe9Cb97UCEhjz7HvnPk2p/tw==",
+      "requires": {
+        "anymatch": "~3.1.1",
+        "braces": "~3.0.2",
+        "fsevents": "~2.3.1",
+        "glob-parent": "~5.1.0",
+        "is-binary-path": "~2.1.0",
+        "is-glob": "~4.0.1",
+        "normalize-path": "~3.0.0",
+        "readdirp": "~3.5.0"
+      }
+    },
+    "color-convert": {
+      "version": "2.0.1",
+      "resolved": "https://registry.npmjs.org/color-convert/-/color-convert-2.0.1.tgz",
+      "integrity": "sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==",
+      "requires": {
+        "color-name": "~1.1.4"
+      }
+    },
+    "color-name": {
+      "version": "1.1.4",
+      "resolved": "https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz",
+      "integrity": "sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA=="
+    },
+    "concat-map": {
+      "version": "0.0.1",
+      "resolved": "https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz",
+      "integrity": "sha1-2Klr13/Wjfd5OnMDajug1UBdR3s="
+    },
+    "concat-stream": {
+      "version": "2.0.0",
+      "resolved": "https://registry.npmjs.org/concat-stream/-/concat-stream-2.0.0.tgz",
+      "integrity": "sha512-MWufYdFw53ccGjCA+Ol7XJYpAlW6/prSMzuPOTRnJGcGzuhLn4Scrz7qf6o8bROZ514ltazcIFJZevcfbo0x7A==",
+      "requires": {
+        "buffer-from": "^1.0.0",
+        "inherits": "^2.0.3",
+        "readable-stream": "^3.0.2",
+        "typedarray": "^0.0.6"
+      }
+    },
+    "debug": {
+      "version": "4.3.1",
+      "resolved": "https://registry.npmjs.org/debug/-/debug-4.3.1.tgz",
+      "integrity": "sha512-doEwdvm4PCeK4K3RQN2ZC2BYUBaxwLARCqZmMjtF8a51J2Rb0xpVloFRnCODwqjpwnAoao4pelN8l3RJdv3gRQ==",
+      "requires": {
+        "ms": "2.1.2"
+      }
+    },
+    "emoji-regex": {
+      "version": "8.0.0",
+      "resolved": "https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz",
+      "integrity": "sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A=="
+    },
+    "error-ex": {
+      "version": "1.3.2",
+      "resolved": "https://registry.npmjs.org/error-ex/-/error-ex-1.3.2.tgz",
+      "integrity": "sha512-7dFHNmqeFSEt2ZBsCriorKnn3Z2pj+fd9kmI6QoWw4//DL+icEBfc0U7qJCisqrTsKTjw4fNFy2pW9OqStD84g==",
+      "requires": {
+        "is-arrayish": "^0.2.1"
+      }
+    },
+    "escape-string-regexp": {
+      "version": "1.0.5",
+      "resolved": "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz",
+      "integrity": "sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ="
+    },
+    "esprima": {
+      "version": "4.0.1",
+      "resolved": "https://registry.npmjs.org/esprima/-/esprima-4.0.1.tgz",
+      "integrity": "sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A=="
+    },
+    "extend": {
+      "version": "3.0.2",
+      "resolved": "https://registry.npmjs.org/extend/-/extend-3.0.2.tgz",
+      "integrity": "sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g=="
+    },
+    "fault": {
+      "version": "1.0.4",
+      "resolved": "https://registry.npmjs.org/fault/-/fault-1.0.4.tgz",
+      "integrity": "sha512-CJ0HCB5tL5fYTEA7ToAq5+kTwd++Borf1/bifxd9iT70QcXr4MRrO3Llf8Ifs70q+SJcGHFtnIE/Nw6giCtECA==",
+      "requires": {
+        "format": "^0.2.0"
+      }
+    },
+    "figgy-pudding": {
+      "version": "3.5.2",
+      "resolved": "https://registry.npmjs.org/figgy-pudding/-/figgy-pudding-3.5.2.tgz",
+      "integrity": "sha512-0btnI/H8f2pavGMN8w40mlSKOfTK2SVJmBfBeVIj3kNw0swwgzyRq0d5TJVOwodFmtvpPeWPN/MCcfuWF0Ezbw=="
+    },
+    "figures": {
+      "version": "3.2.0",
+      "resolved": "https://registry.npmjs.org/figures/-/figures-3.2.0.tgz",
+      "integrity": "sha512-yaduQFRKLXYOGgEn6AZau90j3ggSOyiqXU0F9JZfeXYhNa+Jk4X+s45A2zg5jns87GAFa34BBm2kXw4XpNcbdg==",
+      "requires": {
+        "escape-string-regexp": "^1.0.5"
+      }
+    },
+    "fill-range": {
+      "version": "7.0.1",
+      "resolved": "https://registry.npmjs.org/fill-range/-/fill-range-7.0.1.tgz",
+      "integrity": "sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==",
+      "requires": {
+        "to-regex-range": "^5.0.1"
+      }
+    },
+    "find-up": {
+      "version": "3.0.0",
+      "resolved": "https://registry.npmjs.org/find-up/-/find-up-3.0.0.tgz",
+      "integrity": "sha512-1yD6RmLI1XBfxugvORwlck6f75tYL+iR0jqwsOrOxMZyGYqUuDhJ0l4AXdO1iX/FTs9cBAMEk1gWSEx1kSbylg==",
+      "requires": {
+        "locate-path": "^3.0.0"
+      }
+    },
+    "format": {
+      "version": "0.2.2",
+      "resolved": "https://registry.npmjs.org/format/-/format-0.2.2.tgz",
+      "integrity": "sha1-1hcBB+nv3E7TDJ3DkBbflCtctYs="
+    },
+    "fs.realpath": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz",
+      "integrity": "sha1-FQStJSMVjKpA20onh8sBQRmU6k8="
+    },
+    "fsevents": {
+      "version": "2.3.2",
+      "resolved": "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz",
+      "integrity": "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==",
+      "optional": true
+    },
+    "glob": {
+      "version": "7.1.6",
+      "resolved": "https://registry.npmjs.org/glob/-/glob-7.1.6.tgz",
+      "integrity": "sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==",
+      "requires": {
+        "fs.realpath": "^1.0.0",
+        "inflight": "^1.0.4",
+        "inherits": "2",
+        "minimatch": "^3.0.4",
+        "once": "^1.3.0",
+        "path-is-absolute": "^1.0.0"
+      }
+    },
+    "glob-parent": {
+      "version": "5.1.2",
+      "resolved": "https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz",
+      "integrity": "sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==",
+      "requires": {
+        "is-glob": "^4.0.1"
+      }
+    },
+    "has-flag": {
+      "version": "4.0.0",
+      "resolved": "https://registry.npmjs.org/has-flag/-/has-flag-4.0.0.tgz",
+      "integrity": "sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ=="
+    },
+    "ignore": {
+      "version": "5.1.8",
+      "resolved": "https://registry.npmjs.org/ignore/-/ignore-5.1.8.tgz",
+      "integrity": "sha512-BMpfD7PpiETpBl/A6S498BaIJ6Y/ABT93ETbby2fP00v4EbvPBXWEoaR1UBPKs3iR53pJY7EtZk5KACI57i1Uw=="
+    },
+    "inflight": {
+      "version": "1.0.6",
+      "resolved": "https://registry.npmjs.org/inflight/-/inflight-1.0.6.tgz",
+      "integrity": "sha1-Sb1jMdfQLQwJvJEKEHW6gWW1bfk=",
+      "requires": {
+        "once": "^1.3.0",
+        "wrappy": "1"
+      }
+    },
+    "inherits": {
+      "version": "2.0.4",
+      "resolved": "https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz",
+      "integrity": "sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ=="
+    },
+    "ini": {
+      "version": "1.3.8",
+      "resolved": "https://registry.npmjs.org/ini/-/ini-1.3.8.tgz",
+      "integrity": "sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew=="
+    },
+    "is-alphabetical": {
+      "version": "1.0.4",
+      "resolved": "https://registry.npmjs.org/is-alphabetical/-/is-alphabetical-1.0.4.tgz",
+      "integrity": "sha512-DwzsA04LQ10FHTZuL0/grVDk4rFoVH1pjAToYwBrHSxcrBIGQuXrQMtD5U1b0U2XVgKZCTLLP8u2Qxqhy3l2Vg=="
+    },
+    "is-alphanumerical": {
+      "version": "1.0.4",
+      "resolved": "https://registry.npmjs.org/is-alphanumerical/-/is-alphanumerical-1.0.4.tgz",
+      "integrity": "sha512-UzoZUr+XfVz3t3v4KyGEniVL9BDRoQtY7tOyrRybkVNjDFWyo1yhXNGrrBTQxp3ib9BLAWs7k2YKBQsFRkZG9A==",
+      "requires": {
+        "is-alphabetical": "^1.0.0",
+        "is-decimal": "^1.0.0"
+      }
+    },
+    "is-arrayish": {
+      "version": "0.2.1",
+      "resolved": "https://registry.npmjs.org/is-arrayish/-/is-arrayish-0.2.1.tgz",
+      "integrity": "sha1-d8mYQFJ6qOyxqLppe4BkWnqSap0="
+    },
+    "is-binary-path": {
+      "version": "2.1.0",
+      "resolved": "https://registry.npmjs.org/is-binary-path/-/is-binary-path-2.1.0.tgz",
+      "integrity": "sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==",
+      "requires": {
+        "binary-extensions": "^2.0.0"
+      }
+    },
+    "is-buffer": {
+      "version": "2.0.5",
+      "resolved": "https://registry.npmjs.org/is-buffer/-/is-buffer-2.0.5.tgz",
+      "integrity": "sha512-i2R6zNFDwgEHJyQUtJEk0XFi1i0dPFn/oqjK3/vPCcDeJvW5NQ83V8QbicfF1SupOaB0h8ntgBC2YiE7dfyctQ=="
+    },
+    "is-decimal": {
+      "version": "1.0.4",
+      "resolved": "https://registry.npmjs.org/is-decimal/-/is-decimal-1.0.4.tgz",
+      "integrity": "sha512-RGdriMmQQvZ2aqaQq3awNA6dCGtKpiDFcOzrTWrDAT2MiWrKQVPmxLGHl7Y2nNu6led0kEyoX0enY0qXYsv9zw=="
+    },
+    "is-empty": {
+      "version": "1.2.0",
+      "resolved": "https://registry.npmjs.org/is-empty/-/is-empty-1.2.0.tgz",
+      "integrity": "sha1-3pu1snhzigWgsJpX4ftNSjQan2s="
+    },
+    "is-extglob": {
+      "version": "2.1.1",
+      "resolved": "https://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz",
+      "integrity": "sha1-qIwCU1eR8C7TfHahueqXc8gz+MI="
+    },
+    "is-fullwidth-code-point": {
+      "version": "3.0.0",
+      "resolved": "https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz",
+      "integrity": "sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg=="
+    },
+    "is-glob": {
+      "version": "4.0.1",
+      "resolved": "https://registry.npmjs.org/is-glob/-/is-glob-4.0.1.tgz",
+      "integrity": "sha512-5G0tKtBTFImOqDnLB2hG6Bp2qcKEFduo4tZu9MT/H6NQv/ghhy30o55ufafxJ/LdH79LLs2Kfrn85TLKyA7BUg==",
+      "requires": {
+        "is-extglob": "^2.1.1"
+      }
+    },
+    "is-hexadecimal": {
+      "version": "1.0.4",
+      "resolved": "https://registry.npmjs.org/is-hexadecimal/-/is-hexadecimal-1.0.4.tgz",
+      "integrity": "sha512-gyPJuv83bHMpocVYoqof5VDiZveEoGoFL8m3BXNb2VW8Xs+rz9kqO8LOQ5DH6EsuvilT1ApazU0pyl+ytbPtlw=="
+    },
+    "is-number": {
+      "version": "7.0.0",
+      "resolved": "https://registry.npmjs.org/is-number/-/is-number-7.0.0.tgz",
+      "integrity": "sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng=="
+    },
+    "is-plain-obj": {
+      "version": "2.1.0",
+      "resolved": "https://registry.npmjs.org/is-plain-obj/-/is-plain-obj-2.1.0.tgz",
+      "integrity": "sha512-YWnfyRwxL/+SsrWYfOpUtz5b3YD+nyfkHvjbcanzk8zgyO4ASD67uVMRt8k5bM4lLMDnXfriRhOpemw+NfT1eA=="
+    },
+    "js-tokens": {
+      "version": "4.0.0",
+      "resolved": "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz",
+      "integrity": "sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ=="
+    },
+    "js-yaml": {
+      "version": "3.14.1",
+      "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-3.14.1.tgz",
+      "integrity": "sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==",
+      "requires": {
+        "argparse": "^1.0.7",
+        "esprima": "^4.0.0"
+      }
+    },
+    "json-parse-even-better-errors": {
+      "version": "2.3.1",
+      "resolved": "https://registry.npmjs.org/json-parse-even-better-errors/-/json-parse-even-better-errors-2.3.1.tgz",
+      "integrity": "sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w=="
+    },
+    "json5": {
+      "version": "2.2.3",
+      "resolved": "https://registry.npmjs.org/json5/-/json5-2.2.3.tgz",
+      "integrity": "sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg=="
+    },
+    "libnpmconfig": {
+      "version": "1.2.1",
+      "resolved": "https://registry.npmjs.org/libnpmconfig/-/libnpmconfig-1.2.1.tgz",
+      "integrity": "sha512-9esX8rTQAHqarx6qeZqmGQKBNZR5OIbl/Ayr0qQDy3oXja2iFVQQI81R6GZ2a02bSNZ9p3YOGX1O6HHCb1X7kA==",
+      "requires": {
+        "figgy-pudding": "^3.5.1",
+        "find-up": "^3.0.0",
+        "ini": "^1.3.5"
+      }
+    },
+    "lines-and-columns": {
+      "version": "1.1.6",
+      "resolved": "https://registry.npmjs.org/lines-and-columns/-/lines-and-columns-1.1.6.tgz",
+      "integrity": "sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA="
+    },
+    "load-plugin": {
+      "version": "3.0.0",
+      "resolved": "https://registry.npmjs.org/load-plugin/-/load-plugin-3.0.0.tgz",
+      "integrity": "sha512-od7eKCCZ62ITvFf8nHHrIiYmgOHb4xVNDRDqxBWSaao5FZyyZVX8OmRCbwjDGPrSrgIulwPNyBsWCGnhiDC0oQ==",
+      "requires": {
+        "libnpmconfig": "^1.0.0",
+        "resolve-from": "^5.0.0"
+      }
+    },
+    "locate-path": {
+      "version": "3.0.0",
+      "resolved": "https://registry.npmjs.org/locate-path/-/locate-path-3.0.0.tgz",
+      "integrity": "sha512-7AO748wWnIhNqAuaty2ZWHkQHRSNfPVIsPIfwEOWO22AmaoVrWavlOcMR5nzTLNYvp36X220/maaRsrec1G65A==",
+      "requires": {
+        "p-locate": "^3.0.0",
+        "path-exists": "^3.0.0"
+      }
+    },
+    "lodash.escaperegexp": {
+      "version": "4.1.2",
+      "resolved": "https://registry.npmjs.org/lodash.escaperegexp/-/lodash.escaperegexp-4.1.2.tgz",
+      "integrity": "sha1-ZHYsSGGAglGKw99Mz11YhtriA0c="
+    },
+    "longest-streak": {
+      "version": "2.0.4",
+      "resolved": "https://registry.npmjs.org/longest-streak/-/longest-streak-2.0.4.tgz",
+      "integrity": "sha512-vM6rUVCVUJJt33bnmHiZEvr7wPT78ztX7rojL+LW51bHtLh6HTjx84LA5W4+oa6aKEJA7jJu5LR6vQRBpA5DVg=="
+    },
+    "markdown-extensions": {
+      "version": "1.1.1",
+      "resolved": "https://registry.npmjs.org/markdown-extensions/-/markdown-extensions-1.1.1.tgz",
+      "integrity": "sha512-WWC0ZuMzCyDHYCasEGs4IPvLyTGftYwh6wIEOULOF0HXcqZlhwRzrK0w2VUlxWA98xnvb/jszw4ZSkJ6ADpM6Q=="
+    },
+    "mdast-util-from-markdown": {
+      "version": "0.8.5",
+      "resolved": "https://registry.npmjs.org/mdast-util-from-markdown/-/mdast-util-from-markdown-0.8.5.tgz",
+      "integrity": "sha512-2hkTXtYYnr+NubD/g6KGBS/0mFmBcifAsI0yIWRiRo0PjVs6SSOSOdtzbp6kSGnShDN6G5aWZpKQ2lWRy27mWQ==",
+      "requires": {
+        "@types/mdast": "^3.0.0",
+        "mdast-util-to-string": "^2.0.0",
+        "micromark": "~2.11.0",
+        "parse-entities": "^2.0.0",
+        "unist-util-stringify-position": "^2.0.0"
+      }
+    },
+    "mdast-util-to-markdown": {
+      "version": "0.6.5",
+      "resolved": "https://registry.npmjs.org/mdast-util-to-markdown/-/mdast-util-to-markdown-0.6.5.tgz",
+      "integrity": "sha512-XeV9sDE7ZlOQvs45C9UKMtfTcctcaj/pGwH8YLbMHoMOXNNCn2LsqVQOqrF1+/NU8lKDAqozme9SCXWyo9oAcQ==",
+      "requires": {
+        "@types/unist": "^2.0.0",
+        "longest-streak": "^2.0.0",
+        "mdast-util-to-string": "^2.0.0",
+        "parse-entities": "^2.0.0",
+        "repeat-string": "^1.0.0",
+        "zwitch": "^1.0.0"
+      }
+    },
+    "mdast-util-to-string": {
+      "version": "2.0.0",
+      "resolved": "https://registry.npmjs.org/mdast-util-to-string/-/mdast-util-to-string-2.0.0.tgz",
+      "integrity": "sha512-AW4DRS3QbBayY/jJmD8437V1Gombjf8RSOUCMFBuo5iHi58AGEgVCKQ+ezHkZZDpAQS75hcBMpLqjpJTjtUL7w=="
+    },
+    "micromark": {
+      "version": "2.11.4",
+      "resolved": "https://registry.npmjs.org/micromark/-/micromark-2.11.4.tgz",
+      "integrity": "sha512-+WoovN/ppKolQOFIAajxi7Lu9kInbPxFuTBVEavFcL8eAfVstoc5MocPmqBeAdBOJV00uaVjegzH4+MA0DN/uA==",
+      "requires": {
+        "debug": "^4.0.0",
+        "parse-entities": "^2.0.0"
+      }
+    },
+    "minimatch": {
+      "version": "3.1.2",
+      "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-3.1.2.tgz",
+      "integrity": "sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==",
+      "requires": {
+        "brace-expansion": "^1.1.7"
+      }
+    },
+    "minimist": {
+      "version": "1.2.6",
+      "resolved": "https://registry.npmjs.org/minimist/-/minimist-1.2.6.tgz",
+      "integrity": "sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q=="
+    },
+    "ms": {
+      "version": "2.1.2",
+      "resolved": "https://registry.npmjs.org/ms/-/ms-2.1.2.tgz",
+      "integrity": "sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w=="
+    },
+    "normalize-path": {
+      "version": "3.0.0",
+      "resolved": "https://registry.npmjs.org/normalize-path/-/normalize-path-3.0.0.tgz",
+      "integrity": "sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA=="
+    },
+    "once": {
+      "version": "1.4.0",
+      "resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",
+      "integrity": "sha1-WDsap3WWHUsROsF9nFC6753Xa9E=",
+      "requires": {
+        "wrappy": "1"
+      }
+    },
+    "p-limit": {
+      "version": "2.3.0",
+      "resolved": "https://registry.npmjs.org/p-limit/-/p-limit-2.3.0.tgz",
+      "integrity": "sha512-//88mFWSJx8lxCzwdAABTJL2MyWB12+eIY7MDL2SqLmAkeKU9qxRvWuSyTjm3FUmpBEMuFfckAIqEaVGUDxb6w==",
+      "requires": {
+        "p-try": "^2.0.0"
+      }
+    },
+    "p-locate": {
+      "version": "3.0.0",
+      "resolved": "https://registry.npmjs.org/p-locate/-/p-locate-3.0.0.tgz",
+      "integrity": "sha512-x+12w/To+4GFfgJhBEpiDcLozRJGegY+Ei7/z0tSLkMmxGZNybVMSfWj9aJn8Z5Fc7dBUNJOOVgPv2H7IwulSQ==",
+      "requires": {
+        "p-limit": "^2.0.0"
+      }
+    },
+    "p-try": {
+      "version": "2.2.0",
+      "resolved": "https://registry.npmjs.org/p-try/-/p-try-2.2.0.tgz",
+      "integrity": "sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ=="
+    },
+    "parse-entities": {
+      "version": "2.0.0",
+      "resolved": "https://registry.npmjs.org/parse-entities/-/parse-entities-2.0.0.tgz",
+      "integrity": "sha512-kkywGpCcRYhqQIchaWqZ875wzpS/bMKhz5HnN3p7wveJTkTtyAB/AlnS0f8DFSqYW1T82t6yEAkEcB+A1I3MbQ==",
+      "requires": {
+        "character-entities": "^1.0.0",
+        "character-entities-legacy": "^1.0.0",
+        "character-reference-invalid": "^1.0.0",
+        "is-alphanumerical": "^1.0.0",
+        "is-decimal": "^1.0.0",
+        "is-hexadecimal": "^1.0.0"
+      }
+    },
+    "parse-json": {
+      "version": "5.2.0",
+      "resolved": "https://registry.npmjs.org/parse-json/-/parse-json-5.2.0.tgz",
+      "integrity": "sha512-ayCKvm/phCGxOkYRSCM82iDwct8/EonSEgCSxWxD7ve6jHggsFl4fZVQBPRNgQoKiuV/odhFrGzQXZwbifC8Rg==",
+      "requires": {
+        "@babel/code-frame": "^7.0.0",
+        "error-ex": "^1.3.1",
+        "json-parse-even-better-errors": "^2.3.0",
+        "lines-and-columns": "^1.1.6"
+      }
+    },
+    "path-exists": {
+      "version": "3.0.0",
+      "resolved": "https://registry.npmjs.org/path-exists/-/path-exists-3.0.0.tgz",
+      "integrity": "sha1-zg6+ql94yxiSXqfYENe1mwEP1RU="
+    },
+    "path-is-absolute": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.1.tgz",
+      "integrity": "sha1-F0uSaHNVNP+8es5r9TpanhtcX18="
+    },
+    "picomatch": {
+      "version": "2.2.3",
+      "resolved": "https://registry.npmjs.org/picomatch/-/picomatch-2.2.3.tgz",
+      "integrity": "sha512-KpELjfwcCDUb9PeigTs2mBJzXUPzAuP2oPcA989He8Rte0+YUAjw1JVedDhuTKPkHjSYzMN3npC9luThGYEKdg=="
+    },
+    "readable-stream": {
+      "version": "3.6.0",
+      "resolved": "https://registry.npmjs.org/readable-stream/-/readable-stream-3.6.0.tgz",
+      "integrity": "sha512-BViHy7LKeTz4oNnkcLJ+lVSL6vpiFeX6/d3oSH8zCW7UxP2onchk+vTGB143xuFjHS3deTgkKoXXymXqymiIdA==",
+      "requires": {
+        "inherits": "^2.0.3",
+        "string_decoder": "^1.1.1",
+        "util-deprecate": "^1.0.1"
+      }
+    },
+    "readdirp": {
+      "version": "3.5.0",
+      "resolved": "https://registry.npmjs.org/readdirp/-/readdirp-3.5.0.tgz",
+      "integrity": "sha512-cMhu7c/8rdhkHXWsY+osBhfSy0JikwpHK/5+imo+LpeasTF8ouErHrlYkwT0++njiyuDvc7OFY5T3ukvZ8qmFQ==",
+      "requires": {
+        "picomatch": "^2.2.1"
+      }
+    },
+    "remark": {
+      "version": "13.0.0",
+      "resolved": "https://registry.npmjs.org/remark/-/remark-13.0.0.tgz",
+      "integrity": "sha512-HDz1+IKGtOyWN+QgBiAT0kn+2s6ovOxHyPAFGKVE81VSzJ+mq7RwHFledEvB5F1p4iJvOah/LOKdFuzvRnNLCA==",
+      "requires": {
+        "remark-parse": "^9.0.0",
+        "remark-stringify": "^9.0.0",
+        "unified": "^9.1.0"
+      }
+    },
+    "remark-cli": {
+      "version": "9.0.0",
+      "resolved": "https://registry.npmjs.org/remark-cli/-/remark-cli-9.0.0.tgz",
+      "integrity": "sha512-y6kCXdwZoMoh0Wo4Och1tDW50PmMc86gW6GpF08v9d+xUCEJE2wwXdQ+TnTaUamRnfFdU+fE+eNf2PJ53cyq8g==",
+      "requires": {
+        "markdown-extensions": "^1.1.0",
+        "remark": "^13.0.0",
+        "unified-args": "^8.0.0"
+      }
+    },
+    "remark-parse": {
+      "version": "9.0.0",
+      "resolved": "https://registry.npmjs.org/remark-parse/-/remark-parse-9.0.0.tgz",
+      "integrity": "sha512-geKatMwSzEXKHuzBNU1z676sGcDcFoChMK38TgdHJNAYfFtsfHDQG7MoJAjs6sgYMqyLduCYWDIWZIxiPeafEw==",
+      "requires": {
+        "mdast-util-from-markdown": "^0.8.0"
+      }
+    },
+    "remark-stringify": {
+      "version": "9.0.1",
+      "resolved": "https://registry.npmjs.org/remark-stringify/-/remark-stringify-9.0.1.tgz",
+      "integrity": "sha512-mWmNg3ZtESvZS8fv5PTvaPckdL4iNlCHTt8/e/8oN08nArHRHjNZMKzA/YW3+p7/lYqIw4nx1XsjCBo/AxNChg==",
+      "requires": {
+        "mdast-util-to-markdown": "^0.6.0"
+      }
+    },
+    "repeat-string": {
+      "version": "1.6.1",
+      "resolved": "https://registry.npmjs.org/repeat-string/-/repeat-string-1.6.1.tgz",
+      "integrity": "sha1-jcrkcOHIirwtYA//Sndihtp15jc="
+    },
+    "resolve-from": {
+      "version": "5.0.0",
+      "resolved": "https://registry.npmjs.org/resolve-from/-/resolve-from-5.0.0.tgz",
+      "integrity": "sha512-qYg9KP24dD5qka9J47d0aVky0N+b4fTU89LN9iDnjB5waksiC49rvMB0PrUJQGoTmH50XPiqOvAjDfaijGxYZw=="
+    },
+    "safe-buffer": {
+      "version": "5.2.1",
+      "resolved": "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz",
+      "integrity": "sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ=="
+    },
+    "sprintf-js": {
+      "version": "1.0.3",
+      "resolved": "https://registry.npmjs.org/sprintf-js/-/sprintf-js-1.0.3.tgz",
+      "integrity": "sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw="
+    },
+    "string-width": {
+      "version": "4.2.2",
+      "resolved": "https://registry.npmjs.org/string-width/-/string-width-4.2.2.tgz",
+      "integrity": "sha512-XBJbT3N4JhVumXE0eoLU9DCjcaF92KLNqTmFCnG1pf8duUxFGwtP6AD6nkjw9a3IdiRtL3E2w3JDiE/xi3vOeA==",
+      "requires": {
+        "emoji-regex": "^8.0.0",
+        "is-fullwidth-code-point": "^3.0.0",
+        "strip-ansi": "^6.0.0"
+      }
+    },
+    "string_decoder": {
+      "version": "1.3.0",
+      "resolved": "https://registry.npmjs.org/string_decoder/-/string_decoder-1.3.0.tgz",
+      "integrity": "sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA==",
+      "requires": {
+        "safe-buffer": "~5.2.0"
+      }
+    },
+    "strip-ansi": {
+      "version": "6.0.0",
+      "resolved": "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.0.tgz",
+      "integrity": "sha512-AuvKTrTfQNYNIctbR1K/YGTR1756GycPsg7b9bdV9Duqur4gv6aKqHXah67Z8ImS7WEz5QVcOtlfW2rZEugt6w==",
+      "requires": {
+        "ansi-regex": "^5.0.0"
+      }
+    },
+    "supports-color": {
+      "version": "7.2.0",
+      "resolved": "https://registry.npmjs.org/supports-color/-/supports-color-7.2.0.tgz",
+      "integrity": "sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==",
+      "requires": {
+        "has-flag": "^4.0.0"
+      }
+    },
+    "text-table": {
+      "version": "0.2.0",
+      "resolved": "https://registry.npmjs.org/text-table/-/text-table-0.2.0.tgz",
+      "integrity": "sha1-f17oI66AUgfACvLfSoTsP8+lcLQ="
+    },
+    "to-regex-range": {
+      "version": "5.0.1",
+      "resolved": "https://registry.npmjs.org/to-regex-range/-/to-regex-range-5.0.1.tgz",
+      "integrity": "sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==",
+      "requires": {
+        "is-number": "^7.0.0"
+      }
+    },
+    "to-vfile": {
+      "version": "6.1.0",
+      "resolved": "https://registry.npmjs.org/to-vfile/-/to-vfile-6.1.0.tgz",
+      "integrity": "sha512-BxX8EkCxOAZe+D/ToHdDsJcVI4HqQfmw0tCkp31zf3dNP/XWIAjU4CmeuSwsSoOzOTqHPOL0KUzyZqJplkD0Qw==",
+      "requires": {
+        "is-buffer": "^2.0.0",
+        "vfile": "^4.0.0"
+      }
+    },
+    "trough": {
+      "version": "1.0.5",
+      "resolved": "https://registry.npmjs.org/trough/-/trough-1.0.5.tgz",
+      "integrity": "sha512-rvuRbTarPXmMb79SmzEp8aqXNKcK+y0XaB298IXueQ8I2PsrATcPBCSPyK/dDNa2iWOhKlfNnOjdAOTBU/nkFA=="
+    },
+    "typedarray": {
+      "version": "0.0.6",
+      "resolved": "https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz",
+      "integrity": "sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c="
+    },
+    "typograf": {
+      "version": "6.11.3",
+      "resolved": "https://registry.npmjs.org/typograf/-/typograf-6.11.3.tgz",
+      "integrity": "sha512-aj+FLX8mc9BaWHQeSB1dk7Om7Ag4dGx+rl5jpO6QdpMUKcwqffhFjGAki/SAzsjbUZKUGHXJgaYUcUD6z3eSJg=="
+    },
+    "unified": {
+      "version": "9.2.1",
+      "resolved": "https://registry.npmjs.org/unified/-/unified-9.2.1.tgz",
+      "integrity": "sha512-juWjuI8Z4xFg8pJbnEZ41b5xjGUWGHqXALmBZ3FC3WX0PIx1CZBIIJ6mXbYMcf6Yw4Fi0rFUTA1cdz/BglbOhA==",
+      "requires": {
+        "bail": "^1.0.0",
+        "extend": "^3.0.0",
+        "is-buffer": "^2.0.0",
+        "is-plain-obj": "^2.0.0",
+        "trough": "^1.0.0",
+        "vfile": "^4.0.0"
+      }
+    },
+    "unified-args": {
+      "version": "8.1.0",
+      "resolved": "https://registry.npmjs.org/unified-args/-/unified-args-8.1.0.tgz",
+      "integrity": "sha512-t1HPS1cQPsVvt/6EtyWIbQGurza5684WGRigNghZRvzIdHm3LPgMdXPyGx0npORKzdiy5+urkF0rF5SXM8lBuQ==",
+      "requires": {
+        "camelcase": "^5.0.0",
+        "chalk": "^3.0.0",
+        "chokidar": "^3.0.0",
+        "fault": "^1.0.2",
+        "json5": "^2.0.0",
+        "minimist": "^1.2.0",
+        "text-table": "^0.2.0",
+        "unified-engine": "^8.0.0"
+      }
+    },
+    "unified-engine": {
+      "version": "8.1.0",
+      "resolved": "https://registry.npmjs.org/unified-engine/-/unified-engine-8.1.0.tgz",
+      "integrity": "sha512-ptXTWUf9HZ2L9xto7tre+hSdSN7M9S0rypUpMAcFhiDYjrXLrND4If+8AZOtPFySKI/Zhfxf7GVAR34BqixDUA==",
+      "requires": {
+        "concat-stream": "^2.0.0",
+        "debug": "^4.0.0",
+        "fault": "^1.0.0",
+        "figures": "^3.0.0",
+        "glob": "^7.0.3",
+        "ignore": "^5.0.0",
+        "is-buffer": "^2.0.0",
+        "is-empty": "^1.0.0",
+        "is-plain-obj": "^2.0.0",
+        "js-yaml": "^3.6.1",
+        "load-plugin": "^3.0.0",
+        "parse-json": "^5.0.0",
+        "to-vfile": "^6.0.0",
+        "trough": "^1.0.0",
+        "unist-util-inspect": "^5.0.0",
+        "vfile-reporter": "^6.0.0",
+        "vfile-statistics": "^1.1.0"
+      }
+    },
+    "unist-util-inspect": {
+      "version": "5.0.1",
+      "resolved": "https://registry.npmjs.org/unist-util-inspect/-/unist-util-inspect-5.0.1.tgz",
+      "integrity": "sha512-fPNWewS593JSmg49HbnE86BJKuBi1/nMWhDSccBvbARfxezEuJV85EaARR9/VplveiwCoLm2kWq+DhP8TBaDpw==",
+      "requires": {
+        "is-empty": "^1.0.0"
+      }
+    },
+    "unist-util-is": {
+      "version": "4.0.2",
+      "resolved": "https://registry.npmjs.org/unist-util-is/-/unist-util-is-4.0.2.tgz",
+      "integrity": "sha512-Ofx8uf6haexJwI1gxWMGg6I/dLnF2yE+KibhD3/diOqY2TinLcqHXCV6OI5gFVn3xQqDH+u0M625pfKwIwgBKQ=="
+    },
+    "unist-util-stringify-position": {
+      "version": "2.0.3",
+      "resolved": "https://registry.npmjs.org/unist-util-stringify-position/-/unist-util-stringify-position-2.0.3.tgz",
+      "integrity": "sha512-3faScn5I+hy9VleOq/qNbAd6pAx7iH5jYBMS9I1HgQVijz/4mv5Bvw5iw1sC/90CODiKo81G/ps8AJrISn687g==",
+      "requires": {
+        "@types/unist": "^2.0.2"
+      }
+    },
+    "unist-util-visit": {
+      "version": "2.0.3",
+      "resolved": "https://registry.npmjs.org/unist-util-visit/-/unist-util-visit-2.0.3.tgz",
+      "integrity": "sha512-iJ4/RczbJMkD0712mGktuGpm/U4By4FfDonL7N/9tATGIF4imikjOuagyMY53tnZq3NP6BcmlrHhEKAfGWjh7Q==",
+      "requires": {
+        "@types/unist": "^2.0.0",
+        "unist-util-is": "^4.0.0",
+        "unist-util-visit-parents": "^3.0.0"
+      }
+    },
+    "unist-util-visit-parents": {
+      "version": "3.1.0",
+      "resolved": "https://registry.npmjs.org/unist-util-visit-parents/-/unist-util-visit-parents-3.1.0.tgz",
+      "integrity": "sha512-0g4wbluTF93npyPrp/ymd3tCDTMnP0yo2akFD2FIBAYXq/Sga3lwaU1D8OYKbtpioaI6CkDcQ6fsMnmtzt7htw==",
+      "requires": {
+        "@types/unist": "^2.0.0",
+        "unist-util-is": "^4.0.0"
+      }
+    },
+    "util-deprecate": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz",
+      "integrity": "sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8="
+    },
+    "vfile": {
+      "version": "4.2.1",
+      "resolved": "https://registry.npmjs.org/vfile/-/vfile-4.2.1.tgz",
+      "integrity": "sha512-O6AE4OskCG5S1emQ/4gl8zK586RqA3srz3nfK/Viy0UPToBc5Trp9BVFb1u0CjsKrAWwnpr4ifM/KBXPWwJbCA==",
+      "requires": {
+        "@types/unist": "^2.0.0",
+        "is-buffer": "^2.0.0",
+        "unist-util-stringify-position": "^2.0.0",
+        "vfile-message": "^2.0.0"
+      }
+    },
+    "vfile-message": {
+      "version": "2.0.4",
+      "resolved": "https://registry.npmjs.org/vfile-message/-/vfile-message-2.0.4.tgz",
+      "integrity": "sha512-DjssxRGkMvifUOJre00juHoP9DPWuzjxKuMDrhNbk2TdaYYBNMStsNhEOt3idrtI12VQYM/1+iM0KOzXi4pxwQ==",
+      "requires": {
+        "@types/unist": "^2.0.0",
+        "unist-util-stringify-position": "^2.0.0"
+      }
+    },
+    "vfile-reporter": {
+      "version": "6.0.2",
+      "resolved": "https://registry.npmjs.org/vfile-reporter/-/vfile-reporter-6.0.2.tgz",
+      "integrity": "sha512-GN2bH2gs4eLnw/4jPSgfBjo+XCuvnX9elHICJZjVD4+NM0nsUrMTvdjGY5Sc/XG69XVTgLwj7hknQVc6M9FukA==",
+      "requires": {
+        "repeat-string": "^1.5.0",
+        "string-width": "^4.0.0",
+        "supports-color": "^6.0.0",
+        "unist-util-stringify-position": "^2.0.0",
+        "vfile-sort": "^2.1.2",
+        "vfile-statistics": "^1.1.0"
+      },
+      "dependencies": {
+        "has-flag": {
+          "version": "3.0.0",
+          "resolved": "https://registry.npmjs.org/has-flag/-/has-flag-3.0.0.tgz",
+          "integrity": "sha1-tdRU3CGZriJWmfNGfloH87lVuv0="
+        },
+        "supports-color": {
+          "version": "6.1.0",
+          "resolved": "https://registry.npmjs.org/supports-color/-/supports-color-6.1.0.tgz",
+          "integrity": "sha512-qe1jfm1Mg7Nq/NSh6XE24gPXROEVsWHxC1LIx//XNlD9iw7YZQGjZNjYN7xGaEG6iKdA8EtNFW6R0gjnVXp+wQ==",
+          "requires": {
+            "has-flag": "^3.0.0"
+          }
+        }
+      }
+    },
+    "vfile-sort": {
+      "version": "2.2.2",
+      "resolved": "https://registry.npmjs.org/vfile-sort/-/vfile-sort-2.2.2.tgz",
+      "integrity": "sha512-tAyUqD2R1l/7Rn7ixdGkhXLD3zsg+XLAeUDUhXearjfIcpL1Hcsj5hHpCoy/gvfK/Ws61+e972fm0F7up7hfYA=="
+    },
+    "vfile-statistics": {
+      "version": "1.1.4",
+      "resolved": "https://registry.npmjs.org/vfile-statistics/-/vfile-statistics-1.1.4.tgz",
+      "integrity": "sha512-lXhElVO0Rq3frgPvFBwahmed3X03vjPF8OcjKMy8+F1xU/3Q3QU3tKEDp743SFtb74PdF0UWpxPvtOP0GCLheA=="
+    },
+    "wrappy": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
+      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
+    },
+    "zwitch": {
+      "version": "1.0.5",
+      "resolved": "https://registry.npmjs.org/zwitch/-/zwitch-1.0.5.tgz",
+      "integrity": "sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw=="
+    }
+  }
+}
+
+```
+examples/simple/package.json
+```.json
+{
+  "name": "remark-typograf-simple-expample",
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "@mavrin/remark-typograf": "^2.1.6",
+    "remark": "^13.0.0",
+    "remark-cli": "^9.0.0",
+    "typograf": "^6.11.3"
+  },
+  "remarkConfig": {
+    "plugins": [
+      [
+        "@mavrin/remark-typograf",
+        {
+          "locale": [
+            "ru"
+          ]
+        }
+      ]
+    ]
+  }
+}
+
+```
+index.js
+```.js
+const { remarkTypograf } = require("./remark-typograf");
+
+module.exports = remarkTypograf;
+
+```
+jest.config.js
+```.js
+module.exports = {
+  testEnvironment: "node",
+  testRunner: "jest-circus/runner",
+};
+
+```
+package.json
+```.json
+{
+  "name": "@mavrin/remark-typograf",
+  "version": "2.1.6",
+  "description": "Plugin for remark to make your typography better with typograf",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "remark-typograf.js"
+  ],
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint .",
+    "generate:site": "node ./scripts/generate.js",
+    "publish:site": "npm run generate:site && node ./scripts/publishSite.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mavrin/remark-typograf.git"
+  },
+  "keywords": [
+    "unified",
+    "remark",
+    "remark-plugin",
+    "plugin",
+    "mdast",
+    "markdown",
+    "typograf",
+    "text",
+    "typography",
+    "typographic"
+  ],
+  "author": "Konstantin Krivlenia <krivlenia@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mavrin/remark-typograf/issues"
+  },
+  "homepage": "https://github.com/Mavrin/remark-typograf#readme",
+  "dependencies": {
+    "lodash.escaperegexp": "^4.1.2",
+    "typograf": "^6.11.3",
+    "unist-util-visit": "^2.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.24.0",
+    "eslint-plugin-jest": "^24.3.4",
+    "gh-pages": "^5.0.0",
+    "husky": "^6.0.0",
+    "jest": "^26.6.3",
+    "jest-circus": "^26.6.3",
+    "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0",
+    "remark": "13.0.0",
+    "remark-gfm": "1.0.0",
+    "remark-html": "^13.0.1",
+    "remark-parse": "^9.0.0",
+    "remark-stringify": "^9.0.1",
+    "unified": "^9.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
+
+```
+remark-typograf.js
+```.js
+const visit = require("unist-util-visit");
+const Typograf = require("typograf");
+const escapeRegexp = require("lodash.escaperegexp");
+
+function remarkTypograf(config = {}) {
+  let { typograf, builtIn = true, keywords = [], ...typografConfig } = config;
+
+  if (!typograf && builtIn === false) {
+    throw new Error(
+      "Typograf option should be specified. Please pass instance typograf as option or set builtIn to true"
+    );
+  }
+
+  if (typograf && builtIn === true) {
+    throw new Error(
+      "`builtIn` option is true and `typograf` also is passed. Please set `builtIn` to false or clean `typograf` option"
+    );
+  }
+
+  if (
+    builtIn === true &&
+    typografConfig.locale &&
+    !Array.isArray(typografConfig.locale)
+  ) {
+    throw new Error(
+      `Locale config should be array of string. e.g. {"locale": ["ru"]}`
+    );
+  }
+
+  if (
+    builtIn === true &&
+    !Array.isArray(typografConfig && typografConfig.locale)
+  ) {
+    typografConfig.locale = ["ru"];
+  }
+
+  if (!typograf) {
+    typograf = new Typograf(typografConfig);
+  }
+
+  function getTextNodes(tree) {
+    const textNodes = [];
+    if (tree.type === "inlineCode") {
+      textNodes.push("`" + tree.value + "`");
+      return textNodes;
+    }
+    if (typeof tree.value === "string") {
+      textNodes.push(tree.value);
+      return textNodes;
+    }
+    visit(tree, "inlineCode", (node) => {
+      textNodes.push("`" + node.value + "`");
+    });
+    visit(tree, "text", (node) => {
+      textNodes.push(node.value);
+    });
+    return textNodes;
+  }
+
+  function getLeftSiblingText(index, children) {
+    const textNodes = getTextNodes(children[index - 1]);
+    return typograf.execute(textNodes.pop() || "");
+  }
+
+  function getRightSiblingText(index, children) {
+    const textNodes = getTextNodes(children[index + 1]);
+    return typograf.execute(textNodes.shift() || "");
+  }
+
+  function applyTypograf(text, index, parent) {
+    if (index === 0 && parent.children.length > 1) {
+      const rightText = getRightSiblingText(index, parent.children);
+      const typografedText = typograf.execute(text + rightText);
+      return typografedText.substring(
+        0,
+        typografedText.length - rightText.length
+      );
+    }
+    if (index === parent.children.length - 1 && parent.children.length > 1) {
+      const leftText = getLeftSiblingText(index, parent.children);
+      const typografedText = typograf.execute(leftText + text);
+      return typografedText.substring(
+        leftText.length,
+        typografedText.length + leftText.length
+      );
+    }
+    if (parent.children.length > 1) {
+      const leftText = getLeftSiblingText(index, parent.children);
+      const rightText = getRightSiblingText(index, parent.children);
+      const typografedText = typograf.execute(leftText + text + rightText);
+      return typografedText.substring(
+        leftText.length,
+        typografedText.length - rightText.length
+      );
+    }
+    return typograf.execute(text);
+  }
+
+  function visitor(node, index, parent) {
+    let text = node.value;
+
+    keywords.forEach((keyword) => {
+      const hex = Buffer.from(keyword).toString("hex");
+      const regExp = new RegExp(`${escapeRegexp(keyword)}`, `g`);
+      text = text.replace(regExp, hex);
+    });
+
+    text = applyTypograf(text, index, parent);
+
+    keywords.forEach((keyword) => {
+      const hex = Buffer.from(keyword).toString("hex");
+      const regExp = new RegExp(`${escapeRegexp(hex)}`, `g`);
+      text = text.replace(regExp, keyword);
+    });
+
+    node.value = text;
+  }
+
+  function transform(tree) {
+    visit(tree, "text", visitor);
+  }
+
+  return transform;
+}
+
+module.exports = {
+  remarkTypograf,
+};
+
+```
+remark-typograf.test.js
+```.js
+const { describe, it, expect } = require("@jest/globals");
+const remarkTypograf = require("./index");
+const Typograf = require("typograf");
+const remark = require("remark");
+const gfm = require("remark-gfm");
+
+function getRemark() {
+  return remark().data(`settings`, { bullet: `-`, emphasis: `_` });
+}
+
+describe("remarkjs typograf", () => {
+  it("should throw error if typofraf is not specified", () => {
+    expect(() => remarkTypograf({ builtIn: false })).toThrow(/Typograf/);
+  });
+
+  it("should throw error if typofraf is specified and builtIn true", () => {
+    expect(() =>
+      remarkTypograf({
+        typograf: new Typograf({ locale: ["en-US"] }),
+        builtIn: true,
+      })
+    ).toThrow(/`builtIn` option is true and `typograf` also is passed/);
+  });
+
+  it("should throw error if locale is not array", () => {
+    expect(() => remarkTypograf({ locale: "en" })).toThrow(
+      /Locale config should be array of string/
+    );
+  });
+
+  it("Should work with explicit typograf", () => {
+    expect(
+      getRemark()
+        .use(remarkTypograf, {
+          typograf: new Typograf({ locale: ["en-US"] }),
+          builtIn: false,
+        })
+        .processSync("## spread operator... end . Some test.\n")
+        .toString()
+    ).toEqual("## spread operator… end. Some test.\n");
+  });
+
+  it("Should apply with default config", () => {
+    expect(
+      getRemark()
+        .use(remarkTypograf)
+        .processSync("## spread operator... end . Some test.\n")
+        .toString()
+    ).toEqual("## spread operator… end. Some test.\n");
+  });
+
+  it("Should apply", () => {
+    expect(
+      getRemark()
+        .use(remarkTypograf, { locale: ["en-US"] })
+        .processSync("## spread operator... end . Some test.\n")
+        .toString()
+    ).toEqual("## spread operator… end. Some test.\n");
+  });
+
+  it("should apply keywords config", () => {
+    const result = getRemark()
+      .use(gfm)
+      .use(remarkTypograf, {
+        keywords: [":(", "TL;DR"],
+      })
+      .processSync(`## 1. Это сложно :(.\nSome test. :( "TL;DR" operator... :(`)
+      .toString();
+    expect(result).toEqual(
+      "## 1. Это сложно :(.\n\nSome test. :( «TL;DR» operator… :(\n"
+    );
+  });
+
+  it("Should apply default locale", () => {
+    expect(
+      getRemark()
+        .use(remarkTypograf, {})
+        .processSync("## spread operator... end . Some test.\n")
+        .toString()
+    ).toEqual("## spread operator… end. Some test.\n");
+  });
+
+  it("Should handle for code block", () => {
+    const result = getRemark()
+      .use(remarkTypograf, { locale: ["ru"] })
+      .processSync(
+        "value - some code...\n```js\nconst value = [...[1,3]];\n```"
+      )
+      .toString();
+    expect(result).toEqual(
+      "value — some code…\n\n```js\nconst value = [...[1,3]];\n```\n"
+    );
+  });
+
+  it("Should handle for backtick", () => {
+    const result = getRemark()
+      .use(remarkTypograf, { locale: ["ru"] })
+      .processSync("some... `:tick tick...` some... test `.test` test .")
+      .toString();
+    expect(result).toEqual("some… `:tick tick...` some… test `.test` test.\n");
+  });
+
+  it("Should handle list", () => {
+    const result = getRemark()
+      .use(remarkTypograf, { locale: ["ru"] })
+      .processSync("# header\n - one point...\n - second point\n")
+      .toString();
+    expect(result).toEqual("# header\n\n-   one point…\n-   second point\n");
+  });
+
+  it("Should handle inline block type", () => {
+    const result = getRemark()
+      .use(gfm)
+      .use(remarkTypograf, { locale: ["ru"] })
+      .processSync(
+        "_Italic..._ some... **bold...** **bold** . New code [link...](https://github.com) sentence , ~~во внимание~~\n"
+      )
+      .toString();
+    expect(result).toEqual(
+      "_Italic…_ some… **bold…** **bold**. New code [link…](https://github.com) sentence, ~~во внимание~~\n"
+    );
+  });
+
+  it("Should not trim space after comma if next word is inline code link", () => {
+    const result = getRemark()
+      .use(remarkTypograf, { locale: ["ru"] })
+      .processSync(
+        "Привет, [как]()дела. Привет, [`как`]()дела. Привет, [_как_]()дела.\n"
+      )
+      .toString();
+    expect(result).toEqual(
+      "Привет, [как]()дела. Привет, [`как`]()дела. Привет, [_как_]()дела.\n"
+    );
+  })
+
+  it("Should mark and punctuation", () => {
+    const result = getRemark()
+      .use(remarkTypograf, { locale: ["ru"] })
+      .processSync(
+        "проверить секцию **Categories,** а у родительского тега. Далее — история создания онлайн-инструмента **[Can I Include](https://caninclude.glitch.me/).**\n"
+      )
+      .toString();
+    expect(result).toEqual(
+      "проверить секцию **Categories,** а у родительского тега. Далее — история создания онлайн-инструмента **[Can I Include](https://caninclude.glitch.me/).**\n"
+    );
+  });
+
+  it("Should handle bullet list", () => {
+    const result = getRemark()
+      .use(remarkTypograf, { locale: ["ru"] })
+      .processSync("list:\n- one item\n- В простом случае,\n- two item")
+      .toString();
+    expect(result).toEqual(
+      "list:\n\n-   one item\n-   В простом случае,\n-   two item\n"
+    );
+  });
+});
+
+```
+scripts/before.md
+---
+title: "Принять во внимание воздействие фактора"
+tags:
+  - почво
+  - ведение
+false: true
+---
+
+# Принять во внимание воздействие фактора
+
+В связи с этим нужно подчеркнуть, что [липкость](https://yandex.ru/referats/) возникает агробиогеоценоз. Коллембола нагревает желтозём одинаково по всем направлениям. Поверхность раздела фаз притягивает гумус.
+
+```html
+<button
+  class="button
+    button_theme_normal
+    button_size_s
+    referats__write
+    referats__more
+    i-bem button_js_inited"
+  type="button"
+  autocomplete="off"
+>
+  <span class="button__text">
+    Ещё не
+  </span>
+</button>
+```
+
+В условиях очагового земледелия аллювий — разрушаем. В первом приближении функция влагопроводности нейтрализует `<foo bar="baz">`.
+
+    .topics__item {
+      display: block;
+      margin-top: 14px
+    }
+
+Реология, как того требуют законы термодинамики, едва ли квантуема. В ходе валового анализа аржиллана инструментально обнаружима.
+
+Цветность растворяет фраджипэн:
+
+- Уровень грунтовых вод
+  - Массоперенос
+  - Их охлаждает
+  - Горизонт
+- Вызывает аллювий
+
+Гуминовая кислота пространственно притягивает многофазный суглинок. В первом приближении обеднение окисляет гумин.
+
+scripts/generate.js
+```.js
+const path = require("path");
+const fs = require("fs");
+const remark = require("remark");
+const unified = require("unified");
+const markdown = require("remark-parse");
+const Typograf = require("typograf");
+const remarkStringify = require("remark-stringify");
+const remarkHtml = require("remark-html");
+const remarkjsTypograf = require("../index");
+
+const deleteFolderRecursive = function (folderPath) {
+  if (fs.existsSync(folderPath)) {
+    fs.readdirSync(folderPath).forEach((file) => {
+      const curPath = path.join(folderPath, file);
+      if (fs.lstatSync(curPath).isDirectory()) {
+        // recurse
+        deleteFolderRecursive(curPath);
+      } else {
+        // delete file
+        fs.unlinkSync(curPath);
+      }
+    });
+    fs.rmdirSync(folderPath);
+  }
+};
+
+const distPath = path.resolve(__dirname, "../dist");
+const originalMarkdown = fs.readFileSync(
+  path.resolve(__dirname, "./before.md"),
+  "utf8"
+);
+
+const markdownResultWithTypograf = unified()
+  .use(markdown, { commonmark: true })
+  .use(remarkjsTypograf, {
+    typograf: new Typograf({ locale: ["ru"] }),
+    builtIn: false,
+  })
+  .use(remarkStringify, {
+    gfm: true,
+    listItemIndent: "1",
+    rule: "-",
+    ruleSpaces: false,
+  })
+  .processSync(originalMarkdown).toString();
+
+const htmlResultWithTypograf = remark()
+  .use(remarkjsTypograf, {
+    typograf: new Typograf({ locale: ["ru"] }),
+    builtIn: false,
+  })
+  .use(remarkHtml)
+  .processSync(originalMarkdown);
+
+const htmlResultWithoutTypograf = remark()
+  .use(remarkHtml)
+  .processSync(originalMarkdown);
+
+deleteFolderRecursive(distPath);
+fs.mkdirSync(distPath);
+fs.writeFileSync(
+  path.resolve(path.join(distPath, "before.md")),
+  originalMarkdown,
+  "utf8"
+);
+
+fs.writeFileSync(
+  path.resolve(path.join(distPath, "after.md")),
+  markdownResultWithTypograf,
+  "utf8"
+);
+
+const html = `
+<html lang="ru">
+<head>
+  <title>remark-typograf plugin example</title>
+  <meta charset="UTF-8">
+  <style>
+    body > div.example {
+      float: left;
+      width: 50%;
+    }
+  </style>
+</head>
+  <body>
+    <div>
+        <a href="https://github.com/Mavrin/remarkjs-typograf">Source code on github</a>
+    </div>
+    <div class="example">
+        <h2>Before (<a target="_blank" href="https://github.com/Mavrin/remarkjs-typograf/blob/gh-pages/after.md">markdown source</a>):</h2>
+        <div>${htmlResultWithoutTypograf}</div>
+    </div>
+    <div class="example">
+       <h2>After (<a target="_blank" href="https://github.com/Mavrin/remarkjs-typograf/blob/gh-pages/after.md">markdown source</a>):</h2>
+       <div>${htmlResultWithTypograf}</div>
+    </div>
+  </body>
+</html>
+`;
+
+fs.writeFileSync(
+  path.resolve(path.join(distPath, "index.html")),
+  html.trim(),
+  "utf8"
+);
+
+```
+scripts/publishSite.js
+```.js
+const ghpages = require("gh-pages");
+const { resolve } = require("path");
+const resolvePath = (relativePath) => resolve(__dirname, relativePath);
+
+const build = resolvePath("../dist");
+
+async function publish() {
+  return new Promise((resolve, reject) => {
+    ghpages.publish(
+      build,
+      {
+        branch: "gh-pages",
+      },
+      function (err) {
+        if (err) {
+          reject(err);
+        } else {
+          resolve();
+        }
+      }
+    );
+  });
+}
+
+publish()
+  .then(() => console.log("publish to gh-pages branch success"))
+  .catch((err) => {
+    console.log("could not publish to gh-pages branch", err);
+  });
+
+```
+
 
