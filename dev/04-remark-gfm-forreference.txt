@@ -1,0 +1,5031 @@
+Token Usage:
+GitHub Tokens: 27875
+LLM Input Tokens: 0
+LLM Output Tokens: 0
+Total Tokens: 27875
+
+FileTree:
+.github/workflows/bb.yml
+.github/workflows/main.yml
+.gitignore
+index.d.ts
+index.js
+lib/index.js
+package.json
+readme.md
+test/fixtures/autolink-literal/input.md
+test/fixtures/autolink-literal/output.md
+test/fixtures/autolink-literal/tree.json
+test/fixtures/strikethrough-default/input.md
+test/fixtures/strikethrough-default/output.md
+test/fixtures/strikethrough-default/tree.json
+test/fixtures/strikethrough-not-one/config.json
+test/fixtures/strikethrough-not-one/input.md
+test/fixtures/strikethrough-not-one/output.md
+test/fixtures/strikethrough-not-one/tree.json
+test/fixtures/table-no-align/config.json
+test/fixtures/table-no-align/input.md
+test/fixtures/table-no-align/tree.json
+test/fixtures/table-no-padding/config.json
+test/fixtures/table-no-padding/input.md
+test/fixtures/table-no-padding/output.md
+test/fixtures/table-no-padding/tree.json
+test/fixtures/table-string-length/config.json
+test/fixtures/table-string-length/input.md
+test/fixtures/table-string-length/output.md
+test/fixtures/table-string-length/tree.json
+test/fixtures/table/input.md
+test/fixtures/table/output.md
+test/fixtures/table/tree.json
+test/fixtures/tasklist/input.md
+test/fixtures/tasklist/output.md
+test/fixtures/tasklist/tree.json
+test/index.js
+tsconfig.json
+
+Analysis:
+.github/workflows/bb.yml
+```.yml
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: unifiedjs/beep-boop-beta@main
+        with:
+          repo-token: ${{secrets.GITHUB_TOKEN}}
+name: bb
+on:
+  issues:
+    types: [closed, edited, labeled, opened, reopened, unlabeled]
+  pull_request_target:
+    types: [closed, edited, labeled, opened, reopened, unlabeled]
+
+```
+.github/workflows/main.yml
+```.yml
+jobs:
+  main:
+    name: ${{matrix.node}}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{matrix.node}}
+      - run: npm install
+      - run: npm test
+      - uses: codecov/codecov-action@v5
+    strategy:
+      matrix:
+        node:
+          - lts/hydrogen
+          - node
+name: main
+on:
+  - pull_request
+  - push
+
+```
+.gitignore
+```.gitignore
+*.d.ts
+*.log
+*.map
+*.tsbuildinfo
+.DS_Store
+coverage/
+node_modules/
+yarn.lock
+!/index.d.ts
+
+```
+index.d.ts
+```.ts
+import type {Options as MicromarkOptions} from 'micromark-extension-gfm'
+import type {Options as MdastOptions} from 'mdast-util-gfm'
+
+export {default} from './lib/index.js'
+
+/**
+ * Configuration for `remark-gfm`.
+ *
+ * Currently supports `singleTilde` as a parse option and
+ * `firstLineBlank`, `stringLength`, `tableCellPadding`, and `tablePipeAlign`
+ * as serialization options.
+ */
+export interface Options extends MicromarkOptions, MdastOptions {}
+
+```
+index.js
+```.js
+// Note: types exposed from `index.d.ts`.
+export {default} from './lib/index.js'
+
+```
+lib/index.js
+```.js
+/**
+ * @import {Root} from 'mdast'
+ * @import {Options} from 'remark-gfm'
+ * @import {} from 'remark-parse'
+ * @import {} from 'remark-stringify'
+ * @import {Processor} from 'unified'
+ */
+
+import {gfmFromMarkdown, gfmToMarkdown} from 'mdast-util-gfm'
+import {gfm} from 'micromark-extension-gfm'
+
+/** @type {Options} */
+const emptyOptions = {}
+
+/**
+ * Add support GFM (autolink literals, footnotes, strikethrough, tables,
+ * tasklists).
+ *
+ * @param {Options | null | undefined} [options]
+ *   Configuration (optional).
+ * @returns {undefined}
+ *   Nothing.
+ */
+export default function remarkGfm(options) {
+  // @ts-expect-error: TS is wrong about `this`.
+  // eslint-disable-next-line unicorn/no-this-assignment
+  const self = /** @type {Processor<Root>} */ (this)
+  const settings = options || emptyOptions
+  const data = self.data()
+
+  const micromarkExtensions =
+    data.micromarkExtensions || (data.micromarkExtensions = [])
+  const fromMarkdownExtensions =
+    data.fromMarkdownExtensions || (data.fromMarkdownExtensions = [])
+  const toMarkdownExtensions =
+    data.toMarkdownExtensions || (data.toMarkdownExtensions = [])
+
+  micromarkExtensions.push(gfm(settings))
+  fromMarkdownExtensions.push(gfmFromMarkdown())
+  toMarkdownExtensions.push(gfmToMarkdown(settings))
+}
+
+```
+package.json
+```.json
+{
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "bugs": "https://github.com/remarkjs/remark-gfm/issues",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "dependencies": {
+    "@types/mdast": "^4.0.0",
+    "mdast-util-gfm": "^3.0.0",
+    "micromark-extension-gfm": "^3.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-stringify": "^11.0.0",
+    "unified": "^11.0.0"
+  },
+  "description": "remark plugin to support GFM (autolink literals, footnotes, strikethrough, tables, tasklists)",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "c8": "^10.0.0",
+    "is-hidden": "^2.0.0",
+    "prettier": "^3.0.0",
+    "remark": "^15.0.0",
+    "remark-cli": "^12.0.0",
+    "remark-preset-wooorm": "^11.0.0",
+    "string-width": "^6.0.0",
+    "to-vfile": "^8.0.0",
+    "type-coverage": "^2.0.0",
+    "typescript": "^5.0.0",
+    "xo": "^0.60.0"
+  },
+  "exports": "./index.js",
+  "files": [
+    "index.d.ts",
+    "index.js",
+    "lib/"
+  ],
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "keywords": [
+    "autolink",
+    "footnote",
+    "gfm",
+    "github",
+    "markdown",
+    "mdast",
+    "plugin",
+    "remark",
+    "remark-plugin",
+    "strikethrough",
+    "table",
+    "tasklist",
+    "unified"
+  ],
+  "license": "MIT",
+  "name": "remark-gfm",
+  "prettier": {
+    "bracketSpacing": false,
+    "singleQuote": true,
+    "semi": false,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "useTabs": false
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-wooorm"
+    ]
+  },
+  "repository": "remarkjs/remark-gfm",
+  "scripts": {
+    "build": "tsc --build --clean && tsc --build && type-coverage",
+    "format": "remark . --frail --output --quiet && prettier . --log-level warn --write && xo --fix",
+    "prepack": "npm run build && npm run format",
+    "test": "npm run build && npm run format && npm run test-coverage",
+    "test-api": "node --conditions development test/index.js",
+    "test-coverage": "c8 --100 --reporter lcov npm run test-api"
+  },
+  "sideEffects": false,
+  "typeCoverage": {
+    "atLeast": 100,
+    "strict": true
+  },
+  "type": "module",
+  "version": "4.0.1",
+  "xo": {
+    "overrides": [
+      {
+        "files": [
+          "**/*.d.ts"
+        ],
+        "rules": {
+          "@typescript-eslint/array-type": [
+            "error",
+            {
+              "default": "generic"
+            }
+          ],
+          "@typescript-eslint/ban-types": [
+            "error",
+            {
+              "extendDefaults": true
+            }
+          ],
+          "@typescript-eslint/consistent-type-definitions": [
+            "error",
+            "interface"
+          ]
+        }
+      },
+      {
+        "files": [
+          "test/**/*.js"
+        ],
+        "rules": {
+          "no-await-in-loop": "off"
+        }
+      }
+    ],
+    "prettier": true,
+    "rules": {
+      "logical-assignment-operators": "off"
+    }
+  }
+}
+
+```
+readme.md
+# remark-gfm
+
+[![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
+[![Downloads][downloads-badge]][downloads]
+[![Size][size-badge]][size]
+[![Sponsors][sponsors-badge]][collective]
+[![Backers][backers-badge]][collective]
+[![Chat][chat-badge]][chat]
+
+**[remark][]** plugin to support [GFM][] (autolink literals, footnotes,
+strikethrough, tables, tasklists).
+
+## Contents
+
+* [What is this?](#what-is-this)
+* [When should I use this?](#when-should-i-use-this)
+* [Install](#install)
+* [Use](#use)
+* [API](#api)
+  * [`unified().use(remarkGfm[, options])`](#unifieduseremarkgfm-options)
+  * [`Options`](#options)
+* [Examples](#examples)
+  * [Example: `singleTilde`](#example-singletilde)
+  * [Example: `stringLength`](#example-stringlength)
+* [Bugs](#bugs)
+* [Authoring](#authoring)
+* [HTML](#html)
+* [CSS](#css)
+* [Syntax](#syntax)
+* [Syntax tree](#syntax-tree)
+* [Types](#types)
+* [Compatibility](#compatibility)
+* [Security](#security)
+* [Related](#related)
+* [Contribute](#contribute)
+* [License](#license)
+
+## What is this?
+
+This package is a [unified][] ([remark][]) plugin to enable the extensions to
+markdown that GitHub adds with GFM: autolink literals (`www.x.com`), footnotes
+(`[^1]`), strikethrough (`~~stuff~~`), tables (`| cell |…`), and tasklists
+(`* [x]`).
+You can use this plugin to add support for parsing and serializing them.
+These extensions by GitHub to CommonMark are called [GFM][] (GitHub Flavored
+Markdown).
+
+This plugin does not handle how markdown is turned to HTML.
+That’s done by [`remark-rehype`][remark-rehype].
+If your content is not in English and uses footnotes, you should configure that
+plugin.
+When generating HTML, you might also want to enable [`rehype-slug`][rehype-slug]
+to add `id`s on headings.
+
+A different plugin, [`remark-frontmatter`][remark-frontmatter], adds support for
+frontmatter.
+GitHub supports YAML frontmatter for files in repos and Gists but they don’t
+treat it as part of GFM.
+
+Another plugin, [`remark-github`][remark-github], adds support for how markdown
+works in relation to a certain GitHub repo in comments, issues, PRs, and
+releases, by linking references to commits, issues, and users.
+
+Yet another plugin, [`remark-breaks`][remark-breaks], turns soft line endings
+(enters) into hard breaks (`<br>`s).
+GitHub does this in a few places (comments, issues, PRs, and releases).
+
+## When should I use this?
+
+This project is useful when you want to support the same features that GitHub
+does in files in a repo, Gists, and several other places.
+Users frequently believe that some of these extensions, specifically autolink
+literals and tables, are part of normal markdown, so using `remark-gfm` will
+help match your implementation to their understanding of markdown.
+There are several edge cases where GitHub’s implementation works in unexpected
+ways or even different than described in their spec, so *writing* in GFM is not
+always the best choice.
+
+If you *just* want to turn markdown into HTML (with maybe a few extensions such
+as GFM), we recommend [`micromark`][micromark] with
+[`micromark-extension-gfm`][micromark-extension-gfm] instead.
+If you don’t use plugins and want to access the syntax tree, you can use
+[`mdast-util-from-markdown`][mdast-util-from-markdown] with
+[`mdast-util-gfm`][mdast-util-gfm].
+
+## Install
+
+This package is [ESM only][esm].
+In Node.js (version 16+), install with [npm][]:
+
+```sh
+npm install remark-gfm
+```
+
+In Deno with [`esm.sh`][esmsh]:
+
+```js
+import remarkGfm from 'https://esm.sh/remark-gfm@4'
+```
+
+In browsers with [`esm.sh`][esmsh]:
+
+```html
+<script type="module">
+  import remarkGfm from 'https://esm.sh/remark-gfm@4?bundle'
+</script>
+```
+
+## Use
+
+Say our document `example.md` contains:
+
+```markdown
+# GFM
+
+## Autolink literals
+
+www.example.com, https://example.com, and contact@example.com.
+
+## Footnote
+
+A note[^1]
+
+[^1]: Big note.
+
+## Strikethrough
+
+~one~ or ~~two~~ tildes.
+
+## Table
+
+| a | b  |  c |  d  |
+| - | :- | -: | :-: |
+
+## Tasklist
+
+* [ ] to do
+* [x] done
+```
+
+…and our module `example.js` contains:
+
+```js
+import rehypeStringify from 'rehype-stringify'
+import remarkGfm from 'remark-gfm'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import {read} from 'to-vfile'
+import {unified} from 'unified'
+
+const file = await unified()
+  .use(remarkParse)
+  .use(remarkGfm)
+  .use(remarkRehype)
+  .use(rehypeStringify)
+  .process(await read('example.md'))
+
+console.log(String(file))
+```
+
+…then running `node example.js` yields:
+
+```html
+<h1>GFM</h1>
+<h2>Autolink literals</h2>
+<p><a href="http://www.example.com">www.example.com</a>, <a href="https://example.com">https://example.com</a>, and <a href="mailto:contact@example.com">contact@example.com</a>.</p>
+<h2>Footnote</h2>
+<p>A note<sup><a href="#user-content-fn-1" id="user-content-fnref-1" data-footnote-ref aria-describedby="footnote-label">1</a></sup></p>
+<h2>Strikethrough</h2>
+<p><del>one</del> or <del>two</del> tildes.</p>
+<h2>Table</h2>
+<table>
+<thead>
+<tr>
+<th>a</th>
+<th align="left">b</th>
+<th align="right">c</th>
+<th align="center">d</th>
+</tr>
+</thead>
+</table>
+<h2>Tasklist</h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> to do</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> done</li>
+</ul>
+<section data-footnotes class="footnotes"><h2 class="sr-only" id="footnote-label">Footnotes</h2>
+<ol>
+<li id="user-content-fn-1">
+<p>Big note. <a href="#user-content-fnref-1" data-footnote-backref class="data-footnote-backref" aria-label="Back to content">↩</a></p>
+</li>
+</ol>
+</section>
+```
+
+## API
+
+This package exports no identifiers.
+The default export is [`remarkGfm`][api-remark-gfm].
+
+### `unified().use(remarkGfm[, options])`
+
+Add support GFM (autolink literals, footnotes, strikethrough, tables,
+tasklists).
+
+###### Parameters
+
+* `options` ([`Options`][api-options], optional)
+  — configuration
+
+###### Returns
+
+Nothing (`undefined`).
+
+### `Options`
+
+Configuration (TypeScript type).
+
+###### Fields
+
+* `firstLineBlank` (`boolean`, default: `false`)
+  — serialize with a blank line for the first line of footnote definitions
+* `stringLength` (`((value: string) => number)`, default: `d => d.length`)
+  — detect the size of table cells, used when aligning cells
+* `singleTilde` (`boolean`, default: `true`)
+  — whether to support strikethrough with a single tilde;
+  single tildes work on github.com, but are technically prohibited by GFM;
+  you can always use 2 or more tildes for strikethrough
+* `tablePipeAlign` (`boolean`, default: `true`)
+  — whether to align table pipes
+* `tableCellPadding` (`boolean`, default: `true`)
+  — whether to add a space of padding between table pipes and cells
+
+## Examples
+
+### Example: `singleTilde`
+
+To turn off support for parsing strikethrough with single tildes, pass
+`singleTilde: false`:
+
+```js
+// …
+
+const file = await unified()
+  .use(remarkParse)
+  .use(remarkGfm, {singleTilde: false})
+  .use(remarkRehype)
+  .use(rehypeStringify)
+  .process('~one~ and ~~two~~')
+
+console.log(String(file))
+```
+
+Yields:
+
+```html
+<p>~one~ and <del>two</del></p>
+```
+
+### Example: `stringLength`
+
+It’s possible to align tables based on the visual width of cells.
+First, let’s show the problem:
+
+```js
+import {remark} from 'remark'
+import remarkGfm from 'remark-gfm'
+
+const input = `| Alpha | Bravo |
+| - | - |
+| 中文 | Charlie |
+| 👩‍❤️‍👩 | Delta |`
+
+const file = await remark().use(remarkGfm).process(input)
+
+console.log(String(file))
+```
+
+The above code shows how remark can be used to format markdown.
+The output is as follows:
+
+```markdown
+| Alpha    | Bravo   |
+| -------- | ------- |
+| 中文       | Charlie |
+| 👩‍❤️‍👩 | Delta   |
+```
+
+To improve the alignment of these full-width characters and emoji, pass a
+`stringLength` function that calculates the visual width of cells.
+One such algorithm is [`string-width`][string-width].
+It can be used like so:
+
+```diff
+@@ -1,5 +1,6 @@
+ import {remark} from 'remark'
+ import remarkGfm from 'remark-gfm'
++import stringWidth from 'string-width'
+
+@@ -10,7 +11,7 @@ async function main() {
+ | 👩‍❤️‍👩 | Delta |`
+
+-const file = await remark().use(remarkGfm).process(input)
++const file = await remark()
++  .use(remarkGfm, {stringLength: stringWidth})
++  .process(input)
+
+   console.log(String(file))
+```
+
+The output of our code with these changes is as follows:
+
+```markdown
+| Alpha | Bravo   |
+| ----- | ------- |
+| 中文  | Charlie |
+| 👩‍❤️‍👩    | Delta   |
+```
+
+## Bugs
+
+For bugs present in GFM but not here, or other peculiarities that are
+supported, see each corresponding readme:
+
+* [autolink literal](https://github.com/micromark/micromark-extension-gfm-autolink-literal#bugs)
+* [footnote](https://github.com/micromark/micromark-extension-gfm-footnote#bugs)
+* strikethrough: n/a
+* [table](https://github.com/micromark/micromark-extension-gfm-table#bugs)
+* tasklists: n/a
+
+## Authoring
+
+For recommendations on how to author GFM, see each corresponding readme:
+
+* [autolink literal](https://github.com/micromark/micromark-extension-gfm-autolink-literal#authoring)
+* [footnote](https://github.com/micromark/micromark-extension-gfm-footnote#authoring)
+* [strikethrough](https://github.com/micromark/micromark-extension-gfm-strikethrough#authoring)
+* [table](https://github.com/micromark/micromark-extension-gfm-table#authoring)
+* [tasklists](https://github.com/micromark/micromark-extension-gfm-task-list-item#authoring)
+
+## HTML
+
+This plugin does not handle how markdown is turned to HTML.
+See [`remark-rehype`][remark-rehype] for how that happens and how to change it.
+
+## CSS
+
+For info on how GitHub styles these features, see each corresponding readme:
+
+* [autolink literal](https://github.com/micromark/micromark-extension-gfm-autolink-literal#css)
+* [footnote](https://github.com/micromark/micromark-extension-gfm-footnote#css)
+* [strikethrough](https://github.com/micromark/micromark-extension-gfm-strikethrough#css)
+* [table](https://github.com/micromark/micromark-extension-gfm-table#css)
+* [tasklists](https://github.com/micromark/micromark-extension-gfm-task-list-item#css)
+
+## Syntax
+
+For info on the syntax of these features, see each corresponding readme:
+
+* [autolink literal](https://github.com/micromark/micromark-extension-gfm-autolink-literal#syntax)
+* [footnote](https://github.com/micromark/micromark-extension-gfm-footnote#syntax)
+* [strikethrough](https://github.com/micromark/micromark-extension-gfm-strikethrough#syntax)
+* [table](https://github.com/micromark/micromark-extension-gfm-table#syntax)
+* [tasklists](https://github.com/micromark/micromark-extension-gfm-task-list-item#syntax)
+
+## Syntax tree
+
+For info on the syntax tree of these features, see each corresponding readme:
+
+* [autolink literal](https://github.com/syntax-tree/mdast-util-gfm-autolink-literal#syntax-tree)
+* [footnote](https://github.com/syntax-tree/mdast-util-gfm-footnote#syntax-tree)
+* [strikethrough](https://github.com/syntax-tree/mdast-util-gfm-strikethrough#syntax-tree)
+* [table](https://github.com/syntax-tree/mdast-util-gfm-table#syntax-tree)
+* [tasklists](https://github.com/syntax-tree/mdast-util-gfm-task-list-item#syntax-tree)
+
+## Types
+
+This package is fully typed with [TypeScript][].
+It exports the additional type [`Options`][api-options].
+
+The node types are supported in `@types/mdast` by default.
+
+## Compatibility
+
+Projects maintained by the unified collective are compatible with maintained
+versions of Node.js.
+
+When we cut a new major release, we drop support for unmaintained versions of
+Node.
+This means we try to keep the current release line, `remark-gfm@^4`, compatible
+with Node.js 16.
+
+This plugin works with `remark-parse` version 11+ (`remark` version 15+).
+The previous version (v3) worked with `remark-parse` version 10 (`remark`
+version 14).
+Before that, v2 worked with `remark-parse` version 9 (`remark` version 13).
+Earlier versions of `remark-parse` and `remark` had a `gfm` option that enabled
+this functionality, which defaulted to true.
+
+## Security
+
+Use of `remark-gfm` does not involve **[rehype][]** ([hast][]) or user
+content so there are no openings for [cross-site scripting (XSS)][wiki-xss]
+attacks.
+
+## Related
+
+* [`remark-github`][remark-github]
+  — link references to commits, issues, PRs, and users
+* [`remark-breaks`][remark-breaks]
+  — support breaks without needing spaces or escapes (enters to `<br>`)
+* [`remark-frontmatter`][remark-frontmatter]
+  — support frontmatter (YAML, TOML, and more)
+* [`remark-directive`](https://github.com/remarkjs/remark-directive)
+  — support directives
+* [`remark-math`](https://github.com/remarkjs/remark-math)
+  — support math
+* [`remark-mdx`](https://github.com/mdx-js/mdx/tree/main/packages/remark-mdx)
+  — support MDX (ESM, JSX, expressions)
+
+## Contribute
+
+See [`contributing.md`][contributing] in [`remarkjs/.github`][health] for ways
+to get started.
+See [`support.md`][support] for ways to get help.
+
+This project has a [code of conduct][coc].
+By interacting with this repository, organization, or community you agree to
+abide by its terms.
+
+## License
+
+[MIT][license] © [Titus Wormer][author]
+
+<!-- Definitions -->
+
+[api-options]: #options
+
+[api-remark-gfm]: #unifieduseremarkgfm-options
+
+[author]: https://wooorm.com
+
+[backers-badge]: https://opencollective.com/unified/backers/badge.svg
+
+[build]: https://github.com/remarkjs/remark-gfm/actions
+
+[build-badge]: https://github.com/remarkjs/remark-gfm/workflows/main/badge.svg
+
+[chat]: https://github.com/remarkjs/remark/discussions
+
+[chat-badge]: https://img.shields.io/badge/chat-discussions-success.svg
+
+[coc]: https://github.com/remarkjs/.github/blob/HEAD/code-of-conduct.md
+
+[collective]: https://opencollective.com/unified
+
+[contributing]: https://github.com/remarkjs/.github/blob/HEAD/contributing.md
+
+[coverage]: https://codecov.io/github/remarkjs/remark-gfm
+
+[coverage-badge]: https://img.shields.io/codecov/c/github/remarkjs/remark-gfm.svg
+
+[downloads]: https://www.npmjs.com/package/remark-gfm
+
+[downloads-badge]: https://img.shields.io/npm/dm/remark-gfm.svg
+
+[esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+
+[esmsh]: https://esm.sh
+
+[gfm]: https://github.github.com/gfm/
+
+[hast]: https://github.com/syntax-tree/hast
+
+[health]: https://github.com/remarkjs/.github
+
+[license]: license
+
+[mdast-util-from-markdown]: https://github.com/syntax-tree/mdast-util-from-markdown
+
+[mdast-util-gfm]: https://github.com/syntax-tree/mdast-util-gfm
+
+[micromark]: https://github.com/micromark/micromark
+
+[micromark-extension-gfm]: https://github.com/micromark/micromark-extension-gfm
+
+[npm]: https://docs.npmjs.com/cli/install
+
+[rehype]: https://github.com/rehypejs/rehype
+
+[rehype-slug]: https://github.com/rehypejs/rehype-slug
+
+[remark]: https://github.com/remarkjs/remark
+
+[remark-breaks]: https://github.com/remarkjs/remark-breaks
+
+[remark-frontmatter]: https://github.com/remarkjs/remark-frontmatter
+
+[remark-github]: https://github.com/remarkjs/remark-github
+
+[remark-rehype]: https://github.com/remarkjs/remark-rehype
+
+[size]: https://bundlejs.com/?q=remark-gfm
+
+[size-badge]: https://img.shields.io/bundlejs/size/remark-gfm
+
+[sponsors-badge]: https://opencollective.com/unified/sponsors/badge.svg
+
+[string-width]: https://github.com/sindresorhus/string-width
+
+[support]: https://github.com/remarkjs/.github/blob/HEAD/support.md
+
+[typescript]: https://www.typescriptlang.org
+
+[unified]: https://github.com/unifiedjs/unified
+
+[wiki-xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
+
+test/fixtures/autolink-literal/input.md
+# Literal autolinks
+
+## WWW autolinks
+
+www.commonmark.org
+
+WWW.COMMONMARK.ORG
+
+Visit www.commonmark.org/help for more information.
+
+Visit www.commonmark.org.
+
+Visit www.commonmark.org/a.b.
+
+www.aaa.bbb.ccc_ccc
+
+www.aaa_bbb.ccc
+
+www.aaa.bbb.ccc.ddd_ddd
+
+www.aaa.bbb.ccc_ccc.ddd
+
+www.aaa.bbb_bbb.ccc.ddd
+
+www.aaa_aaa.bbb.ccc.ddd
+
+Visit www.commonmark.org.
+
+Visit www.commonmark.org/a.b.
+
+www.google.com/search?q=Markup+(business)
+
+www.google.com/search?q=Markup+(business)))
+
+(www.google.com/search?q=Markup+(business))
+
+(www.google.com/search?q=Markup+(business)
+
+www.google.com/search?q=(business))+ok
+
+www.google.com/search?q=commonmark&hl=en
+
+www.google.com/search?q=commonmark&hl;en
+
+www.google.com/search?q=commonmark&hl;
+
+www.commonmark.org/he<lp
+
+## HTTP autolinks
+
+http://example.com
+
+https://example.com
+
+https://example
+
+http://commonmark.org
+
+(Visit https://encrypted.google.com/search?q=Markup+(business))
+
+## Email autolinks
+
+No dot: foo@barbaz
+
+No dot: foo@barbaz.
+
+foo@bar.baz
+
+hello@mail+xyz.example isn’t valid, but hello+xyz@mail.example is.
+
+a.b-c_d@a.b
+
+a.b-c_d@a.b.
+
+a.b-c_d@a.b-
+
+a.b-c_d@a.b_
+
+a@a_b.c
+
+a@a-b.c
+
+Can’t end in an underscore followed by a period: aaa@a.b_.
+
+Can contain an underscore followed by a period: aaa@a.b_.c
+
+[https://google.com](https://google.com)
+
+test/fixtures/autolink-literal/output.md
+# Literal autolinks
+
+## WWW autolinks
+
+[www.commonmark.org](http://www.commonmark.org)
+
+[WWW.COMMONMARK.ORG](http://WWW.COMMONMARK.ORG)
+
+Visit [www.commonmark.org/help](http://www.commonmark.org/help) for more information.
+
+Visit [www.commonmark.org](http://www.commonmark.org).
+
+Visit [www.commonmark.org/a.b](http://www.commonmark.org/a.b).
+
+www\.aaa.bbb.ccc\_ccc
+
+www\.aaa\_bbb.ccc
+
+www\.aaa.bbb.ccc.ddd\_ddd
+
+www\.aaa.bbb.ccc\_ccc.ddd
+
+[www.aaa.bbb\_bbb.ccc.ddd](http://www.aaa.bbb_bbb.ccc.ddd)
+
+[www.aaa\_aaa.bbb.ccc.ddd](http://www.aaa_aaa.bbb.ccc.ddd)
+
+Visit [www.commonmark.org](http://www.commonmark.org).
+
+Visit [www.commonmark.org/a.b](http://www.commonmark.org/a.b).
+
+[www.google.com/search?q=Markup+(business)](http://www.google.com/search?q=Markup+\(business\))
+
+[www.google.com/search?q=Markup+(business)](http://www.google.com/search?q=Markup+\(business\))))
+
+([www.google.com/search?q=Markup+(business)](http://www.google.com/search?q=Markup+\(business\)))
+
+([www.google.com/search?q=Markup+(business)](http://www.google.com/search?q=Markup+\(business\))
+
+[www.google.com/search?q=(business))+ok](http://www.google.com/search?q=\(business\)\)+ok)
+
+[www.google.com/search?q=commonmark\&hl=en](http://www.google.com/search?q=commonmark\&hl=en)
+
+[www.google.com/search?q=commonmark\&hl;en](http://www.google.com/search?q=commonmark\&hl;en)
+
+[www.google.com/search?q=commonmark](http://www.google.com/search?q=commonmark)\&hl;
+
+[www.commonmark.org/he](http://www.commonmark.org/he)\<lp
+
+## HTTP autolinks
+
+<http://example.com>
+
+<https://example.com>
+
+<https://example>
+
+<http://commonmark.org>
+
+(Visit <https://encrypted.google.com/search?q=Markup+(business)>)
+
+## Email autolinks
+
+No dot: foo\@barbaz
+
+No dot: foo\@barbaz.
+
+<foo@bar.baz>
+
+hello\@mail+xyz.example isn’t valid, but <hello+xyz@mail.example> is.
+
+<a.b-c_d@a.b>
+
+<a.b-c_d@a.b>.
+
+a.b-c\_d\@a.b-
+
+a.b-c\_d\@a.b\_
+
+<a@a_b.c>
+
+<a@a-b.c>
+
+Can’t end in an underscore followed by a period: aaa\@a.b\_.
+
+Can contain an underscore followed by a period: <aaa@a.b_.c>
+
+<https://google.com>
+
+test/fixtures/autolink-literal/tree.json
+```.json
+{
+  "type": "root",
+  "children": [
+    {
+      "type": "heading",
+      "depth": 1,
+      "children": [
+        {
+          "type": "text",
+          "value": "Literal autolinks",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 3,
+              "offset": 2
+            },
+            "end": {
+              "line": 1,
+              "column": 20,
+              "offset": 19
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 20,
+          "offset": 19
+        }
+      }
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "children": [
+        {
+          "type": "text",
+          "value": "WWW autolinks",
+          "position": {
+            "start": {
+              "line": 3,
+              "column": 4,
+              "offset": 24
+            },
+            "end": {
+              "line": 3,
+              "column": 17,
+              "offset": 37
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 3,
+          "column": 1,
+          "offset": 21
+        },
+        "end": {
+          "line": 3,
+          "column": 17,
+          "offset": 37
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "link",
+          "title": null,
+          "url": "http://www.commonmark.org",
+          "children": [
+            {
+              "type": "text",
+              "value": "www.commonmark.org",
+              "position": {
+                "start": {
+                  "line": 5,
+                  "column": 1,
+                  "offset": 39
+                },
+                "end": {
+                  "line": 5,
+                  "column": 19,
+                  "offset": 57
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 5,
+              "column": 1,
+              "offset": 39
+            },
+            "end": {
+              "line": 5,
+              "column": 19,
+              "offset": 57
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 5,
+          "column": 1,
+          "offset": 39
+        },
+        "end": {
+          "line": 5,
+          "column": 19,
+          "offset": 57
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "link",
+          "title": null,
+          "url": "http://WWW.COMMONMARK.ORG",
+          "children": [
+            {
+              "type": "text",
+              "value": "WWW.COMMONMARK.ORG",
+              "position": {
+                "start": {
+                  "line": 7,
+                  "column": 1,
+                  "offset": 59
+                },
+                "end": {
+                  "line": 7,
+                  "column": 19,
+                  "offset": 77
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 7,
+              "column": 1,
+              "offset": 59
+            },
+            "end": {
+              "line": 7,
+              "column": 19,
+              "offset": 77
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 7,
+          "column": 1,
+          "offset": 59
+        },
+        "end": {
+          "line": 7,
+          "column": 19,
+          "offset": 77
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Visit ",
+          "position": {
+            "start": {
+              "line": 9,
+              "column": 1,
+              "offset": 79
+            },
+            "end": {
+              "line": 9,
+              "column": 7,
+              "offset": 85
+            }
+          }
+        },
+        {
+          "type": "link",
+          "title": null,
+          "url": "http://www.commonmark.org/help",
+          "children": [
+            {
+              "type": "text",
+              "value": "www.commonmark.org/help",
+              "position": {
+                "start": {
+                  "line": 9,
+                  "column": 7,
+                  "offset": 85
+                },
+                "end": {
+                  "line": 9,
+                  "column": 30,
+                  "offset": 108
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 9,
+              "column": 7,
+              "offset": 85
+            },
+            "end": {
+              "line": 9,
+              "column": 30,
+              "offset": 108
+            }
+          }
+        },
+        {
+          "type": "text",
+          "value": " for more information.",
+          "position": {
+            "start": {
+              "line": 9,
+              "column": 30,
+              "offset": 108
+            },
+            "end": {
+              "line": 9,
+              "column": 52,
+              "offset": 130
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 9,
+          "column": 1,
+          "offset": 79
+        },
+        "end": {
+          "line": 9,
+          "column": 52,
+          "offset": 130
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Visit ",
+          "position": {
+            "start": {
+              "line": 11,
+              "column": 1,
+              "offset": 132
+            },
+            "end": {
+              "line": 11,
+              "column": 7,
+              "offset": 138
+            }
+          }
+        },
+        {
+          "type": "link",
+          "title": null,
+          "url": "http://www.commonmark.org",
+          "children": [
+            {
+              "type": "text",
+              "value": "www.commonmark.org",
+              "position": {
+                "start": {
+                  "line": 11,
+                  "column": 7,
+                  "offset": 138
+                },
+                "end": {
+                  "line": 11,
+                  "column": 25,
+                  "offset": 156
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 11,
+              "column": 7,
+              "offset": 138
+            },
+            "end": {
+              "line": 11,
+              "column": 25,
+              "offset": 156
+            }
+          }
+        },
+        {
+          "type": "text",
+          "value": ".",
+          "position": {
+            "start": {
+              "line": 11,
+              "column": 25,
+              "offset": 156
+            },
+            "end": {
+              "line": 11,
+              "column": 26,
+              "offset": 157
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 11,
+          "column": 1,
+          "offset": 132
+        },
+        "end": {
+          "line": 11,
+          "column": 26,
+          "offset": 157
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Visit ",
+          "position": {
+            "start": {
+              "line": 13,
+              "column": 1,
+              "offset": 159
+            },
+            "end": {
+              "line": 13,
+              "column": 7,
+              "offset": 165
+            }
+          }
+        },
+        {
+          "type": "link",
+          "title": null,
+          "url": "http://www.commonmark.org/a.b",
+          "children": [
+            {
+              "type": "text",
+              "value": "www.commonmark.org/a.b",
+              "position": {
+                "start": {
+                  "line": 13,
+                  "column": 7,
+                  "offset": 165
+                },
+                "end": {
+                  "line": 13,
+                  "column": 29,
+                  "offset": 187
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 13,
+              "column": 7,
+              "offset": 165
+            },
+            "end": {
+              "line": 13,
+              "column": 29,
+              "offset": 187
+            }
+          }
+        },
+        {
+          "type": "text",
+          "value": ".",
+          "position": {
+            "start": {
+              "line": 13,
+              "column": 29,
+              "offset": 187
+            },
+            "end": {
+              "line": 13,
+              "column": 30,
+              "offset": 188
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 13,
+          "column": 1,
+          "offset": 159
+        },
+        "end": {
+          "line": 13,
+          "column": 30,
+          "offset": 188
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "www.aaa.bbb.ccc_ccc",
+          "position": {
+            "start": {
+              "line": 15,
+              "column": 1,
+              "offset": 190
+            },
+            "end": {
+              "line": 15,
+              "column": 20,
+              "offset": 209
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 15,
+          "column": 1,
+          "offset": 190
+        },
+        "end": {
+          "line": 15,
+          "column": 20,
+          "offset": 209
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "www.aaa_bbb.ccc",
+          "position": {
+            "start": {
+              "line": 17,
+              "column": 1,
+              "offset": 211
+            },
+            "end": {
+              "line": 17,
+              "column": 16,
+              "offset": 226
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 17,
+          "column": 1,
+          "offset": 211
+        },
+        "end": {
+          "line": 17,
+          "column": 16,
+          "offset": 226
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "www.aaa.bbb.ccc.ddd_ddd",
+          "position": {
+            "start": {
+              "line": 19,
+              "column": 1,
+              "offset": 228
+            },
+            "end": {
+              "line": 19,
+              "column": 24,
+              "offset": 251
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 19,
+          "column": 1,
+          "offset": 228
+        },
+        "end": {
+          "line": 19,
+          "column": 24,
+          "offset": 251
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "www.aaa.bbb.ccc_ccc.ddd",
+          "position": {
+            "start": {
+              "line": 21,
+              "column": 1,
+              "offset": 253
+            },
+            "end": {
+              "line": 21,
+              "column": 24,
+              "offset": 276
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 21,
+          "column": 1,
+          "offset": 253
+        },
+        "end": {
+          "line": 21,
+          "column": 24,
+          "offset": 276
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "link",
+          "title": null,
+          "url": "http://www.aaa.bbb_bbb.ccc.ddd",
+          "children": [
+            {
+              "type": "text",
+              "value": "www.aaa.bbb_bbb.ccc.ddd",
+              "position": {
+                "start": {
+                  "line": 23,
+                  "column": 1,
+                  "offset": 278
+                },
+                "end": {
+                  "line": 23,
+                  "column": 24,
+                  "offset": 301
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 23,
+              "column": 1,
+              "offset": 278
+            },
+            "end": {
+              "line": 23,
+              "column": 24,
+              "offset": 301
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 23,
+          "column": 1,
+          "offset": 278
+        },
+        "end": {
+          "line": 23,
+          "column": 24,
+          "offset": 301
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "link",
+          "title": null,
+          "url": "http://www.aaa_aaa.bbb.ccc.ddd",
+          "children": [
+            {
+              "type": "text",
+              "value": "www.aaa_aaa.bbb.ccc.ddd",
+              "position": {
+                "start": {
+                  "line": 25,
+                  "column": 1,
+                  "offset": 303
+                },
+                "end": {
+                  "line": 25,
+                  "column": 24,
+                  "offset": 326
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 25,
+              "column": 1,
+              "offset": 303
+            },
+            "end": {
+              "line": 25,
+              "column": 24,
+              "offset": 326
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 25,
+          "column": 1,
+          "offset": 303
+        },
+        "end": {
+          "line": 25,
+          "column": 24,
+          "offset": 326
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Visit ",
+          "position": {
+            "start": {
+              "line": 27,
+              "column": 1,
+              "offset": 328
+            },
+            "end": {
+              "line": 27,
+              "column": 7,
+              "offset": 334
+            }
+          }
+        },
+        {
+          "type": "link",
+          "title": null,
+          "url": "http://www.commonmark.org",
+          "children": [
+            {
+              "type": "text",
+              "value": "www.commonmark.org",
+              "position": {
+                "start": {
+                  "line": 27,
+                  "column": 7,
+                  "offset": 334
+                },
+                "end": {
+                  "line": 27,
+                  "column": 25,
+                  "offset": 352
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 27,
+              "column": 7,
+              "offset": 334
+            },
+            "end": {
+              "line": 27,
+              "column": 25,
+              "offset": 352
+            }
+          }
+        },
+        {
+          "type": "text",
+          "value": ".",
+          "position": {
+            "start": {
+              "line": 27,
+              "column": 25,
+              "offset": 352
+            },
+            "end": {
+              "line": 27,
+              "column": 26,
+              "offset": 353
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 27,
+          "column": 1,
+          "offset": 328
+        },
+        "end": {
+          "line": 27,
+          "column": 26,
+          "offset": 353
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Visit ",
+          "position": {
+            "start": {
+              "line": 29,
+              "column": 1,
+              "offset": 355
+            },
+            "end": {
+              "line": 29,
+              "column": 7,
+              "offset": 361
+            }
+          }
+        },
+        {
+          "type": "link",
+          "title": null,
+          "url": "http://www.commonmark.org/a.b",
+          "children": [
+            {
+              "type": "text",
+              "value": "www.commonmark.org/a.b",
+              "position": {
+                "start": {
+                  "line": 29,
+                  "column": 7,
+                  "offset": 361
+                },
+                "end": {
+                  "line": 29,
+                  "column": 29,
+                  "offset": 383
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 29,
+              "column": 7,
+              "offset": 361
+            },
+            "end": {
+              "line": 29,
+              "column": 29,
+              "offset": 383
+            }
+          }
+        },
+        {
+          "type": "text",
+          "value": ".",
+          "position": {
+            "start": {
+              "line": 29,
+              "column": 29,
+              "offset": 383
+            },
+            "end": {
+              "line": 29,
+              "column": 30,
+              "offset": 384
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 29,
+          "column": 1,
+          "offset": 355
+        },
+        "end": {
+          "line": 29,
+          "column": 30,
+          "offset": 384
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "link",
+          "title": null,
+          "url": "http://www.google.com/search?q=Markup+(business)",
+          "children": [
+            {
+              "type": "text",
+              "value": "www.google.com/search?q=Markup+(business)",
+              "position": {
+                "start": {
+                  "line": 31,
+                  "column": 1,
+                  "offset": 386
+                },
+                "end": {
+                  "line": 31,
+                  "column": 42,
+                  "offset": 427
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 31,
+              "column": 1,
+              "offset": 386
+            },
+            "end": {
+              "line": 31,
+              "column": 42,
+              "offset": 427
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 31,
+          "column": 1,
+          "offset": 386
+        },
+        "end": {
+          "line": 31,
+          "column": 42,
+          "offset": 427
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "link",
+          "title": null,
+          "url": "http://www.google.com/search?q=Markup+(business)",
+          "children": [
+            {
+              "type": "text",
+              "value": "www.google.com/search?q=Markup+(business)",
+              "position": {
+                "start": {
+                  "line": 33,
+                  "column": 1,
+                  "offset": 429
+                },
+                "end": {
+                  "line": 33,
+                  "column": 42,
+                  "offset": 470
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 33,
+              "column": 1,
+              "offset": 429
+            },
+            "end": {
+              "line": 33,
+              "column": 42,
+              "offset": 470
+            }
+          }
+        },
+        {
+          "type": "text",
+          "value": "))",
+          "position": {
+            "start": {
+              "line": 33,
+              "column": 42,
+              "offset": 470
+            },
+            "end": {
+              "line": 33,
+              "column": 44,
+              "offset": 472
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 33,
+          "column": 1,
+          "offset": 429
+        },
+        "end": {
+          "line": 33,
+          "column": 44,
+          "offset": 472
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "(",
+          "position": {
+            "start": {
+              "line": 35,
+              "column": 1,
+              "offset": 474
+            },
+            "end": {
+              "line": 35,
+              "column": 2,
+              "offset": 475
+            }
+          }
+        },
+        {
+          "type": "link",
+          "title": null,
+          "url": "http://www.google.com/search?q=Markup+(business)",
+          "children": [
+            {
+              "type": "text",
+              "value": "www.google.com/search?q=Markup+(business)",
+              "position": {
+                "start": {
+                  "line": 35,
+                  "column": 2,
+                  "offset": 475
+                },
+                "end": {
+                  "line": 35,
+                  "column": 43,
+                  "offset": 516
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 35,
+              "column": 2,
+              "offset": 475
+            },
+            "end": {
+              "line": 35,
+              "column": 43,
+              "offset": 516
+            }
+          }
+        },
+        {
+          "type": "text",
+          "value": ")",
+          "position": {
+            "start": {
+              "line": 35,
+              "column": 43,
+              "offset": 516
+            },
+            "end": {
+              "line": 35,
+              "column": 44,
+              "offset": 517
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 35,
+          "column": 1,
+          "offset": 474
+        },
+        "end": {
+          "line": 35,
+          "column": 44,
+          "offset": 517
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "(",
+          "position": {
+            "start": {
+              "line": 37,
+              "column": 1,
+              "offset": 519
+            },
+            "end": {
+              "line": 37,
+              "column": 2,
+              "offset": 520
+            }
+          }
+        },
+        {
+          "type": "link",
+          "title": null,
+          "url": "http://www.google.com/search?q=Markup+(business)",
+          "children": [
+            {
+              "type": "text",
+              "value": "www.google.com/search?q=Markup+(business)",
+              "position": {
+                "start": {
+                  "line": 37,
+                  "column": 2,
+                  "offset": 520
+                },
+                "end": {
+                  "line": 37,
+                  "column": 43,
+                  "offset": 561
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 37,
+              "column": 2,
+              "offset": 520
+            },
+            "end": {
+              "line": 37,
+              "column": 43,
+              "offset": 561
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 37,
+          "column": 1,
+          "offset": 519
+        },
+        "end": {
+          "line": 37,
+          "column": 43,
+          "offset": 561
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "link",
+          "title": null,
+          "url": "http://www.google.com/search?q=(business))+ok",
+          "children": [
+            {
+              "type": "text",
+              "value": "www.google.com/search?q=(business))+ok",
+              "position": {
+                "start": {
+                  "line": 39,
+                  "column": 1,
+                  "offset": 563
+                },
+                "end": {
+                  "line": 39,
+                  "column": 39,
+                  "offset": 601
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 39,
+              "column": 1,
+              "offset": 563
+            },
+            "end": {
+              "line": 39,
+              "column": 39,
+              "offset": 601
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 39,
+          "column": 1,
+          "offset": 563
+        },
+        "end": {
+          "line": 39,
+          "column": 39,
+          "offset": 601
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "link",
+          "title": null,
+          "url": "http://www.google.com/search?q=commonmark&hl=en",
+          "children": [
+            {
+              "type": "text",
+              "value": "www.google.com/search?q=commonmark&hl=en",
+              "position": {
+                "start": {
+                  "line": 41,
+                  "column": 1,
+                  "offset": 603
+                },
+                "end": {
+                  "line": 41,
+                  "column": 41,
+                  "offset": 643
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 41,
+              "column": 1,
+              "offset": 603
+            },
+            "end": {
+              "line": 41,
+              "column": 41,
+              "offset": 643
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 41,
+          "column": 1,
+          "offset": 603
+        },
+        "end": {
+          "line": 41,
+          "column": 41,
+          "offset": 643
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "link",
+          "title": null,
+          "url": "http://www.google.com/search?q=commonmark&hl;en",
+          "children": [
+            {
+              "type": "text",
+              "value": "www.google.com/search?q=commonmark&hl;en",
+              "position": {
+                "start": {
+                  "line": 43,
+                  "column": 1,
+                  "offset": 645
+                },
+                "end": {
+                  "line": 43,
+                  "column": 41,
+                  "offset": 685
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 43,
+              "column": 1,
+              "offset": 645
+            },
+            "end": {
+              "line": 43,
+              "column": 41,
+              "offset": 685
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 43,
+          "column": 1,
+          "offset": 645
+        },
+        "end": {
+          "line": 43,
+          "column": 41,
+          "offset": 685
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "link",
+          "title": null,
+          "url": "http://www.google.com/search?q=commonmark",
+          "children": [
+            {
+              "type": "text",
+              "value": "www.google.com/search?q=commonmark",
+              "position": {
+                "start": {
+                  "line": 45,
+                  "column": 1,
+                  "offset": 687
+                },
+                "end": {
+                  "line": 45,
+                  "column": 35,
+                  "offset": 721
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 45,
+              "column": 1,
+              "offset": 687
+            },
+            "end": {
+              "line": 45,
+              "column": 35,
+              "offset": 721
+            }
+          }
+        },
+        {
+          "type": "text",
+          "value": "&hl;",
+          "position": {
+            "start": {
+              "line": 45,
+              "column": 35,
+              "offset": 721
+            },
+            "end": {
+              "line": 45,
+              "column": 39,
+              "offset": 725
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 45,
+          "column": 1,
+          "offset": 687
+        },
+        "end": {
+          "line": 45,
+          "column": 39,
+          "offset": 725
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "link",
+          "title": null,
+          "url": "http://www.commonmark.org/he",
+          "children": [
+            {
+              "type": "text",
+              "value": "www.commonmark.org/he",
+              "position": {
+                "start": {
+                  "line": 47,
+                  "column": 1,
+                  "offset": 727
+                },
+                "end": {
+                  "line": 47,
+                  "column": 22,
+                  "offset": 748
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 47,
+              "column": 1,
+              "offset": 727
+            },
+            "end": {
+              "line": 47,
+              "column": 22,
+              "offset": 748
+            }
+          }
+        },
+        {
+          "type": "text",
+          "value": "<lp",
+          "position": {
+            "start": {
+              "line": 47,
+              "column": 22,
+              "offset": 748
+            },
+            "end": {
+              "line": 47,
+              "column": 25,
+              "offset": 751
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 47,
+          "column": 1,
+          "offset": 727
+        },
+        "end": {
+          "line": 47,
+          "column": 25,
+          "offset": 751
+        }
+      }
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "children": [
+        {
+          "type": "text",
+          "value": "HTTP autolinks",
+          "position": {
+            "start": {
+              "line": 49,
+              "column": 4,
+              "offset": 756
+            },
+            "end": {
+              "line": 49,
+              "column": 18,
+              "offset": 770
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 49,
+          "column": 1,
+          "offset": 753
+        },
+        "end": {
+          "line": 49,
+          "column": 18,
+          "offset": 770
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "link",
+          "title": null,
+          "url": "http://example.com",
+          "children": [
+            {
+              "type": "text",
+              "value": "http://example.com",
+              "position": {
+                "start": {
+                  "line": 51,
+                  "column": 1,
+                  "offset": 772
+                },
+                "end": {
+                  "line": 51,
+                  "column": 19,
+                  "offset": 790
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 51,
+              "column": 1,
+              "offset": 772
+            },
+            "end": {
+              "line": 51,
+              "column": 19,
+              "offset": 790
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 51,
+          "column": 1,
+          "offset": 772
+        },
+        "end": {
+          "line": 51,
+          "column": 19,
+          "offset": 790
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "link",
+          "title": null,
+          "url": "https://example.com",
+          "children": [
+            {
+              "type": "text",
+              "value": "https://example.com",
+              "position": {
+                "start": {
+                  "line": 53,
+                  "column": 1,
+                  "offset": 792
+                },
+                "end": {
+                  "line": 53,
+                  "column": 20,
+                  "offset": 811
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 53,
+              "column": 1,
+              "offset": 792
+            },
+            "end": {
+              "line": 53,
+              "column": 20,
+              "offset": 811
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 53,
+          "column": 1,
+          "offset": 792
+        },
+        "end": {
+          "line": 53,
+          "column": 20,
+          "offset": 811
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "link",
+          "title": null,
+          "url": "https://example",
+          "children": [
+            {
+              "type": "text",
+              "value": "https://example",
+              "position": {
+                "start": {
+                  "line": 55,
+                  "column": 1,
+                  "offset": 813
+                },
+                "end": {
+                  "line": 55,
+                  "column": 16,
+                  "offset": 828
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 55,
+              "column": 1,
+              "offset": 813
+            },
+            "end": {
+              "line": 55,
+              "column": 16,
+              "offset": 828
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 55,
+          "column": 1,
+          "offset": 813
+        },
+        "end": {
+          "line": 55,
+          "column": 16,
+          "offset": 828
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "link",
+          "title": null,
+          "url": "http://commonmark.org",
+          "children": [
+            {
+              "type": "text",
+              "value": "http://commonmark.org",
+              "position": {
+                "start": {
+                  "line": 57,
+                  "column": 1,
+                  "offset": 830
+                },
+                "end": {
+                  "line": 57,
+                  "column": 22,
+                  "offset": 851
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 57,
+              "column": 1,
+              "offset": 830
+            },
+            "end": {
+              "line": 57,
+              "column": 22,
+              "offset": 851
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 57,
+          "column": 1,
+          "offset": 830
+        },
+        "end": {
+          "line": 57,
+          "column": 22,
+          "offset": 851
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "(Visit ",
+          "position": {
+            "start": {
+              "line": 59,
+              "column": 1,
+              "offset": 853
+            },
+            "end": {
+              "line": 59,
+              "column": 8,
+              "offset": 860
+            }
+          }
+        },
+        {
+          "type": "link",
+          "title": null,
+          "url": "https://encrypted.google.com/search?q=Markup+(business)",
+          "children": [
+            {
+              "type": "text",
+              "value": "https://encrypted.google.com/search?q=Markup+(business)",
+              "position": {
+                "start": {
+                  "line": 59,
+                  "column": 8,
+                  "offset": 860
+                },
+                "end": {
+                  "line": 59,
+                  "column": 63,
+                  "offset": 915
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 59,
+              "column": 8,
+              "offset": 860
+            },
+            "end": {
+              "line": 59,
+              "column": 63,
+              "offset": 915
+            }
+          }
+        },
+        {
+          "type": "text",
+          "value": ")",
+          "position": {
+            "start": {
+              "line": 59,
+              "column": 63,
+              "offset": 915
+            },
+            "end": {
+              "line": 59,
+              "column": 64,
+              "offset": 916
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 59,
+          "column": 1,
+          "offset": 853
+        },
+        "end": {
+          "line": 59,
+          "column": 64,
+          "offset": 916
+        }
+      }
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "children": [
+        {
+          "type": "text",
+          "value": "Email autolinks",
+          "position": {
+            "start": {
+              "line": 61,
+              "column": 4,
+              "offset": 921
+            },
+            "end": {
+              "line": 61,
+              "column": 19,
+              "offset": 936
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 61,
+          "column": 1,
+          "offset": 918
+        },
+        "end": {
+          "line": 61,
+          "column": 19,
+          "offset": 936
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "No dot: foo@barbaz",
+          "position": {
+            "start": {
+              "line": 63,
+              "column": 1,
+              "offset": 938
+            },
+            "end": {
+              "line": 63,
+              "column": 19,
+              "offset": 956
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 63,
+          "column": 1,
+          "offset": 938
+        },
+        "end": {
+          "line": 63,
+          "column": 19,
+          "offset": 956
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "No dot: foo@barbaz.",
+          "position": {
+            "start": {
+              "line": 65,
+              "column": 1,
+              "offset": 958
+            },
+            "end": {
+              "line": 65,
+              "column": 20,
+              "offset": 977
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 65,
+          "column": 1,
+          "offset": 958
+        },
+        "end": {
+          "line": 65,
+          "column": 20,
+          "offset": 977
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "link",
+          "title": null,
+          "url": "mailto:foo@bar.baz",
+          "children": [
+            {
+              "type": "text",
+              "value": "foo@bar.baz",
+              "position": {
+                "start": {
+                  "line": 67,
+                  "column": 1,
+                  "offset": 979
+                },
+                "end": {
+                  "line": 67,
+                  "column": 12,
+                  "offset": 990
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 67,
+              "column": 1,
+              "offset": 979
+            },
+            "end": {
+              "line": 67,
+              "column": 12,
+              "offset": 990
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 67,
+          "column": 1,
+          "offset": 979
+        },
+        "end": {
+          "line": 67,
+          "column": 12,
+          "offset": 990
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "hello@mail+xyz.example isn’t valid, but ",
+          "position": {
+            "start": {
+              "line": 69,
+              "column": 1,
+              "offset": 992
+            },
+            "end": {
+              "line": 69,
+              "column": 41,
+              "offset": 1032
+            }
+          }
+        },
+        {
+          "type": "link",
+          "title": null,
+          "url": "mailto:hello+xyz@mail.example",
+          "children": [
+            {
+              "type": "text",
+              "value": "hello+xyz@mail.example",
+              "position": {
+                "start": {
+                  "line": 69,
+                  "column": 41,
+                  "offset": 1032
+                },
+                "end": {
+                  "line": 69,
+                  "column": 63,
+                  "offset": 1054
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 69,
+              "column": 41,
+              "offset": 1032
+            },
+            "end": {
+              "line": 69,
+              "column": 63,
+              "offset": 1054
+            }
+          }
+        },
+        {
+          "type": "text",
+          "value": " is.",
+          "position": {
+            "start": {
+              "line": 69,
+              "column": 63,
+              "offset": 1054
+            },
+            "end": {
+              "line": 69,
+              "column": 67,
+              "offset": 1058
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 69,
+          "column": 1,
+          "offset": 992
+        },
+        "end": {
+          "line": 69,
+          "column": 67,
+          "offset": 1058
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "link",
+          "title": null,
+          "url": "mailto:a.b-c_d@a.b",
+          "children": [
+            {
+              "type": "text",
+              "value": "a.b-c_d@a.b",
+              "position": {
+                "start": {
+                  "line": 71,
+                  "column": 1,
+                  "offset": 1060
+                },
+                "end": {
+                  "line": 71,
+                  "column": 12,
+                  "offset": 1071
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 71,
+              "column": 1,
+              "offset": 1060
+            },
+            "end": {
+              "line": 71,
+              "column": 12,
+              "offset": 1071
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 71,
+          "column": 1,
+          "offset": 1060
+        },
+        "end": {
+          "line": 71,
+          "column": 12,
+          "offset": 1071
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "link",
+          "title": null,
+          "url": "mailto:a.b-c_d@a.b",
+          "children": [
+            {
+              "type": "text",
+              "value": "a.b-c_d@a.b",
+              "position": {
+                "start": {
+                  "line": 73,
+                  "column": 1,
+                  "offset": 1073
+                },
+                "end": {
+                  "line": 73,
+                  "column": 12,
+                  "offset": 1084
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 73,
+              "column": 1,
+              "offset": 1073
+            },
+            "end": {
+              "line": 73,
+              "column": 12,
+              "offset": 1084
+            }
+          }
+        },
+        {
+          "type": "text",
+          "value": ".",
+          "position": {
+            "start": {
+              "line": 73,
+              "column": 12,
+              "offset": 1084
+            },
+            "end": {
+              "line": 73,
+              "column": 13,
+              "offset": 1085
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 73,
+          "column": 1,
+          "offset": 1073
+        },
+        "end": {
+          "line": 73,
+          "column": 13,
+          "offset": 1085
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "a.b-c_d@a.b-",
+          "position": {
+            "start": {
+              "line": 75,
+              "column": 1,
+              "offset": 1087
+            },
+            "end": {
+              "line": 75,
+              "column": 13,
+              "offset": 1099
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 75,
+          "column": 1,
+          "offset": 1087
+        },
+        "end": {
+          "line": 75,
+          "column": 13,
+          "offset": 1099
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "a.b-c_d@a.b_",
+          "position": {
+            "start": {
+              "line": 77,
+              "column": 1,
+              "offset": 1101
+            },
+            "end": {
+              "line": 77,
+              "column": 13,
+              "offset": 1113
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 77,
+          "column": 1,
+          "offset": 1101
+        },
+        "end": {
+          "line": 77,
+          "column": 13,
+          "offset": 1113
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "link",
+          "title": null,
+          "url": "mailto:a@a_b.c",
+          "children": [
+            {
+              "type": "text",
+              "value": "a@a_b.c",
+              "position": {
+                "start": {
+                  "line": 79,
+                  "column": 1,
+                  "offset": 1115
+                },
+                "end": {
+                  "line": 79,
+                  "column": 8,
+                  "offset": 1122
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 79,
+              "column": 1,
+              "offset": 1115
+            },
+            "end": {
+              "line": 79,
+              "column": 8,
+              "offset": 1122
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 79,
+          "column": 1,
+          "offset": 1115
+        },
+        "end": {
+          "line": 79,
+          "column": 8,
+          "offset": 1122
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "link",
+          "title": null,
+          "url": "mailto:a@a-b.c",
+          "children": [
+            {
+              "type": "text",
+              "value": "a@a-b.c",
+              "position": {
+                "start": {
+                  "line": 81,
+                  "column": 1,
+                  "offset": 1124
+                },
+                "end": {
+                  "line": 81,
+                  "column": 8,
+                  "offset": 1131
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 81,
+              "column": 1,
+              "offset": 1124
+            },
+            "end": {
+              "line": 81,
+              "column": 8,
+              "offset": 1131
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 81,
+          "column": 1,
+          "offset": 1124
+        },
+        "end": {
+          "line": 81,
+          "column": 8,
+          "offset": 1131
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Can’t end in an underscore followed by a period: aaa@a.b_.",
+          "position": {
+            "start": {
+              "line": 83,
+              "column": 1,
+              "offset": 1133
+            },
+            "end": {
+              "line": 83,
+              "column": 59,
+              "offset": 1191
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 83,
+          "column": 1,
+          "offset": 1133
+        },
+        "end": {
+          "line": 83,
+          "column": 59,
+          "offset": 1191
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Can contain an underscore followed by a period: ",
+          "position": {
+            "start": {
+              "line": 85,
+              "column": 1,
+              "offset": 1193
+            },
+            "end": {
+              "line": 85,
+              "column": 49,
+              "offset": 1241
+            }
+          }
+        },
+        {
+          "type": "link",
+          "title": null,
+          "url": "mailto:aaa@a.b_.c",
+          "children": [
+            {
+              "type": "text",
+              "value": "aaa@a.b_.c",
+              "position": {
+                "start": {
+                  "line": 85,
+                  "column": 49,
+                  "offset": 1241
+                },
+                "end": {
+                  "line": 85,
+                  "column": 59,
+                  "offset": 1251
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 85,
+              "column": 49,
+              "offset": 1241
+            },
+            "end": {
+              "line": 85,
+              "column": 59,
+              "offset": 1251
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 85,
+          "column": 1,
+          "offset": 1193
+        },
+        "end": {
+          "line": 85,
+          "column": 59,
+          "offset": 1251
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "link",
+          "title": null,
+          "url": "https://google.com",
+          "children": [
+            {
+              "type": "text",
+              "value": "https://google.com",
+              "position": {
+                "start": {
+                  "line": 87,
+                  "column": 2,
+                  "offset": 1254
+                },
+                "end": {
+                  "line": 87,
+                  "column": 20,
+                  "offset": 1272
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 87,
+              "column": 1,
+              "offset": 1253
+            },
+            "end": {
+              "line": 87,
+              "column": 41,
+              "offset": 1293
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 87,
+          "column": 1,
+          "offset": 1253
+        },
+        "end": {
+          "line": 87,
+          "column": 41,
+          "offset": 1293
+        }
+      }
+    }
+  ],
+  "position": {
+    "start": {
+      "line": 1,
+      "column": 1,
+      "offset": 0
+    },
+    "end": {
+      "line": 88,
+      "column": 1,
+      "offset": 1294
+    }
+  }
+}
+
+```
+test/fixtures/strikethrough-default/input.md
+~one~, ~~two~~, ~~~three~~~.
+
+test/fixtures/strikethrough-default/output.md
+~~one~~, ~~two~~, \~\~\~three\~\~\~.
+
+test/fixtures/strikethrough-default/tree.json
+```.json
+{
+  "type": "root",
+  "children": [
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "delete",
+          "children": [
+            {
+              "type": "text",
+              "value": "one",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 2,
+                  "offset": 1
+                },
+                "end": {
+                  "line": 1,
+                  "column": 5,
+                  "offset": 4
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 6,
+              "offset": 5
+            }
+          }
+        },
+        {
+          "type": "text",
+          "value": ", ",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 6,
+              "offset": 5
+            },
+            "end": {
+              "line": 1,
+              "column": 8,
+              "offset": 7
+            }
+          }
+        },
+        {
+          "type": "delete",
+          "children": [
+            {
+              "type": "text",
+              "value": "two",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 10,
+                  "offset": 9
+                },
+                "end": {
+                  "line": 1,
+                  "column": 13,
+                  "offset": 12
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 8,
+              "offset": 7
+            },
+            "end": {
+              "line": 1,
+              "column": 15,
+              "offset": 14
+            }
+          }
+        },
+        {
+          "type": "text",
+          "value": ", ~~~three~~~.",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 15,
+              "offset": 14
+            },
+            "end": {
+              "line": 1,
+              "column": 29,
+              "offset": 28
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 29,
+          "offset": 28
+        }
+      }
+    }
+  ],
+  "position": {
+    "start": {
+      "line": 1,
+      "column": 1,
+      "offset": 0
+    },
+    "end": {
+      "line": 2,
+      "column": 1,
+      "offset": 29
+    }
+  }
+}
+
+```
+test/fixtures/strikethrough-not-one/config.json
+```.json
+{
+  "singleTilde": false
+}
+
+```
+test/fixtures/strikethrough-not-one/input.md
+~one~, ~~two~~, ~~~three~~~.
+
+test/fixtures/strikethrough-not-one/output.md
+\~one\~, ~~two~~, \~\~\~three\~\~\~.
+
+test/fixtures/strikethrough-not-one/tree.json
+```.json
+{
+  "type": "root",
+  "children": [
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "~one~, ",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 8,
+              "offset": 7
+            }
+          }
+        },
+        {
+          "type": "delete",
+          "children": [
+            {
+              "type": "text",
+              "value": "two",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 10,
+                  "offset": 9
+                },
+                "end": {
+                  "line": 1,
+                  "column": 13,
+                  "offset": 12
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 8,
+              "offset": 7
+            },
+            "end": {
+              "line": 1,
+              "column": 15,
+              "offset": 14
+            }
+          }
+        },
+        {
+          "type": "text",
+          "value": ", ~~~three~~~.",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 15,
+              "offset": 14
+            },
+            "end": {
+              "line": 1,
+              "column": 29,
+              "offset": 28
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 29,
+          "offset": 28
+        }
+      }
+    }
+  ],
+  "position": {
+    "start": {
+      "line": 1,
+      "column": 1,
+      "offset": 0
+    },
+    "end": {
+      "line": 2,
+      "column": 1,
+      "offset": 29
+    }
+  }
+}
+
+```
+test/fixtures/table-no-align/config.json
+```.json
+{
+  "tablePipeAlign": false
+}
+
+```
+test/fixtures/table-no-align/input.md
+| a | b | c | d |
+| - | :- | -: | :-: |
+
+test/fixtures/table-no-align/tree.json
+```.json
+{
+  "type": "root",
+  "children": [
+    {
+      "type": "table",
+      "align": [null, "left", "right", "center"],
+      "children": [
+        {
+          "type": "tableRow",
+          "children": [
+            {
+              "type": "tableCell",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "a",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 3,
+                      "offset": 2
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 4,
+                      "offset": 3
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 5,
+                  "offset": 4
+                }
+              }
+            },
+            {
+              "type": "tableCell",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "b",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 7,
+                      "offset": 6
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 8,
+                      "offset": 7
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 5,
+                  "offset": 4
+                },
+                "end": {
+                  "line": 1,
+                  "column": 9,
+                  "offset": 8
+                }
+              }
+            },
+            {
+              "type": "tableCell",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "c",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 11,
+                      "offset": 10
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 12,
+                      "offset": 11
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 9,
+                  "offset": 8
+                },
+                "end": {
+                  "line": 1,
+                  "column": 13,
+                  "offset": 12
+                }
+              }
+            },
+            {
+              "type": "tableCell",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "d",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 15,
+                      "offset": 14
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 16,
+                      "offset": 15
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 13,
+                  "offset": 12
+                },
+                "end": {
+                  "line": 1,
+                  "column": 18,
+                  "offset": 17
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 18,
+              "offset": 17
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 22,
+          "offset": 39
+        }
+      }
+    }
+  ],
+  "position": {
+    "start": {
+      "line": 1,
+      "column": 1,
+      "offset": 0
+    },
+    "end": {
+      "line": 3,
+      "column": 1,
+      "offset": 40
+    }
+  }
+}
+
+```
+test/fixtures/table-no-padding/config.json
+```.json
+{
+  "tableCellPadding": false
+}
+
+```
+test/fixtures/table-no-padding/input.md
+| a | b | c | d |
+| - | :- | -: | :-: |
+
+test/fixtures/table-no-padding/output.md
+|a|b | c| d |
+|-|:-|-:|:-:|
+
+test/fixtures/table-no-padding/tree.json
+```.json
+{
+  "type": "root",
+  "children": [
+    {
+      "type": "table",
+      "align": [null, "left", "right", "center"],
+      "children": [
+        {
+          "type": "tableRow",
+          "children": [
+            {
+              "type": "tableCell",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "a",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 3,
+                      "offset": 2
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 4,
+                      "offset": 3
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 5,
+                  "offset": 4
+                }
+              }
+            },
+            {
+              "type": "tableCell",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "b",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 7,
+                      "offset": 6
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 8,
+                      "offset": 7
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 5,
+                  "offset": 4
+                },
+                "end": {
+                  "line": 1,
+                  "column": 9,
+                  "offset": 8
+                }
+              }
+            },
+            {
+              "type": "tableCell",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "c",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 11,
+                      "offset": 10
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 12,
+                      "offset": 11
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 9,
+                  "offset": 8
+                },
+                "end": {
+                  "line": 1,
+                  "column": 13,
+                  "offset": 12
+                }
+              }
+            },
+            {
+              "type": "tableCell",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "d",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 15,
+                      "offset": 14
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 16,
+                      "offset": 15
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 13,
+                  "offset": 12
+                },
+                "end": {
+                  "line": 1,
+                  "column": 18,
+                  "offset": 17
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 18,
+              "offset": 17
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 22,
+          "offset": 39
+        }
+      }
+    }
+  ],
+  "position": {
+    "start": {
+      "line": 1,
+      "column": 1,
+      "offset": 0
+    },
+    "end": {
+      "line": 3,
+      "column": 1,
+      "offset": 40
+    }
+  }
+}
+
+```
+test/fixtures/table-string-length/config.json
+```.json
+{
+  "stringLength": "this is overwritten in `test/index.js`"
+}
+
+```
+test/fixtures/table-string-length/input.md
+| a | 古 | 🤔 |
+| - | - | - |
+
+test/fixtures/table-string-length/output.md
+| a | 古 | 🤔 |
+| - | -- | -- |
+
+test/fixtures/table-string-length/tree.json
+```.json
+{
+  "type": "root",
+  "children": [
+    {
+      "type": "table",
+      "align": [null, null, null],
+      "children": [
+        {
+          "type": "tableRow",
+          "children": [
+            {
+              "type": "tableCell",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "a",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 3,
+                      "offset": 2
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 4,
+                      "offset": 3
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 5,
+                  "offset": 4
+                }
+              }
+            },
+            {
+              "type": "tableCell",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "古",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 7,
+                      "offset": 6
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 8,
+                      "offset": 7
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 5,
+                  "offset": 4
+                },
+                "end": {
+                  "line": 1,
+                  "column": 9,
+                  "offset": 8
+                }
+              }
+            },
+            {
+              "type": "tableCell",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "🤔",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 11,
+                      "offset": 10
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 13,
+                      "offset": 12
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 9,
+                  "offset": 8
+                },
+                "end": {
+                  "line": 1,
+                  "column": 15,
+                  "offset": 14
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 15,
+              "offset": 14
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 14,
+          "offset": 28
+        }
+      }
+    }
+  ],
+  "position": {
+    "start": {
+      "line": 1,
+      "column": 1,
+      "offset": 0
+    },
+    "end": {
+      "line": 3,
+      "column": 1,
+      "offset": 29
+    }
+  }
+}
+
+```
+test/fixtures/table/input.md
+| a | b | c | d |
+| - | :- | -: | :-: |
+| e | f |
+| g | h | i | j | k |
+
+test/fixtures/table/output.md
+| a | b  |  c |  d  |   |
+| - | :- | -: | :-: | - |
+| e | f  |    |     |   |
+| g | h  |  i |  j  | k |
+
+test/fixtures/table/tree.json
+```.json
+{
+  "type": "root",
+  "children": [
+    {
+      "type": "table",
+      "align": [null, "left", "right", "center"],
+      "children": [
+        {
+          "type": "tableRow",
+          "children": [
+            {
+              "type": "tableCell",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "a",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 3,
+                      "offset": 2
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 4,
+                      "offset": 3
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 5,
+                  "offset": 4
+                }
+              }
+            },
+            {
+              "type": "tableCell",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "b",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 7,
+                      "offset": 6
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 8,
+                      "offset": 7
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 5,
+                  "offset": 4
+                },
+                "end": {
+                  "line": 1,
+                  "column": 9,
+                  "offset": 8
+                }
+              }
+            },
+            {
+              "type": "tableCell",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "c",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 11,
+                      "offset": 10
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 12,
+                      "offset": 11
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 9,
+                  "offset": 8
+                },
+                "end": {
+                  "line": 1,
+                  "column": 13,
+                  "offset": 12
+                }
+              }
+            },
+            {
+              "type": "tableCell",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "d",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 15,
+                      "offset": 14
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 16,
+                      "offset": 15
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 13,
+                  "offset": 12
+                },
+                "end": {
+                  "line": 1,
+                  "column": 18,
+                  "offset": 17
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 18,
+              "offset": 17
+            }
+          }
+        },
+        {
+          "type": "tableRow",
+          "children": [
+            {
+              "type": "tableCell",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "e",
+                  "position": {
+                    "start": {
+                      "line": 3,
+                      "column": 3,
+                      "offset": 42
+                    },
+                    "end": {
+                      "line": 3,
+                      "column": 4,
+                      "offset": 43
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 3,
+                  "column": 1,
+                  "offset": 40
+                },
+                "end": {
+                  "line": 3,
+                  "column": 5,
+                  "offset": 44
+                }
+              }
+            },
+            {
+              "type": "tableCell",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "f",
+                  "position": {
+                    "start": {
+                      "line": 3,
+                      "column": 7,
+                      "offset": 46
+                    },
+                    "end": {
+                      "line": 3,
+                      "column": 8,
+                      "offset": 47
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 3,
+                  "column": 5,
+                  "offset": 44
+                },
+                "end": {
+                  "line": 3,
+                  "column": 10,
+                  "offset": 49
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 3,
+              "column": 1,
+              "offset": 40
+            },
+            "end": {
+              "line": 3,
+              "column": 10,
+              "offset": 49
+            }
+          }
+        },
+        {
+          "type": "tableRow",
+          "children": [
+            {
+              "type": "tableCell",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "g",
+                  "position": {
+                    "start": {
+                      "line": 4,
+                      "column": 3,
+                      "offset": 52
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 4,
+                      "offset": 53
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 4,
+                  "column": 1,
+                  "offset": 50
+                },
+                "end": {
+                  "line": 4,
+                  "column": 5,
+                  "offset": 54
+                }
+              }
+            },
+            {
+              "type": "tableCell",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "h",
+                  "position": {
+                    "start": {
+                      "line": 4,
+                      "column": 7,
+                      "offset": 56
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 8,
+                      "offset": 57
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 4,
+                  "column": 5,
+                  "offset": 54
+                },
+                "end": {
+                  "line": 4,
+                  "column": 9,
+                  "offset": 58
+                }
+              }
+            },
+            {
+              "type": "tableCell",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "i",
+                  "position": {
+                    "start": {
+                      "line": 4,
+                      "column": 11,
+                      "offset": 60
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 12,
+                      "offset": 61
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 4,
+                  "column": 9,
+                  "offset": 58
+                },
+                "end": {
+                  "line": 4,
+                  "column": 13,
+                  "offset": 62
+                }
+              }
+            },
+            {
+              "type": "tableCell",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "j",
+                  "position": {
+                    "start": {
+                      "line": 4,
+                      "column": 15,
+                      "offset": 64
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 16,
+                      "offset": 65
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 4,
+                  "column": 13,
+                  "offset": 62
+                },
+                "end": {
+                  "line": 4,
+                  "column": 17,
+                  "offset": 66
+                }
+              }
+            },
+            {
+              "type": "tableCell",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "k",
+                  "position": {
+                    "start": {
+                      "line": 4,
+                      "column": 19,
+                      "offset": 68
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 20,
+                      "offset": 69
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 4,
+                  "column": 17,
+                  "offset": 66
+                },
+                "end": {
+                  "line": 4,
+                  "column": 22,
+                  "offset": 71
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 4,
+              "column": 1,
+              "offset": 50
+            },
+            "end": {
+              "line": 4,
+              "column": 22,
+              "offset": 71
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 22,
+          "offset": 71
+        }
+      }
+    }
+  ],
+  "position": {
+    "start": {
+      "line": 1,
+      "column": 1,
+      "offset": 0
+    },
+    "end": {
+      "line": 5,
+      "column": 1,
+      "offset": 72
+    }
+  }
+}
+
+```
+test/fixtures/tasklist/input.md
+* [x] done
+* [ ] to do
+* other
+test/fixtures/tasklist/output.md
+* [x] done
+* [ ] to do
+* other
+
+test/fixtures/tasklist/tree.json
+```.json
+{
+  "type": "root",
+  "children": [
+    {
+      "type": "list",
+      "ordered": false,
+      "start": null,
+      "spread": false,
+      "children": [
+        {
+          "type": "listItem",
+          "spread": false,
+          "checked": true,
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "done",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 7,
+                      "offset": 6
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 11,
+                      "offset": 10
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 7,
+                  "offset": 6
+                },
+                "end": {
+                  "line": 1,
+                  "column": 11,
+                  "offset": 10
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 11,
+              "offset": 10
+            }
+          }
+        },
+        {
+          "type": "listItem",
+          "spread": false,
+          "checked": false,
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "to do",
+                  "position": {
+                    "start": {
+                      "line": 2,
+                      "column": 7,
+                      "offset": 17
+                    },
+                    "end": {
+                      "line": 2,
+                      "column": 12,
+                      "offset": 22
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 2,
+                  "column": 7,
+                  "offset": 17
+                },
+                "end": {
+                  "line": 2,
+                  "column": 12,
+                  "offset": 22
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 2,
+              "column": 1,
+              "offset": 11
+            },
+            "end": {
+              "line": 2,
+              "column": 12,
+              "offset": 22
+            }
+          }
+        },
+        {
+          "type": "listItem",
+          "spread": false,
+          "checked": null,
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "other",
+                  "position": {
+                    "start": {
+                      "line": 3,
+                      "column": 3,
+                      "offset": 25
+                    },
+                    "end": {
+                      "line": 3,
+                      "column": 8,
+                      "offset": 30
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 3,
+                  "column": 3,
+                  "offset": 25
+                },
+                "end": {
+                  "line": 3,
+                  "column": 8,
+                  "offset": 30
+                }
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 3,
+              "column": 1,
+              "offset": 23
+            },
+            "end": {
+              "line": 3,
+              "column": 8,
+              "offset": 30
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 8,
+          "offset": 30
+        }
+      }
+    }
+  ],
+  "position": {
+    "start": {
+      "line": 1,
+      "column": 1,
+      "offset": 0
+    },
+    "end": {
+      "line": 3,
+      "column": 8,
+      "offset": 30
+    }
+  }
+}
+
+```
+test/index.js
+```.js
+/**
+ * @import {Root} from 'mdast'
+ * @import {Options} from 'remark-gfm'
+ */
+
+import assert from 'node:assert/strict'
+import fs from 'node:fs/promises'
+import process from 'node:process'
+import test from 'node:test'
+import {isHidden} from 'is-hidden'
+import {remark} from 'remark'
+import remarkGfm from 'remark-gfm'
+import stringWidth from 'string-width'
+
+test('remarkGfm', async function (t) {
+  await t.test('should expose the public api', async function () {
+    assert.deepEqual(Object.keys(await import('remark-gfm')).sort(), [
+      'default'
+    ])
+  })
+
+  await t.test('should not throw if not passed options', async function () {
+    assert.doesNotThrow(function () {
+      remark().use(remarkGfm).freeze()
+    })
+  })
+})
+
+test('fixtures', async function (t) {
+  const base = new URL('fixtures/', import.meta.url)
+  const folders = await fs.readdir(base)
+
+  let index = -1
+
+  while (++index < folders.length) {
+    const folder = folders[index]
+
+    if (isHidden(folder)) continue
+
+    await t.test(folder, async function () {
+      const folderUrl = new URL(folder + '/', base)
+      const inputUrl = new URL('input.md', folderUrl)
+      const outputUrl = new URL('output.md', folderUrl)
+      const treeUrl = new URL('tree.json', folderUrl)
+      const configUrl = new URL('config.json', folderUrl)
+
+      const input = String(await fs.readFile(inputUrl))
+
+      /** @type {Options | undefined} */
+      let config
+      /** @type {Root} */
+      let expected
+      /** @type {string} */
+      let output
+
+      try {
+        config = JSON.parse(String(await fs.readFile(configUrl)))
+      } catch {}
+
+      if (folder === 'table-string-length') {
+        config = {stringLength: stringWidth}
+      }
+
+      const processor = remark().use(remarkGfm, config)
+      const actual = processor.parse(input)
+
+      try {
+        output = String(await fs.readFile(outputUrl))
+      } catch {
+        output = input
+      }
+
+      try {
+        if ('UPDATE' in process.env) {
+          throw new Error('Updating…')
+        }
+
+        expected = JSON.parse(String(await fs.readFile(treeUrl)))
+      } catch {
+        expected = actual
+
+        // New fixture.
+        await fs.writeFile(treeUrl, JSON.stringify(actual, undefined, 2) + '\n')
+      }
+
+      assert.deepEqual(actual, expected)
+
+      assert.equal(String(await processor.process(input)), String(output))
+    })
+  }
+})
+
+```
+tsconfig.json
+```.json
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "customConditions": ["development"],
+    "declarationMap": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "exactOptionalPropertyTypes": true,
+    "lib": ["es2022"],
+    "module": "node16",
+    "strict": true,
+    "target": "es2022"
+  },
+  "exclude": ["coverage/", "node_modules/"],
+  "include": ["**/*.js", "index.d.ts"]
+}
+
+```
+

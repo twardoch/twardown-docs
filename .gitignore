@@ -1,0 +1,15 @@
+# Build output
+_site/
+.cache/
+.temp/
+dist/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
