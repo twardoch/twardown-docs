@@ -11,7 +11,8 @@ This document demonstrates the basic features of Twardown Markdown.
 
 ## Text Formatting
 
-You can use **bold**, *italic*, or ***both***. You can also use `inline code` or add [links](https://example.com).
+You can use **bold**, _italic_, or **_both_**. You can also use `inline code` or add
+[links](https://example.com).
 
 ## Lists
 
@@ -51,14 +52,14 @@ def hello_world():
 ```javascript
 function helloWorld() {
   // Print a greeting
-  console.log("Hello, Twardown!");
+  console.log('Hello, Twardown!')
 }
 ```
 
 ## Tables
 
-| Feature    | Status | Notes                    |
-|------------|--------|--------------------------|
+| Feature    | Status | Notes                   |
+| ---------- | ------ | ----------------------- |
 | Basic MD   | ✅     | All CommonMark features |
 | Tables     | ✅     | With alignment support  |
 | Task Lists | ✅     | Nested lists supported  |
@@ -66,7 +67,7 @@ function helloWorld() {
 ## Blockquotes
 
 > This is a blockquote
-> 
+>
 > It can span multiple lines
 >
 > > And can be nested
@@ -75,7 +76,7 @@ function helloWorld() {
 
 Above this line
 
-***
+---
 
 Below this line
 
@@ -83,7 +84,8 @@ Below this line
 
 ### Magic Records
 
-The magic record at the top of this file (`this_file: examples/basic.md`) helps track the file's location in the project.
+The magic record at the top of this file (`this_file: examples/basic.md`) helps track the file's
+location in the project.
 
 ### Frontmatter
 
@@ -91,12 +93,9 @@ This file includes YAML frontmatter with title, author, and date information.
 
 ## Extended Syntax
 
-Term 1
-: Definition 1
+Term 1 : Definition 1
 
-Term 2
-: Definition 2
-: Additional definition
+Term 2 : Definition 2 : Additional definition
 
 ~~Strikethrough text~~
 

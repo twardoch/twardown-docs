@@ -7,6 +7,7 @@ this_file: twardown-docs/LOG.md
 ## Initial Setup - 2024-03-24
 
 1. Documentation Structure
+
    - Created basic directory structure
    - Added initial examples
    - Set up specification document
@@ -14,6 +15,7 @@ this_file: twardown-docs/LOG.md
    - Added development documentation
 
 2. Infrastructure
+
    - Set up CI/CD pipeline
    - Configured Markdown linting
    - Added format checking
@@ -30,6 +32,7 @@ this_file: twardown-docs/LOG.md
 ## Recent Progress - 2024-03-24
 
 1. Documentation Improvements
+
    - Added magic record support
    - Enhanced example documentation
    - Improved guides
@@ -46,6 +49,7 @@ this_file: twardown-docs/LOG.md
 ## Current Status
 
 1. Documentation
+
    - Basic structure established
    - Examples created
    - Guides written
@@ -62,6 +66,7 @@ this_file: twardown-docs/LOG.md
 ## Next Steps
 
 1. Content
+
    - [ ] Add more examples
    - [ ] Improve guides
    - [ ] Complete specification
@@ -73,4 +78,4 @@ this_file: twardown-docs/LOG.md
    - [ ] Add release automation
    - [ ] Improve development workflow
    - [ ] Set up monitoring
-   - [ ] Add automated testing 
+   - [ ] Add automated testing

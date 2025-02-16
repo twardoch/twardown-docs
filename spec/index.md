@@ -6,7 +6,9 @@ this_file: twardown-docs/spec/index.md
 
 ## Overview
 
-Twardown is an opinionated Markdown flavor that combines the best features of various Markdown extensions into a cohesive, well-documented package. This specification defines the exact features and behaviors that make up the Twardown flavor.
+Twardown is an opinionated Markdown flavor that combines the best features of various Markdown
+extensions into a cohesive, well-documented package. This specification defines the exact features
+and behaviors that make up the Twardown flavor.
 
 ## Design Principles
 
@@ -44,7 +46,7 @@ In addition to CommonMark, Twardown includes:
 
 ```markdown
 | Header 1 | Header 2 |
-|----------|----------|
+| -------- | -------- |
 | Cell 1   | Cell 2   |
 ```
 
@@ -93,6 +95,7 @@ this_file: path/to/file.md
 ## Implementation Requirements
 
 1. Python Implementation
+
    - Must be compatible with Python-Markdown
    - Should provide extension mechanism
    - Must maintain type safety
@@ -105,6 +108,7 @@ this_file: path/to/file.md
 ## Extension Points
 
 1. Custom Syntax
+
    - Implementations must provide way to add custom syntax
    - Must not conflict with core features
 

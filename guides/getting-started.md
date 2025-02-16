@@ -8,7 +8,9 @@ This guide will help you get started with Twardown in both Python and JavaScript
 
 ## What is Twardown?
 
-Twardown is an opinionated Markdown flavor that provides a consistent writing experience across different platforms and tools. Instead of manually configuring multiple Markdown plugins and extensions, Twardown gives you a carefully curated set of features that work well together.
+Twardown is an opinionated Markdown flavor that provides a consistent writing experience across
+different platforms and tools. Instead of manually configuring multiple Markdown plugins and
+extensions, Twardown gives you a carefully curated set of features that work well together.
 
 ## Installation
 
@@ -67,10 +69,7 @@ import remarkParse from 'remark-parse'
 import remarkTwardown from 'twardown-js'
 import remarkHtml from 'remark-html'
 
-const processor = unified()
-  .use(remarkParse)
-  .use(remarkTwardown)
-  .use(remarkHtml)
+const processor = unified().use(remarkParse).use(remarkTwardown).use(remarkHtml)
 
 const markdown = `
 ---
@@ -92,13 +91,15 @@ console.log(result.toString())
 Twardown includes all CommonMark features plus:
 
 1. Tables
+
    ```markdown
    | Header 1 | Header 2 |
-   |----------|----------|
+   | -------- | -------- |
    | Cell 1   | Cell 2   |
    ```
 
 2. Task Lists
+
    ```markdown
    - [ ] Unchecked task
    - [x] Checked task
@@ -106,6 +107,7 @@ Twardown includes all CommonMark features plus:
    ```
 
 3. Frontmatter
+
    ```markdown
    ---
    title: Document Title
@@ -126,6 +128,7 @@ Twardown includes all CommonMark features plus:
 ### VSCode
 
 1. Install the recommended extensions:
+
    - unifiedjs.vscode-remark
    - yzhang.markdown-all-in-one
 
